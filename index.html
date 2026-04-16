@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuanti - Parcial 1 | UCES 2026</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+/* ===== THEME ===== */
+:root,[data-theme="light"]{
+  --bg:#f0f2f5;--card:#fff;--nav-bg:rgba(255,255,255,.88);--text:#1a1a2e;--text2:#555;--muted:#888;
+  --accent:#0d9488;--accent-l:#ccfbf1;--red:#ef4444;--blue:#3b82f6;--purple:#8b5cf6;--amber:#f59e0b;--green:#22c55e;
+  --border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.07);--shadow-lg:0 10px 25px -5px rgba(0,0,0,.1);
+  --danger-bg:#fef2f2;--success-bg:#f0fdf4;--info-bg:#eff6ff;--warn-bg:#fffbeb;
+  --ex-bg:linear-gradient(135deg,#fef3c7,#fde68a33);--ex-border:#f59e0b;
+}
+[data-theme="dark"]{
+  --bg:#0f172a;--card:#1e293b;--nav-bg:rgba(15,23,42,.92);--text:#e2e8f0;--text2:#94a3b8;--muted:#64748b;
+  --accent:#14b8a6;--accent-l:#042f2e;--border:#334155;
+  --shadow:0 4px 6px -1px rgba(0,0,0,.3);--shadow-lg:0 10px 25px -5px rgba(0,0,0,.4);
+  --danger-bg:#450a0a;--success-bg:#052e16;--info-bg:#172554;--warn-bg:#451a03;
+  --ex-bg:linear-gradient(135deg,#451a0322,#78350f22);--ex-border:#d97706;
+}
+
+/* ===== RESET ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;transition:background .3s,color .3s}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+
+/* ===== NAV ===== */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:56px}
+.topnav .logo{font-weight:700;font-size:1.1em;color:var(--accent);display:flex;align-items:center;gap:6px}
+.topnav .nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.topnav .nav-links a{color:var(--text2);text-decoration:none;font-size:.8em;font-weight:500;padding:4px 10px;border-radius:6px;transition:.2s}
+.topnav .nav-links a:hover{background:var(--accent-l);color:var(--accent)}
+.topnav .controls{display:flex;gap:6px;align-items:center}
+.topnav .controls button{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:5px 10px;cursor:pointer;font-size:1em;transition:.2s;color:var(--text);display:flex;align-items:center}
+.topnav .controls button:hover{transform:scale(1.05);box-shadow:var(--shadow)}
+.progress-bar{position:fixed;top:56px;left:0;right:0;height:3px;z-index:999;background:var(--border)}
+.progress-bar .fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--blue),var(--purple));transition:width .1s}
+
+/* ===== CONTENT ===== */
+.content{max-width:900px;margin:76px auto 60px;padding:0 16px}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(135deg,#0d9488,#06b6d4,#8b5cf6);border-radius:20px;padding:50px 40px;text-align:center;color:#fff;margin-bottom:30px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 60%);animation:glow 6s ease-in-out infinite}
+@keyframes glow{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-20px)}}
+.hero h1{font-size:2.2em;font-weight:700;position:relative;border:none;color:#fff;margin-bottom:6px}
+.hero p{opacity:.9;position:relative;font-size:1em}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.18);backdrop-filter:blur(10px);padding:5px 14px;border-radius:20px;font-size:.83em;margin-top:10px;position:relative}
+
+/* ===== STATS ===== */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;box-shadow:var(--shadow);transition:.2s}
+.stat-card:hover{transform:translateY(-2px)}
+.stat-card .num{font-size:1.8em;font-weight:700;color:var(--accent)}
+.stat-card .label{font-size:.82em;color:var(--muted);margin-top:2px}
+
+/* ===== SECTIONS ===== */
+.section{background:var(--card);border:1px solid var(--border);border-radius:16px;margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden;transition:.3s}
+.section:hover{box-shadow:var(--shadow-lg)}
+.section-header{padding:14px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;transition:.2s}
+.section-header:hover{background:var(--accent-l)}
+.section-header h2{font-size:1.15em;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:8px;margin:0;padding:0;background:none;border:none}
+.section-header .chevron{transition:transform .3s;color:var(--muted)}
+.section-header.active .chevron{transform:rotate(180deg)}
+.section-body{padding:0 20px 20px;display:none;animation:fadeIn .3s}
+.section-body.open{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.section-body h3{font-size:1.1em;color:var(--accent);margin:22px 0 8px;padding-bottom:5px;border-bottom:2px dashed var(--border)}
+.section-body h4{font-size:.95em;color:var(--text2);margin:14px 0 6px;font-weight:600}
+.section-body p{margin:6px 0}
+
+/* ===== CARDS ===== */
+.card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:12px 0;transition:.2s}
+.card:hover{border-color:var(--accent)}
+.formula-box{background:linear-gradient(135deg,var(--info-bg),var(--card));border:2px solid var(--blue);border-radius:12px;padding:16px 20px;margin:14px 0;text-align:center;font-size:1.02em}
+
+/* ===== ALERTS ===== */
+.alert{padding:12px 16px;border-radius:10px;margin:12px 0;border-left:4px solid}
+.alert .at{font-weight:700;margin-bottom:3px;display:flex;align-items:center;gap:5px}
+.alert-danger{background:var(--danger-bg);border-color:var(--red)}.alert-danger .at{color:var(--red)}
+.alert-success{background:var(--success-bg);border-color:var(--green)}.alert-success .at{color:#16a34a}
+.alert-info{background:var(--info-bg);border-color:var(--blue)}.alert-info .at{color:var(--blue)}
+.alert-warn{background:var(--warn-bg);border-color:var(--amber)}.alert-warn .at{color:#d97706}
+
+/* ===== EXAMPLES ===== */
+.example-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe33);border:1px solid #c4b5fd;border-left:4px solid var(--purple);border-radius:10px;padding:12px 16px;margin:12px 0}
+.example-box .et{font-weight:700;color:var(--purple);margin-bottom:4px}
+[data-theme="dark"] .example-box{background:linear-gradient(135deg,#2e1065,#1e1b4b33);border-color:#7c3aed}
+
+/* ===== TABLES ===== */
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9em;border-radius:10px;overflow:hidden}
+th{background:var(--accent);color:#fff;padding:9px 12px;text-align:left;font-weight:600}
+td{padding:8px 12px;border-bottom:1px solid var(--border)}
+tr:nth-child(even) td{background:var(--bg)}
+tr:hover td{background:var(--accent-l)}
+
+/* ===== EXERCISES ===== */
+.exercise{background:var(--ex-bg);border:2px solid var(--ex-border);border-radius:14px;padding:16px 18px;margin:14px 0;position:relative;overflow:hidden}
+.exercise h4{color:#b45309;margin:0 0 8px;font-weight:700;font-size:1em}
+[data-theme="dark"] .exercise h4{color:#fbbf24}
+.exercise ol,.exercise ul{padding-left:20px}
+.exercise li{margin:5px 0}
+.ex-item{display:flex;align-items:flex-start;gap:8px;padding:4px 0}
+.ex-item input[type="checkbox"]{width:18px;height:18px;margin-top:3px;accent-color:var(--accent);cursor:pointer;flex-shrink:0}
+.ex-item.done .ex-text{text-decoration:line-through;opacity:.45}
+
+/* ===== VIDEOS ===== */
+.video-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:14px 0}
+.video-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--card)}
+.video-card iframe{width:100%;aspect-ratio:16/9;border:none;display:block}
+.video-card .vc-info{padding:8px 12px;font-size:.82em;color:var(--text2)}
+.video-card .vc-info strong{color:var(--text);display:block;font-size:.95em;margin-bottom:2px}
+
+/* ===== MATERIAL IMAGES ===== */
+.material-gallery{margin:14px 0}
+.material-gallery summary{cursor:pointer;font-weight:600;color:var(--accent);padding:8px 0;font-size:.95em;display:flex;align-items:center;gap:6px}
+.material-gallery summary:hover{text-decoration:underline}
+.material-gallery .mg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-top:10px}
+.material-gallery img{width:100%;border-radius:8px;border:1px solid var(--border);cursor:pointer;transition:.2s}
+.material-gallery img:hover{transform:scale(1.02);box-shadow:var(--shadow-lg)}
+/* Lightbox */
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.9);z-index:9999;justify-content:center;align-items:center;cursor:zoom-out}
+.lightbox.active{display:flex}
+.lightbox img{max-width:95%;max-height:95%;border-radius:8px}
+
+/* ===== GRAPHS ===== */
+.graph{text-align:center;margin:16px 0}.graph svg{max-width:100%;height:auto}
+
+/* ===== FORMULA SHEET ===== */
+.formula-sheet{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:16px 0}
+.formula-card{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:16px;text-align:center;transition:.2s}
+.formula-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.formula-card h4{color:var(--accent);margin-bottom:8px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){.hero{padding:30px 16px}.hero h1{font-size:1.5em}.topnav .nav-links{display:none}.content{padding:0 10px}.section-body{padding:0 14px 14px}.formula-sheet{grid-template-columns:1fr}.video-row{grid-template-columns:1fr}}
+@media print{.topnav,.progress-bar,.controls,.video-row,.material-gallery,.topnav .nav-links{display:none!important}.content{margin-top:0}.section-body{display:block!important}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <div class="logo"><i data-lucide="book-open" style="width:20px;height:20px"></i> Cuanti</div>
+  <div class="nav-links">
+    <a href="#prelim">Preliminares</a><a href="#u1">Unidad 1</a><a href="#u2">Unidad 2</a><a href="#ejercicios">Ejercicios</a><a href="#formulas">Formulas</a>
+  </div>
+  <div class="controls">
+    <button onclick="toggleAll()" title="Abrir/cerrar todo"><i data-lucide="layout-list" style="width:16px;height:16px"></i></button>
+    <button onclick="toggleTheme()" id="themeBtn" title="Tema"><i data-lucide="moon" style="width:16px;height:16px"></i></button>
+  </div>
+</nav>
+<div class="progress-bar"><div class="fill" id="progressFill"></div></div>
+
+<div class="content">
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Instrumentos Cuantitativos</h1>
+  <p>Resumen Completo &mdash; Primer Parcial 2026</p>
+  <div class="badge">Preliminares + Unidad 1 + Unidad 2 (hasta Rectas Paralelas) &bull; Prof. Salaj &bull; UCES &bull; 20/04</div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card"><div class="num" id="totalEx">0</div><div class="label">Ejercicios</div></div>
+  <div class="stat-card"><div class="num" id="doneEx">0</div><div class="label">Completados</div></div>
+  <div class="stat-card"><div class="num" id="pctEx">0%</div><div class="label">Progreso</div></div>
+  <div class="stat-card"><div class="num">4</div><div class="label">Dias para el parcial</div></div>
+</div>
+
+<!-- ================================================================ -->
+<!--                        PRELIMINARES                              -->
+<!-- ================================================================ -->
+
+<!-- 0.1 CONJUNTOS NUMERICOS -->
+<div class="section" id="prelim">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="layers" style="width:20px;height:20px"></i> 0.1 Conjuntos Numericos</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<p>Los conjuntos numericos son como cajas rusas: cada uno contiene al anterior. A medida que necesitamos resolver mas operaciones, ampliamos el conjunto.</p>
+
+<div class="card">
+<h4>Naturales \(\mathbb{N}\) &mdash; Para contar</h4>
+<p>\(\{1, 2, 3, 4, 5, \ldots\}\). El \(0\) <strong>no</strong> es natural (con 0 se escribe \(\mathbb{N}_0\)). En \(\mathbb{N}\) podes sumar y multiplicar, pero no siempre restar (\(5-8\) no tiene solucion).</p>
+</div>
+<div class="card">
+<h4>Enteros \(\mathbb{Z}\) &mdash; Con negativos</h4>
+<p>\(\{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}\). Ahora siempre podes restar. Pero la division no siempre da entero (\(5 \div 2 = 2{,}5 \notin \mathbb{Z}\)).</p>
+</div>
+<div class="card">
+<h4>Racionales \(\mathbb{Q}\) &mdash; Fracciones</h4>
+$$\mathbb{Q} = \left\{\frac{p}{q} \;\middle|\; p,q \in \mathbb{Z},\; q \neq 0\right\}$$
+<p>Incluye fracciones \(\left(\frac{1}{2},\, -\frac{7}{3}\right)\), decimales exactos \((0{,}25)\) y periodicos \((0{,}\overline{3} = \frac{1}{3})\).</p>
+</div>
+<div class="card">
+<h4>Irracionales \(\mathbb{I}\) &mdash; Infinitos sin patron</h4>
+<p>Infinitas cifras decimales <strong>no periodicas</strong>. No se pueden escribir como fraccion.</p>
+<p>\(\sqrt{2},\;\sqrt{3},\;\sqrt{5},\;\pi = 3{,}14159\ldots,\;e = 2{,}71828\ldots\)</p>
+</div>
+<div class="card">
+<h4>Reales \(\mathbb{R}\) &mdash; Todos juntos</h4>
+$$\mathbb{R} = \mathbb{Q} \cup \mathbb{I} \qquad\qquad \mathbb{Q} \cap \mathbb{I} = \varnothing$$
+<p>Racionales e irracionales juntos forman los reales. No comparten elementos.</p>
+</div>
+
+<!-- Diagrama SVG -->
+<div class="graph">
+<svg viewBox="0 0 600 260" width="600" height="260">
+  <rect x="5" y="5" width="590" height="250" rx="15" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="300" y="28" text-anchor="middle" font-weight="bold" fill="#2e7d32" font-size="15" font-family="Space Grotesk">Numeros Reales R</text>
+  <rect x="20" y="38" width="350" height="205" rx="12" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="195" y="58" text-anchor="middle" font-weight="bold" fill="#1565c0" font-size="13" font-family="Space Grotesk">Racionales Q</text>
+  <rect x="35" y="68" width="230" height="162" rx="10" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="150" y="88" text-anchor="middle" font-weight="bold" fill="#e65100" font-size="12" font-family="Space Grotesk">Enteros Z</text>
+  <rect x="50" y="96" width="140" height="122" rx="8" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+  <text x="120" y="116" text-anchor="middle" font-weight="bold" fill="#c62828" font-size="11" font-family="Space Grotesk">Naturales N</text>
+  <text x="120" y="145" text-anchor="middle" font-size="13" font-family="Space Grotesk">1, 2, 3, ...</text>
+  <text x="120" y="198" text-anchor="middle" font-size="11" fill="#e65100" font-family="Space Grotesk">0</text>
+  <text x="215" y="155" text-anchor="middle" font-size="11" fill="#e65100" font-family="Space Grotesk">-1, -2, -3...</text>
+  <text x="310" y="125" text-anchor="middle" font-size="12" fill="#1565c0" font-family="Space Grotesk">1/2, -7/3</text>
+  <text x="310" y="150" text-anchor="middle" font-size="12" fill="#1565c0" font-family="Space Grotesk">2,5 &middot; 0,333...</text>
+  <rect x="390" y="38" width="190" height="205" rx="12" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="485" y="58" text-anchor="middle" font-weight="bold" fill="#7b1fa2" font-size="13" font-family="Space Grotesk">Irracionales I</text>
+  <text x="485" y="110" text-anchor="middle" font-size="13" fill="#7b1fa2" font-family="Space Grotesk">&radic;2, &radic;3, &radic;5</text>
+  <text x="485" y="140" text-anchor="middle" font-size="13" fill="#7b1fa2" font-family="Space Grotesk">&pi; = 3,1415...</text>
+  <text x="485" y="170" text-anchor="middle" font-size="13" fill="#7b1fa2" font-family="Space Grotesk">e = 2,7182...</text>
+</svg>
+</div>
+
+<table>
+<tr><th>Simbolo</th><th>Se lee</th><th>Ejemplo</th></tr>
+<tr><td>\(a \in S\)</td><td>a pertenece a S</td><td>\(-3 \in \mathbb{Z}\)</td></tr>
+<tr><td>\(a \notin S\)</td><td>a no pertenece a S</td><td>\(\tfrac{5}{4} \notin \mathbb{I}\)</td></tr>
+<tr><td>\(S \subset T\)</td><td>S contenido en T</td><td>\(\mathbb{Q} \subset \mathbb{R}\)</td></tr>
+</table>
+
+<!-- VIDEO -->
+<h3>Video explicativo</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/rtNC7g1h_JA" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Clasificacion de numeros</strong>MateFacil &bull; 1.4M vistas</div>
+</div>
+</div>
+
+<!-- MATERIAL DEL APUNTE -->
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte (paginas del PDF)</summary>
+<div class="mg-grid">
+  <img src="img/Preliminares_p1.png" alt="Preliminares p1" onclick="openLightbox(this)">
+  <img src="img/Preliminares_p2.png" alt="Preliminares p2" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 0.2 OPERACIONES -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="calculator" style="width:20px;height:20px"></i> 0.2 Operaciones con Reales</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<h3>Suma &mdash; Regla de los signos</h3>
+<table>
+<tr><th>Caso</th><th>Regla</th><th>Ejemplos</th></tr>
+<tr><td>Signos iguales</td><td>Sumar absolutos, mantener signo</td><td>\(3+4=7\) &nbsp; \((-3)+(-4)=-7\)</td></tr>
+<tr><td>Signos distintos</td><td>Restar absolutos, signo del mayor</td><td>\(-2+5=3\) &nbsp; \(2+(-5)=-3\)</td></tr>
+</table>
+
+<h3>Resta = sumar el opuesto</h3>
+<div class="card">
+$$9-(-3)=9+3=12 \qquad -2-(-11)=-2+11=9$$
+$$-12-(+5)=-17 \qquad 10-(+13)=-3$$
+</div>
+
+<h3>Fracciones</h3>
+<div class="card">
+<h4>Mismo denominador</h4>
+$$\frac{a}{c}+\frac{b}{c}=\frac{a+b}{c} \qquad \text{Ej: }\frac{2}{3}+\frac{4}{3}=\frac{6}{3}=2$$
+</div>
+<div class="card">
+<h4>Distinto denominador &rarr; buscar MCM</h4>
+$$\left(-\frac{2}{3}\right)+\frac{4}{5}=\frac{-10+12}{15}=\frac{2}{15} \qquad \frac{7}{4}-\frac{1}{8}=\frac{14-1}{8}=\frac{13}{8}$$
+</div>
+<div class="card">
+<h4>Multiplicacion: numerador x numerador, denominador x denominador</h4>
+$$\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$$
+</div>
+<div class="card">
+<h4>Division: multiplicar por el inverso</h4>
+$$\frac{a}{b}\div\frac{c}{d}=\frac{a}{b}\cdot\frac{d}{c}=\frac{ad}{bc}$$
+</div>
+
+<h3>Ley de signos (producto y cociente)</h3>
+<table>
+<tr><th>Operacion</th><th>Resultado</th></tr>
+<tr><td>\((+)\times(+)\) o \((-)\times(-)\)</td><td>Positivo</td></tr>
+<tr><td>\((+)\times(-)\) o \((-)\times(+)\)</td><td>Negativo</td></tr>
+</table>
+
+<div class="alert alert-success"><div class="at"><i data-lucide="check-circle" style="width:14px;height:14px"></i> CLAVE</div>Antes de multiplicar fracciones, <strong>simplifica cruzado</strong> (numerador de una con denominador de la otra).</div>
+
+<h3>Video explicativo</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/FUbla-rPt3M" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Suma, resta, multiplicacion y division de fracciones</strong>Daniel Carreon &bull; 9M vistas</div>
+</div>
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/KDDcZCvgx5k" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Operaciones combinadas con fracciones</strong>julioprofe</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Preliminares_p3.png" alt="Operaciones p3" onclick="openLightbox(this)">
+  <img src="img/Preliminares_p4.png" alt="Operaciones p4" onclick="openLightbox(this)">
+  <img src="img/Preliminares_p5.png" alt="Operaciones p5" onclick="openLightbox(this)">
+  <img src="img/Preliminares_p6.png" alt="Operaciones p6" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 0.3 POTENCIACION -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="zap" style="width:20px;height:20px"></i> 0.3 Potenciacion</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<div class="formula-box">
+$$a^n = \underbrace{a \cdot a \cdot a \cdots a}_{n \text{ veces}} \qquad 2^3 = 2\cdot2\cdot2=8$$
+</div>
+
+<table>
+<tr><th>Caso</th><th>Resultado</th><th>Ejemplo</th></tr>
+<tr><td>Base negativa, exp. <strong>impar</strong></td><td>Negativo</td><td>\((-2)^3=-8\)</td></tr>
+<tr><td>Base negativa, exp. <strong>par</strong></td><td>Positivo</td><td>\((-2)^4=16\)</td></tr>
+<tr><td>Exponente cero (\(a\neq0\))</td><td>1</td><td>\((-5)^0=1\)</td></tr>
+<tr><td>Exponente negativo</td><td>\(a^{-n}=\frac{1}{a^n}\)</td><td>\(2^{-4}=\frac{1}{16}\)</td></tr>
+</table>
+
+<h3>Propiedades</h3>
+<table>
+<tr><th>Propiedad</th><th>Formula</th><th>Ejemplo</th></tr>
+<tr><td>Prod. igual base</td><td>\(a^n\cdot a^m=a^{n+m}\)</td><td>\(2^3\cdot2^1=2^4=16\)</td></tr>
+<tr><td>Coc. igual base</td><td>\(a^n\div a^m=a^{n-m}\)</td><td>\(4^5\div4^3=4^2=16\)</td></tr>
+<tr><td>Potencia de potencia</td><td>\((a^n)^m=a^{nm}\)</td><td>\((2^3)^4=2^{12}\)</td></tr>
+<tr><td>Distrib. producto</td><td>\((ab)^n=a^n b^n\)</td><td>\((2\cdot3)^2=36\)</td></tr>
+<tr><td>Distrib. cociente</td><td>\(\left(\frac{a}{b}\right)^n=\frac{a^n}{b^n}\)</td><td>\(\left(\frac{3}{2}\right)^2=\frac{9}{4}\)</td></tr>
+</table>
+
+<div class="alert alert-danger"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> ERROR CLASICO</div>
+\((2+3)^2 \neq 2^2+3^2\) porque \(25 \neq 13\). La potencia <strong>NO</strong> distribuye con suma/resta.
+</div>
+
+<h3>Video explicativo</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/tA94S33kxm8" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Propiedades de la potenciacion - Todas</strong>Matematicas profe Alex &bull; 2.6M vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Preliminares_p7.png" alt="Potenciacion p7" onclick="openLightbox(this)">
+  <img src="img/Preliminares_p8.png" alt="Potenciacion p8" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 0.4 RADICACION -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="square-root" style="width:20px;height:20px"></i> 0.4 Radicacion</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<div class="formula-box">\(\sqrt[n]{a}=b\) si y solo si \(b^n=a\). &nbsp; \(a\)=radicando, \(n\)=indice.</div>
+
+<div class="card">
+$$\sqrt{64}=8 \quad \sqrt[3]{125}=5 \quad \sqrt[5]{-32}=-2 \quad \sqrt{-81}=\text{NO EXISTE en }\mathbb{R}$$
+</div>
+
+<div class="alert alert-danger"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> REGLA</div>No existen raices de indice <strong>par</strong> con radicando <strong>negativo</strong> en \(\mathbb{R}\).</div>
+
+<div class="card">
+<h4>Exponente fraccionario</h4>
+$$a^{\frac{m}{n}}=\sqrt[n]{a^m} \qquad 27^{\frac{1}{3}}=\sqrt[3]{27}=3$$
+</div>
+
+<div class="alert alert-success"><div class="at"><i data-lucide="check-circle" style="width:14px;height:14px"></i> SI distributiva con producto/cociente</div>
+$$\sqrt{a\cdot b}=\sqrt{a}\cdot\sqrt{b} \qquad \sqrt{\frac{a}{b}}=\frac{\sqrt{a}}{\sqrt{b}}$$
+</div>
+
+<div class="alert alert-danger"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> NO distributiva con suma/resta</div>
+$$\sqrt{9+16}\neq\sqrt{9}+\sqrt{16} \quad\text{porque}\quad 5\neq7$$
+</div>
+
+<h3>Video explicativo</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/3iU69afc5dI" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Las 8 propiedades de la radicacion</strong>Matematicas con Juan &bull; 172K vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Preliminares_p9.png" alt="Radicacion" onclick="openLightbox(this)">
+  <img src="img/Preliminares_p10.png" alt="Radicacion 2" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 0.5 OP COMBINADAS + 0.6 PORCENTAJE -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="list-ordered" style="width:20px;height:20px"></i> 0.5 Operaciones Combinadas + 0.6 Porcentaje</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<div class="formula-box" style="font-size:1.1em">
+<strong>Orden:</strong> 1) Parentesis &rarr; 2) Potencias y raices &rarr; 3) &times; y &div; &rarr; 4) + y &minus;
+</div>
+
+<h3>Porcentaje</h3>
+<div class="card">
+$$X\%\text{ de }N=\frac{X}{100}\times N \qquad\qquad \%=\frac{A}{B}\times100$$
+$$P_{\text{desc}}=P\times\left(1-\frac{X}{100}\right) \qquad P_{\text{sin IVA}}=\frac{P_{\text{con IVA}}}{1{,}21}$$
+</div>
+
+<h3>Video explicativo</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/RE3XoDORMys" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Como calcular un porcentaje</strong>Daniel Carreon &bull; 13.5M vistas</div>
+</div>
+</div>
+
+</div></div>
+
+<!-- ================================================================ -->
+<!--                          UNIDAD 1                                -->
+<!-- ================================================================ -->
+
+<!-- 1.1 ECUACIONES -->
+<div class="section" id="u1">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="equal" style="width:20px;height:20px"></i> 1.1 Ecuaciones Lineales</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<p>Una <strong>ecuacion</strong> es una igualdad con una incognita. Los valores que la hacen verdadera son las <strong>soluciones o raices</strong>.</p>
+
+<div class="formula-box">
+$$ax+b=c \qquad\Rightarrow\qquad x=\frac{c-b}{a} \quad(a\neq0)$$
+</div>
+
+<div class="alert alert-info"><div class="at"><i data-lucide="lightbulb" style="width:14px;height:14px"></i> METODO</div>
+Lo que <strong>suma</strong> pasa <strong>restando</strong>. Lo que <strong>multiplica</strong> pasa <strong>dividiendo</strong>. Siempre verificar.
+</div>
+
+<div class="example-box"><div class="et">Ejemplo: \(7x-4=3x+8\)</div>
+$$7x-3x=8+4 \implies 4x=12 \implies x=3$$
+Verifico: \(7(3)-4=17=3(3)+8\) &check;
+</div>
+
+<h3>Clasificacion</h3>
+<table>
+<tr><th>Tipo</th><th>Al resolver</th><th>Soluciones</th></tr>
+<tr><td><strong>Compatible determinada</strong></td><td>\(x=\text{valor}\)</td><td>1 unica</td></tr>
+<tr><td><strong>Compatible indeterminada</strong></td><td>\(0=0\)</td><td>Infinitas (todo \(\mathbb{R}\))</td></tr>
+<tr><td><strong>Incompatible</strong></td><td>Absurdo (\(4=-8\))</td><td>Ninguna</td></tr>
+</table>
+
+<div class="alert alert-warn"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> CUIDADO</div>
+En ecuaciones fraccionarias (con \(x\) en el denominador), verifica que la solucion <strong>no anule</strong> ningun denominador.
+</div>
+
+<h3>Video explicativo</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/IHblqjW8RY8" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Ecuaciones de primer grado</strong>Daniel Carreon &bull; 27M vistas</div>
+</div>
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/lolGRSlyY5E" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Ecuaciones - TODO lo que debes saber</strong>Matematicas profe Alex &bull; 3.2M vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte (Unidad 1)</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_1_Exp_p1.png" alt="U1 p1" onclick="openLightbox(this)">
+  <img src="img/Unidad_1_Exp_p2.png" alt="U1 p2" onclick="openLightbox(this)">
+  <img src="img/Unidad_1_Exp_p3.png" alt="U1 p3" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 1.2 INTERVALOS -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="arrow-left-right" style="width:20px;height:20px"></i> 1.2 Intervalos</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<table>
+<tr><th>Intervalo</th><th>Desigualdad</th><th>Tipo</th><th>Extremos</th></tr>
+<tr><td>\([a;b]\)</td><td>\(a\leq x\leq b\)</td><td>Cerrado</td><td>Ambos incluidos</td></tr>
+<tr><td>\((a;b)\)</td><td>\(a< x< b\)</td><td>Abierto</td><td>Ninguno incluido</td></tr>
+<tr><td>\([a;b)\)</td><td>\(a\leq x< b\)</td><td>Semiabierto</td><td>a si, b no</td></tr>
+<tr><td>\((a;+\infty)\)</td><td>\(x>a\)</td><td>No acotado</td><td>a no incluido</td></tr>
+<tr><td>\((-\infty;b]\)</td><td>\(x\leq b\)</td><td>No acotado</td><td>b incluido</td></tr>
+</table>
+
+<div class="alert alert-warn"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> RECORDA</div>\(\infty\) siempre con <strong>parentesis</strong>, nunca corchete.</div>
+
+<div class="graph">
+<svg viewBox="0 0 500 160" width="500" height="160">
+  <text x="10" y="25" font-size="13" font-weight="600" fill="#0d9488" font-family="Space Grotesk">[a; b]</text>
+  <line x1="80" y1="20" x2="420" y2="20" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="160" y1="20" x2="340" y2="20" stroke="#0d9488" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="160" cy="20" r="6" fill="#0d9488"/><circle cx="340" cy="20" r="6" fill="#0d9488"/>
+  <text x="160" y="40" text-anchor="middle" font-size="12" font-family="Space Grotesk">a</text>
+  <text x="340" y="40" text-anchor="middle" font-size="12" font-family="Space Grotesk">b</text>
+  <text x="10" y="75" font-size="13" font-weight="600" fill="#3b82f6" font-family="Space Grotesk">(a; b)</text>
+  <line x1="80" y1="70" x2="420" y2="70" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="160" y1="70" x2="340" y2="70" stroke="#3b82f6" stroke-width="5"/>
+  <circle cx="160" cy="70" r="6" fill="white" stroke="#3b82f6" stroke-width="2.5"/>
+  <circle cx="340" cy="70" r="6" fill="white" stroke="#3b82f6" stroke-width="2.5"/>
+  <text x="160" y="90" text-anchor="middle" font-size="12" font-family="Space Grotesk">a</text>
+  <text x="340" y="90" text-anchor="middle" font-size="12" font-family="Space Grotesk">b</text>
+  <text x="10" y="125" font-size="13" font-weight="600" fill="#ef4444" font-family="Space Grotesk">(a; +inf)</text>
+  <line x1="80" y1="120" x2="420" y2="120" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="160" y1="120" x2="430" y2="120" stroke="#ef4444" stroke-width="5"/>
+  <circle cx="160" cy="120" r="6" fill="white" stroke="#ef4444" stroke-width="2.5"/>
+  <polygon points="425,114 440,120 425,126" fill="#ef4444"/>
+  <text x="160" y="145" text-anchor="middle" font-size="12" font-family="Space Grotesk">a</text>
+</svg>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_1_Exp_p4.png" alt="Intervalos" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 1.3 INECUACIONES -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="git-compare" style="width:20px;height:20px"></i> 1.3 Inecuaciones Lineales</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<div class="alert alert-danger" style="font-size:1.05em"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> REGLA MAS IMPORTANTE</div>
+Al multiplicar o dividir por un numero <strong>NEGATIVO</strong>, el sentido de la desigualdad <strong>SE DA VUELTA</strong>.
+$$-5x\geq3 \implies x\leq-\frac{3}{5}$$
+</div>
+
+<div class="example-box"><div class="et">Ejemplo 1: \(3x+5>11\)</div>
+$$3x>6 \implies x>2 \qquad S=(2;+\infty)$$
+</div>
+<div class="example-box"><div class="et">Ejemplo 2: \(4-3x\geq7+2x\)</div>
+$$-5x\geq3 \implies x\leq-\tfrac{3}{5} \qquad S=(-\infty;-\tfrac{3}{5}]$$
+</div>
+<div class="example-box"><div class="et">Ejemplo doble: \(-2<5+3m<20\)</div>
+$$-7<3m<15 \implies -\tfrac{7}{3}<m<5 \qquad S=(-\tfrac{7}{3};5)$$
+</div>
+
+<h3>Video explicativo</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/CkVXbU-PNRs" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Inecuaciones de primer grado</strong>Matematicas profe Alex &bull; 6.1M vistas</div>
+</div>
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/gMDAtLLW5lM" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Inecuaciones - Super facil</strong>Daniel Carreon &bull; 2.9M vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_1_Exp_p5.png" alt="Inecuaciones" onclick="openLightbox(this)">
+  <img src="img/Unidad_1_Exp_p6.png" alt="Inecuaciones 2" onclick="openLightbox(this)">
+  <img src="img/Unidad_1_Exp_p7.png" alt="Inecuaciones 3" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- ================================================================ -->
+<!--                          UNIDAD 2                                -->
+<!-- ================================================================ -->
+
+<!-- 2.1 FUNCIONES -->
+<div class="section" id="u2">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="activity" style="width:20px;height:20px"></i> 2.1 Concepto de Funcion</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<div class="formula-box">
+Una <strong>funcion</strong> \(f\) asigna a cada \(x\) de un conjunto \(A\) un <strong>unico</strong> \(y=f(x)\) de un conjunto \(B\).
+$$f:A\to B\;/\;y=f(x)$$
+</div>
+
+<p>La demanda de un producto <em>depende</em> del precio; el costo de enviar un paquete <em>depende</em> de su peso. Esa relacion de dependencia es una funcion.</p>
+
+<table>
+<tr><th>Termino</th><th>Significado</th><th>Ejemplo con \(C(x)=1500+3x\)</th></tr>
+<tr><td><strong>Dominio</strong></td><td>Valores posibles de \(x\)</td><td>\(x\geq0\)</td></tr>
+<tr><td><strong>Imagen</strong></td><td>Valores posibles de \(f(x)\)</td><td>\(C\geq1500\)</td></tr>
+<tr><td><strong>Var. independiente</strong></td><td>\(x\) (la que elegis)</td><td>Cantidad a producir</td></tr>
+<tr><td><strong>Var. dependiente</strong></td><td>\(y=f(x)\)</td><td>El costo resultante</td></tr>
+</table>
+
+<div class="alert alert-warn"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i></div>\(f(x)\) se lee "f <strong>de</strong> x". <strong>NO</strong> es \(f\) multiplicado por \(x\).</div>
+
+<div class="example-box"><div class="et">Evaluar: \(C(x)=1500+3x+0{,}02x^2\)</div>
+<p>\(C(10)=1500+30+2=1532\) &rarr; producir 10 unidades cuesta $1532</p>
+<p>\(C(0)=1500\) &rarr; costo fijo (sin producir nada)</p>
+</div>
+
+<h3>Cuando NO es funcion?</h3>
+<p>Cuando a un \(x\) le corresponden <strong>2 o mas</strong> valores de \(y\). Test: recta vertical toca la curva en mas de un punto &rarr; no es funcion.</p>
+
+<h3>Videos</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/H40lcwlgPMk" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Dominio y rango de una funcion</strong>Matematicas profe Alex &bull; 6.4M vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte (Unidad 2)</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_2_Fun_p1.png" alt="U2 p1" onclick="openLightbox(this)">
+  <img src="img/Unidad_2_Fun_p2.png" alt="U2 p2" onclick="openLightbox(this)">
+  <img src="img/Unidad_2_Fun_p3.png" alt="U2 p3" onclick="openLightbox(this)">
+  <img src="img/Unidad_2_Fun_p4.png" alt="U2 p4" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 2.2 ANALISIS DE GRAFICOS -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="line-chart" style="width:20px;height:20px"></i> 2.2 Analisis de Graficos</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<p>En el parcial te dan un grafico y te piden un "analisis completo":</p>
+
+<table>
+<tr><th>Concepto</th><th>Definicion</th><th>En el grafico</th></tr>
+<tr><td><strong>Creciente</strong></td><td>\(x_1<x_2 \Rightarrow f(x_1)<f(x_2)\)</td><td>Sube de izq a der</td></tr>
+<tr><td><strong>Decreciente</strong></td><td>\(x_1<x_2 \Rightarrow f(x_1)>f(x_2)\)</td><td>Baja de izq a der</td></tr>
+<tr><td><strong>Maximo rel.</strong></td><td>Pasa de crecer a decrecer</td><td>Cima de montania</td></tr>
+<tr><td><strong>Minimo rel.</strong></td><td>Pasa de decrecer a crecer</td><td>Fondo de valle</td></tr>
+<tr><td><strong>Ceros</strong></td><td>\(f(a)=0\)</td><td>Cruza el eje X</td></tr>
+<tr><td><strong>Positiva</strong></td><td>\(f(x)>0\)</td><td>Arriba del eje X</td></tr>
+<tr><td><strong>Negativa</strong></td><td>\(f(x)<0\)</td><td>Abajo del eje X</td></tr>
+</table>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_2_Fun_p5.png" alt="Analisis graficos" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 2.3 FUNCION LINEAL -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="trending-up" style="width:20px;height:20px"></i> 2.3 Funcion Lineal</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<div class="formula-box">
+$$y=mx+b \qquad m=\text{pendiente} \qquad b=\text{ordenada al origen} \qquad \text{Raiz: }x=-\frac{b}{m}$$
+</div>
+
+<div class="card">
+<h4>Pendiente \(m\)</h4>
+<p>Cuanto varia \(y\) cuando \(x\) sube 1 unidad. Es la "velocidad de cambio".</p>
+$$m=\frac{y_2-y_1}{x_2-x_1}=\frac{\Delta y}{\Delta x}$$
+<p>\(m=2\): por cada 1 que sube \(x\), \(y\) sube 2. \(m=-\frac{3}{2}\): por cada 2 que sube \(x\), \(y\) baja 3.</p>
+</div>
+
+<div class="card">
+<h4>Ordenada al origen \(b\)</h4>
+<p>Valor de \(y\) cuando \(x=0\). Donde la recta <strong>corta el eje Y</strong>: punto \((0,b)\).</p>
+</div>
+
+<table>
+<tr><th>Pendiente</th><th>Comportamiento</th></tr>
+<tr><td>\(m>0\)</td><td>Creciente (sube)</td></tr>
+<tr><td>\(m<0\)</td><td>Decreciente (baja)</td></tr>
+<tr><td>\(m=0\)</td><td>Constante (horizontal \(y=b\))</td></tr>
+</table>
+
+<div class="alert alert-info"><div class="at"><i data-lucide="lightbulb" style="width:14px;height:14px"></i> COMO GRAFICAR</div>
+1) Marcar \((0,b)\) en el eje Y. 2) Desde ahi mover \(\Delta x\) a la derecha y \(\Delta y\) segun la pendiente. 3) Unir con recta. Si \(m\) es fraccionaria: mover el denominador en \(x\) y el numerador en \(y\).
+</div>
+
+<h3>Videos</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/edE5Y1kOgFw" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Graficar funciones lineales</strong>Daniel Carreon &bull; 4.3M vistas</div>
+</div>
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/g2zFHMXatRA" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Grafica con pendiente y ordenada</strong>Ricardo Jara &bull; 524K vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_2_Fun_p6.png" alt="F lineal" onclick="openLightbox(this)">
+  <img src="img/Unidad_2_Fun_p7.png" alt="F lineal 2" onclick="openLightbox(this)">
+  <img src="img/Unidad_2_Fun_p8.png" alt="F lineal 3" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 2.4 ECUACION DE LA RECTA -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="pencil-ruler" style="width:20px;height:20px"></i> 2.4 Ecuaciones de la Recta</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<div class="formula-box"><h4>Explicita</h4>$$y=mx+b$$</div>
+<div class="formula-box"><h4>Por un punto con pendiente</h4>$$y-y_1=m(x-x_1)$$</div>
+<div class="formula-box"><h4>Por dos puntos</h4>$$m=\frac{y_2-y_1}{x_2-x_1} \qquad\text{luego}\qquad y-y_1=m(x-x_1)$$</div>
+
+<div class="example-box"><div class="et">Ejemplo: recta por \(P(3,-4)\) con \(m=-\frac{3}{2}\)</div>
+$$y+4=-\tfrac{3}{2}(x-3) \implies y=-\tfrac{3}{2}x+\tfrac{9}{2}-4=-\tfrac{3}{2}x+\tfrac{1}{2}$$
+</div>
+
+<h3>Video</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/JWnk1BivjTw" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Ecuacion de la recta dados 2 puntos</strong>Matematicas profe Alex &bull; 1.2M vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_2_Fun_p9.png" alt="Ec recta" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 2.5 PARALELISMO -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="align-center-horizontal" style="width:20px;height:20px"></i> 2.5 Paralelismo y Perpendicularidad</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div>
+<h4 style="color:var(--blue)">Paralelas \(r_1\parallel r_2\)</h4>
+<div class="formula-box" style="border-color:var(--blue)">$$m_1=m_2$$</div>
+<p>Misma pendiente, distinta \(b\). Nunca se cruzan.</p>
+</div>
+<div>
+<h4 style="color:var(--purple)">Perpendiculares \(r_1\perp r_2\)</h4>
+<div class="formula-box" style="border-color:var(--purple)">$$m_1\cdot m_2=-1$$</div>
+<p>Pendientes opuestas e inversas. Se cruzan a 90 grados.</p>
+<p>Si \(m_1=2\) &rarr; \(m_2=-\frac{1}{2}\)</p>
+</div>
+</div>
+
+<div class="example-box"><div class="et">Ejemplo tipo parcial</div>
+<p>Dada \(r_1:-25x+5y+5=0\). Forma explicita: \(y=5x-1\), \(m_1=5\).</p>
+<p><strong>Perpendicular por \((-2,-1)\):</strong> \(m_\perp=-\frac{1}{5}\) &rarr; \(y=-\frac{1}{5}x-\frac{7}{5}\)</p>
+<p><strong>Paralela por \((2,5)\):</strong> \(m_\parallel=5\) &rarr; \(y=5x-5\)</p>
+</div>
+
+<h3>Video</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/IP8HI9gAdoE" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Rectas perpendiculares</strong>Matematicas profe Alex &bull; 1.8M vistas</div>
+</div>
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/KmqeuA7w9gs" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Rectas paralelas y perpendiculares</strong>Juliana la profe &bull; 548K vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_2_Fun_p10.png" alt="Paralelas perp" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 2.6 SISTEMAS -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="git-merge" style="width:20px;height:20px"></i> 2.6 Sistemas de Ecuaciones</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<div class="card">
+$$\begin{cases}ax+by=c\\dx+ey=f\end{cases}$$
+<p>Resolver = encontrar \((x_0,y_0)\) que satisface <strong>ambas</strong>. Graficamente: punto donde se cruzan las rectas.</p>
+</div>
+
+<table>
+<tr><th>Tipo</th><th>Soluciones</th><th>Graficamente</th><th>Al resolver</th></tr>
+<tr><td><strong>Comp. determinado</strong></td><td>1 unica</td><td>Se cruzan</td><td>\(x=\text{valor}\)</td></tr>
+<tr><td><strong>Comp. indeterminado</strong></td><td>Infinitas</td><td>Coincidentes</td><td>\(0=0\)</td></tr>
+<tr><td><strong>Incompatible</strong></td><td>Ninguna</td><td>Paralelas</td><td>Absurdo</td></tr>
+</table>
+
+<h3>3 Metodos de resolucion</h3>
+
+<div class="card"><h4 style="color:var(--accent)">Sustitucion</h4>
+<p>Despejar variable en una ec. &rarr; reemplazar en la otra. <em>Conviene si alguna tiene coef. 1.</em></p>
+</div>
+<div class="example-box"><div class="et">Ejemplo sustitucion</div>
+<p>\(\begin{cases}2x+y=1\\3x+2y=3\end{cases}\)</p>
+<p>De (1): \(y=1-2x\). En (2): \(3x+2(1-2x)=3 \implies -x=1 \implies x=-1\). Luego \(y=3\). \(S=\{(-1;3)\}\)</p>
+</div>
+
+<div class="card"><h4 style="color:var(--blue)">Igualacion</h4>
+<p>Despejar la misma variable en ambas &rarr; igualar.</p>
+</div>
+
+<div class="card"><h4 style="color:var(--purple)">Reduccion (eliminacion)</h4>
+<p>Multiplicar para que una variable se cancele al sumar. <em>Conviene si ningun coef. es 1.</em></p>
+</div>
+<div class="example-box"><div class="et">Ejemplo reduccion</div>
+<p>\(\begin{cases}2x+3y=7\\6x-4y=8\end{cases}\)</p>
+<p>Multiplicar (1) por \(-3\): \(-6x-9y=-21\). Sumar con (2): \(-13y=-13 \implies y=1\). Luego \(x=2\). \(S=\{(2;1)\}\)</p>
+</div>
+
+<h3>Videos</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/LTfv1G2iYuQ" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Sistemas 2x2 - Sustitucion</strong>Matematicas profe Alex &bull; 10.7M vistas</div>
+</div>
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/P_NBQQzM1UU" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Los 3 metodos explicados</strong>FACIL Y SENCILLO &bull; 2.7M vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_2_Fun_p11.png" alt="Sistemas" onclick="openLightbox(this)">
+  <img src="img/Unidad_2_Fun_p12.png" alt="Sistemas 2" onclick="openLightbox(this)">
+  <img src="img/Unidad_2_Fun_p13.png" alt="Sistemas 3" onclick="openLightbox(this)">
+  <img src="img/Unidad_2_Fun_p14.png" alt="Sistemas 4" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- 2.7 APLICACIONES -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="dollar-sign" style="width:20px;height:20px"></i> 2.7 Aplicaciones Economicas</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+
+<table>
+<tr><th>Funcion</th><th>Formula</th><th>Que es</th></tr>
+<tr><td><strong>Costo Total</strong></td><td>\(C(x)=CF+CV\cdot x\)</td><td>CF=fijo, CV=variable/unidad</td></tr>
+<tr><td><strong>Ingreso Total</strong></td><td>\(I(x)=PV\cdot x\)</td><td>PV=precio venta/unidad</td></tr>
+<tr><td><strong>Utilidad</strong></td><td>\(U(x)=I(x)-C(x)\)</td><td>Ganancia o perdida</td></tr>
+</table>
+
+<div class="formula-box">
+<h4>Punto de Equilibrio</h4>
+$$x^*=\frac{CF}{PV-CV}$$
+</div>
+
+<div class="example-box"><div class="et">Ejemplo completo</div>
+<p>CF=$5000, CV=$3,50, PV=$6. \(C(x)=5000+3{,}5x\), \(I(x)=6x\)</p>
+<p><strong>Equilibrio:</strong> \(6x=5000+3{,}5x \implies x^*=2000\) unidades. \(I(2000)=\$12.000\)</p>
+<p><strong>Utilidad $1000:</strong> \(2{,}5x=6000 \implies x=2400\) unidades</p>
+</div>
+
+<h3>Oferta y Demanda</h3>
+<div class="card">
+<p><strong>Demanda:</strong> pendiente negativa (mas precio &rarr; menos cantidad). <strong>Oferta:</strong> pendiente positiva (mas precio &rarr; mas cantidad). <strong>Equilibrio:</strong> igualar ambas.</p>
+</div>
+
+<div class="example-box"><div class="et">Ejemplo oferta-demanda</div>
+<p>D: \(p=-2q+36\). O: \(p=3q+6\). Igualar: \(-2q+36=3q+6 \implies q^*=6\), \(p^*=24\).</p>
+</div>
+
+<h3>Videos</h3>
+<div class="video-row">
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/PvViocJwYRI" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Oferta y demanda explicado</strong>Kotaro en Espanol &bull; 1.6M vistas</div>
+</div>
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/MBMIN21lrYI" loading="lazy" allowfullscreen></iframe>
+  <div class="vc-info"><strong>Punto de equilibrio</strong>Kotaro en Espanol &bull; 280K vistas</div>
+</div>
+</div>
+
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
+<div class="mg-grid">
+  <img src="img/Unidad_2_Fun_p15.png" alt="Aplicaciones" onclick="openLightbox(this)">
+</div>
+</details>
+
+</div></div>
+
+<!-- ================================================================ -->
+<!--                        REPASO PARCIAL                            -->
+<!-- ================================================================ -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="clipboard-check" style="width:20px;height:20px"></i> Repaso para Primer Parcial (de la catedra)</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+<p>Este es el repaso oficial que dio la catedra. Hacelo completo.</p>
+<details class="material-gallery" open>
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver repaso completo</summary>
+<div class="mg-grid">
+  <img src="img/Repaso_p1.png" alt="Repaso p1" onclick="openLightbox(this)">
+  <img src="img/Repaso_p2.png" alt="Repaso p2" onclick="openLightbox(this)">
+</div>
+</details>
+</div></div>
+
+<!-- ================================================================ -->
+<!--                         EJERCICIOS                               -->
+<!-- ================================================================ -->
+<h1 id="ejercicios" style="margin-top:50px;text-align:center;color:var(--accent);font-size:1.8em;border-bottom:3px solid var(--accent);padding-bottom:10px">Ejercicios para practicar</h1>
+<p style="color:var(--muted);margin-bottom:16px;text-align:center">Marca cada ejercicio cuando lo termines. El progreso se guarda automaticamente.</p>
+
+<!-- PRELIM EXERCISES -->
+<div class="section">
+<div class="section-header active" onclick="toggle(this)">
+  <h2><i data-lucide="layers" style="width:20px;height:20px"></i> Preliminares</h2>
+  <span class="chevron" style="transform:rotate(180deg)"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body open">
+
+<div class="exercise"><h4>Ej. 1 &mdash; Conjuntos numericos</h4>
+<p>Clasifica en \(\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{I},\mathbb{R}\):</p>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(2\) &nbsp; b) \(0\) &nbsp; c) \(-4\) &nbsp; d) \(\frac{3}{7}\) &nbsp; e) \(\sqrt{5}\) &nbsp; f) \(\pi\) &nbsp; g) \(0{,}\overline{3}\) &nbsp; h) \(\frac{8}{4}\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 2 &mdash; V o F (justifica)</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(\sqrt{25-9}=\sqrt{25}-\sqrt{9}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) \((2+3)^2=2^2+3^2\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) \((2\cdot3)^2=2^2\cdot3^2\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) \(9^{-2}=-81\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) \(\frac{3\cdot5+3}{5}=6\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">f) Entre 2 enteros consecutivos siempre hay otro entero</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">g) Sube 10% y luego baja 10%: queda igual?</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 3 &mdash; Fracciones</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(\frac{3}{4}+\frac{5}{6}\) &nbsp; b) \(\frac{7}{10}-\frac{2}{3}\) &nbsp; c) \(\frac{1}{2}+\frac{2}{3}-\frac{1}{4}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) \((-\frac{5}{6})\cdot\frac{3}{10}\) &nbsp; e) \(\frac{4}{7}\div\frac{8}{21}\) &nbsp; f) \(\frac{2}{3}\cdot\frac{15}{4}\cdot\frac{1}{5}\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 4 &mdash; Combinadas con fracciones</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(\frac{1}{2}+\frac{3}{4}\cdot\frac{2}{3}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) \((\frac{1}{2}+\frac{3}{4})\cdot\frac{2}{3}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) \(\frac{5}{6}-\frac{1}{3}\div\frac{2}{9}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) \(\frac{2}{3}\cdot(\frac{1}{4}-\frac{3}{2})+\frac{5}{6}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) \((\frac{3}{5}+\frac{1}{10})\div(\frac{2}{3}-\frac{1}{6})\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 5 &mdash; Potencias</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \((-3)^4\) vs \(-3^4\) (son distintos, por que?)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) \(5^{-2}\) &nbsp; c) \((\frac{3}{4})^{-2}\) &nbsp; d) \((-2)^{-3}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) \(10^0+10^{-1}+10^{-2}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">f) \(\frac{3^{-1}}{3^4}\) &nbsp; g) \(\frac{2^6\cdot2^{-1}}{2^3}\) &nbsp; h) \((2^{10}\cdot5^3)^0\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">i) \(2^4\cdot2^{-2}+2^2\) &nbsp; j) \(\frac{2}{3^{-2}}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">k) \((\frac{2^3\cdot2^{-1}}{2^4})^{-2}\) &nbsp; l) \(\frac{(-2)^3+\sqrt{49}}{3^2-2^3}\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 6 &mdash; Raices</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(\sqrt{144}\) &nbsp; b) \(\sqrt[3]{-64}\) &nbsp; c) \(\sqrt[4]{81}\) &nbsp; d) \(\sqrt{\frac{49}{25}}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) \(27^{1/3}\) &nbsp; f) \(16^{3/4}\) &nbsp; g) \(8^{-2/3}\) &nbsp; h) \((\frac{1}{4})^{-1/2}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">i) \(\sqrt{12}\cdot\sqrt{3}\) &nbsp; j) \((\sqrt{9})^3-(\sqrt[3]{27})^2+2^0\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 7 &mdash; Porcentaje</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) 4% de 725 &nbsp; b) 175% de 800 &nbsp; c) Que % de 2500 es 137,50?</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) 7% de x=5,25. Hallar x. &nbsp; e) Zapatillas $75.000 con 10% off.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">f) Lavadora $300.000 (IVA 21% incluido). Precio sin IVA?</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">g) Despues de aumento del 20% cuesta $6000. Precio original?</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">h) Descuento 3% sobre $3425 por buen cliente. Cuanto se rebaja?</span></div>
+</div>
+
+</div></div>
+
+<!-- U1 EXERCISES -->
+<div class="section">
+<div class="section-header active" onclick="toggle(this)">
+  <h2><i data-lucide="equal" style="width:20px;height:20px"></i> Unidad 1</h2>
+  <span class="chevron" style="transform:rotate(180deg)"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body open">
+
+<div class="exercise"><h4>Ej. 8 &mdash; Ecuaciones simples</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(5x-3=2x+9\) &nbsp; b) \(3(x-4)=2(x+1)\) &nbsp; c) \(7-2x=3+2x\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) \(4(2x-1)-3(x+2)=x-10\) &nbsp; e) \(2x-1=x-2\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 9 &mdash; Ecuaciones con fracciones</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(4-\frac{2}{3}x=x+\frac{2}{3}\) &nbsp; b) \(1+\frac{2}{5}x=\frac{1}{5}-2\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) \(\frac{x}{2}+\frac{x}{3}=5\) &nbsp; d) \(\frac{2x-1}{4}=\frac{x+3}{6}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) \(\frac{2}{3}(3x+6)=-3x+\frac{4}{3}\) &nbsp; f) \(\frac{2x-3}{5}=\frac{4}{5}x+\frac{3}{10}\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 10 &mdash; Clasificar ecuaciones</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(3(x+2)=3x+6\) &nbsp; b) \(2(x-1)=2x+5\) &nbsp; c) \(4x+8=4(x+2)\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 11 &mdash; Plantear ecuaciones</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) Tres enteros consecutivos suman 72.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) Triple de un numero menos 7 = doble del numero mas 5.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) Repartir $24.000: 2da recibe doble de 1ra, 3ra recibe $3000 mas que 2da.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) Rectangulo con perimetro 38cm, largo=ancho+5.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) Existe entero que dividido por doble de su anterior da 1/4?</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">f) Tres multiplos consecutivos de 3 que sumen 54. Y que sumen 56?</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 12 &mdash; Inecuaciones</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(2x\leq7\) &nbsp; b) \(2x-5>3\) &nbsp; c) \(3x+11<5\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) \(-4x\leq20\) &nbsp; e) \(3(x-2)>2(x+4)\) &nbsp; f) \(-2(3x+1)\leq4(1-x)\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">g) \(-2x+\frac{3}{2}\geq5x-\frac{7}{2}\) &nbsp; h) \(\frac{1}{3}x-\frac{2}{3}<-\frac{5}{3}x+\frac{7}{3}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">i) \(\frac{2}{3}-\frac{1}{2}x\geq\frac{1}{6}+x\) &nbsp; j) \(2(7x-3)\leq12x+16\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 13 &mdash; Inecuaciones dobles y especiales</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(-1\leq2x+3\leq7\) &nbsp; b) \(0<4-x<6\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) \(2(x+3)>2x+1\) (tiene solucion?)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) \(x-5>x+2\) (tiene solucion?)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 14 &mdash; Aplicacion con ecuaciones/inecuaciones</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) CV=$6, CF=$80.000, PV=$10. Cuantos vender para utilidad de $60.000?</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) Alquiler vehiculo: $3500/dia + $120/km. 3 dias, cuenta $34.500. Cuantos km?</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) Costo publicar revista $1,50. Ingreso $1,40/revista + 10% publicidad sobre exceso de 10.000. Minimo de revistas para utilidad?</span></div>
+</div>
+
+</div></div>
+
+<!-- U2 EXERCISES -->
+<div class="section">
+<div class="section-header active" onclick="toggle(this)">
+  <h2><i data-lucide="line-chart" style="width:20px;height:20px"></i> Unidad 2</h2>
+  <span class="chevron" style="transform:rotate(180deg)"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body open">
+
+<div class="exercise"><h4>Ej. 15 &mdash; Funcion lineal: componentes</h4>
+<p>Pendiente, ord. origen, raiz, crece/decrece, positiva/negativa:</p>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(y=-2x+3\) &nbsp; b) \(y=2x\) &nbsp; c) \(y=\frac{3}{2}x+1\) &nbsp; d) \(y=-\frac{2}{3}x+1\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) \(f(x)=4x-8\) &nbsp; f) \(f(x)=-\frac{1}{2}x+3\) &nbsp; g) \(f(x)=5\) &nbsp; h) \(f(x)=-3x\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 16 &mdash; Evaluar funciones</h4>
+<p>Dada \(f(x)=-2x+7\):</p>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(f(0)\) &nbsp; b) \(f(3)\) &nbsp; c) \(f(-2)\) &nbsp; d) \(f(\frac{1}{2})\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) Para que \(x\) es \(f(x)=0\)? &nbsp; f) Para que \(x\) es \(f(x)>0\)?</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 17 &mdash; Ecuacion de la recta</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) Por \(P(3,-4)\) con \(m=-3/2\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) Por \(M(2,3)\) y \(N(-1,3)\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) Por \(P(-1,-2)\) y \(Q(1,4)\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) Corta eje x en 4 y eje y en 12</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) Por \((-3,4)\) y \((1,-2)\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">f) Por \((5,0)\) y \((0,-3)\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 18 &mdash; Paralelismo y perpendicularidad</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(r_1:-25x+5y+5=0\). Explicita, \(m\), \(b\).</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) Perpendicular a \(r_1\) por \((-2,-1)\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) Paralela a \(r_1\) por \((2,5)\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) \(y=2x+4\) y \(y=-\frac{1}{2}x+1\): que relacion?</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) Paralela a \(y=4x-1\) por \((2,3)\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">f) Perpendicular a \(x+4y=8\) por \((2,-1)\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 19 &mdash; Sistemas de ecuaciones</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(\begin{cases}x+4y=3\\3x-2y=-5\end{cases}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) \(\begin{cases}2x-y=1\\-x+2y=7\end{cases}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) \(\begin{cases}3x+2y=12\\5x-2y=4\end{cases}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) \(\begin{cases}x+y=10\\2x-y=5\end{cases}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) \(\begin{cases}2x+5y=1\\3x+4y=-2\end{cases}\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 20 &mdash; Clasificar sistemas</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) \(\begin{cases}4p+12q=6\\2p+6q=3\end{cases}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) \(\begin{cases}x+y=5\\2x+2y=8\end{cases}\)</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) \(\begin{cases}3x-y=4\\-6x+2y=-8\end{cases}\)</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 21 &mdash; Aplicaciones economicas</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) CF=$5000, CV=$3.50, PV=$6. Equilibrio + utilidad $1000.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) Demanda \(p+2x=36\), Oferta \(p-3x=6\). Equilibrio.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) Boligrafos: C(200)=$1100, CV=$3. Hallar C(x), C(600), unidades si C=$1781.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) PV=$8, CF=$5000, CV=$22/9. Equilibrio, U(1800), x para U=$10000.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) Refrigeradores: (q=3000,p=940) y (q=2200,p=740). Ec. oferta.</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 22 &mdash; Problemas con sistemas</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) 80 articulos (remeras $2000, pantalones $5000). Recaudacion $250.000.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) Inversor: $100.000 en 2 fondos (8% y 12%). Gano $9200.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) Comedores A y B. 20% mas A que B. Utilidad $250/A, $350/B. Meta $130.000.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) Argon I: 6 medidores + 3 controladores. Argon II: 10 med + 8 contr. Total: 760 med, 500 contr.</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 23 &mdash; Integradores tipo parcial</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) Editorial: CF=$15.000, CV=$8/libro, PV=$12. C(x), I(x), equilibrio, minimo para no perder.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) Empresa A: $50.000+$1.500/inv. Empresa B: $20.000+$2.500/inv. Igualdad? Mejor para 40?</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) Taxi: $800+$200/km. Remis: $1500 fijo. Igualdad? Cual para 2km? Y 5km?</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) Empresa eventos: costo $2000/asist, entrada $1800, 15% extra sobre exceso de 300. Minimo sin perdida?</span></div>
+</div>
+
+<div class="exercise"><h4>Ej. 24 &mdash; V o F conceptual</h4>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">a) Toda funcion lineal tiene exactamente una raiz.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">b) Si \(m=0\), la recta es vertical.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">c) Si \(m_1=3\) y \(m_2=-3\), son perpendiculares.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">d) Un sistema lineal puede tener exactamente 2 soluciones.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">e) El punto de equilibrio es donde la utilidad es cero.</span></div>
+<div class="ex-item"><input type="checkbox" class="ex-check"><span class="ex-text">f) Dos rectas con misma pendiente siempre forman sistema incompatible.</span></div>
+</div>
+
+</div></div>
+
+<!-- ================================================================ -->
+<!--                      GUIAS DE TP                                 -->
+<!-- ================================================================ -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+  <h2><i data-lucide="book-open" style="width:20px;height:20px"></i> Guias de Trabajos Practicos (completas)</h2>
+  <span class="chevron"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body">
+<p>Las guias completas de la catedra para practicar:</p>
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> TP Preliminares</summary>
+<div class="mg-grid">
+  <img src="img/TP_Prelim_p1.png" alt="TP Prelim 1" onclick="openLightbox(this)">
+  <img src="img/TP_Prelim_p2.png" alt="TP Prelim 2" onclick="openLightbox(this)">
+  <img src="img/TP_Prelim_p3.png" alt="TP Prelim 3" onclick="openLightbox(this)">
+</div>
+</details>
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> TP N1 - Ecuaciones e Inecuaciones</summary>
+<div class="mg-grid">
+  <img src="img/TP1_p1.png" alt="TP1 1" onclick="openLightbox(this)">
+  <img src="img/TP1_p2.png" alt="TP1 2" onclick="openLightbox(this)">
+</div>
+</details>
+<details class="material-gallery">
+<summary><i data-lucide="file-text" style="width:16px;height:16px"></i> TP N2 - Funciones y Sistemas</summary>
+<div class="mg-grid">
+  <img src="img/TP2_p1.png" alt="TP2 1" onclick="openLightbox(this)">
+  <img src="img/TP2_p2.png" alt="TP2 2" onclick="openLightbox(this)">
+  <img src="img/TP2_p3.png" alt="TP2 3" onclick="openLightbox(this)">
+  <img src="img/TP2_p4.png" alt="TP2 4" onclick="openLightbox(this)">
+  <img src="img/TP2_p5.png" alt="TP2 5" onclick="openLightbox(this)">
+  <img src="img/TP2_p6.png" alt="TP2 6" onclick="openLightbox(this)">
+</div>
+</details>
+</div></div>
+
+<!-- ================================================================ -->
+<!--                      FORMULA SHEET                               -->
+<!-- ================================================================ -->
+<h1 id="formulas" style="margin-top:50px;text-align:center;color:var(--accent);font-size:1.8em;border-bottom:3px solid var(--accent);padding-bottom:10px">Hoja de Formulas</h1>
+
+<div class="formula-sheet">
+<div class="formula-card"><h4>Potencias</h4>$$a^0=1 \quad a^{-n}=\frac{1}{a^n}$$$$a^n\cdot a^m=a^{n+m} \quad \frac{a^n}{a^m}=a^{n-m}$$$$(a^n)^m=a^{nm}$$</div>
+<div class="formula-card"><h4>Raices</h4>$$\sqrt{ab}=\sqrt{a}\cdot\sqrt{b}$$$$a^{m/n}=\sqrt[n]{a^m}$$<p style="color:var(--red);font-weight:600">\(\sqrt{a+b}\neq\sqrt{a}+\sqrt{b}\)</p></div>
+<div class="formula-card"><h4>Ecuacion lineal</h4>$$ax+b=c \implies x=\frac{c-b}{a}$$</div>
+<div class="formula-card"><h4>Inecuaciones</h4><p style="font-weight:600">Dividir por negativo &rarr; <span style="color:var(--red)">INVIERTE</span></p></div>
+<div class="formula-card"><h4>Funcion lineal</h4>$$y=mx+b$$$$m=\frac{y_2-y_1}{x_2-x_1} \quad x_0=-\frac{b}{m}$$</div>
+<div class="formula-card"><h4>Recta por punto</h4>$$y-y_1=m(x-x_1)$$</div>
+<div class="formula-card"><h4>Paralelas / Perp.</h4>$$\parallel: m_1=m_2$$$$\perp: m_1\cdot m_2=-1$$</div>
+<div class="formula-card"><h4>Equilibrio</h4>$$x^*=\frac{CF}{PV-CV}$$</div>
+</div>
+
+<br><br>
+<p style="text-align:center;color:var(--muted);font-size:.83em">Instrumentos Cuantitativos &mdash; UCES 2026 &mdash; Parcial 1 &mdash; Prof. Salaj</p>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="Zoom">
+</div>
+
+<!-- JS -->
+<script>
+function toggle(h){h.classList.toggle('active');h.nextElementSibling.classList.toggle('open')}
+let allOpen=false;
+function toggleAll(){allOpen=!allOpen;document.querySelectorAll('.section-header').forEach(h=>{if(allOpen){h.classList.add('active');h.nextElementSibling.classList.add('open')}else{h.classList.remove('active');h.nextElementSibling.classList.remove('open')}})}
+function toggleTheme(){const h=document.documentElement;const n=h.getAttribute('data-theme')==='light'?'dark':'light';h.setAttribute('data-theme',n);localStorage.setItem('cuanti-theme',n)}
+const s=localStorage.getItem('cuanti-theme');if(s)document.documentElement.setAttribute('data-theme',s);
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressFill').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%'});
+function updateStats(){const a=document.querySelectorAll('.ex-check'),d=document.querySelectorAll('.ex-check:checked');document.getElementById('totalEx').textContent=a.length;document.getElementById('doneEx').textContent=d.length;document.getElementById('pctEx').textContent=(a.length?Math.round(d.length/a.length*100):0)+'%';const st={};a.forEach((c,i)=>st[i]=c.checked);localStorage.setItem('cuanti-prog',JSON.stringify(st))}
+function loadProg(){const d=localStorage.getItem('cuanti-prog');if(!d)return;const st=JSON.parse(d);document.querySelectorAll('.ex-check').forEach((c,i)=>{if(st[i]){c.checked=true;c.closest('.ex-item').classList.add('done')}})}
+document.addEventListener('change',e=>{if(e.target.classList.contains('ex-check')){e.target.closest('.ex-item').classList.toggle('done',e.target.checked);updateStats()}});
+function openLightbox(img){document.getElementById('lightboxImg').src=img.src;document.getElementById('lightbox').classList.add('active')}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('active')}
+window.addEventListener('DOMContentLoaded',()=>{loadProg();updateStats();if(typeof lucide!=='undefined')lucide.createIcons()});
+</script>
+
+</body>
+</html>
