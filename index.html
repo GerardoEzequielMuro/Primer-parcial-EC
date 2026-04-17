@@ -1250,8 +1250,8 @@ $$x^*=\frac{CF}{PV-CV}$$
 <!-- ============ PARCIAL 1 ============ -->
 <div class="parcial-hero" id="parcial1">
   <h2><i data-lucide="file-text" style="width:22px;height:22px;vertical-align:-4px"></i> Parcial Simulacro 1</h2>
-  <p>Nivel: <strong>integrador</strong> &bull; Duracion estimada: 2 horas &bull; Todos los temas combinados</p>
-  <div class="badge">8 ejercicios &middot; 20 preguntas validadas</div>
+  <p>Nivel <strong>real UCES</strong> &bull; Modelado sobre el repaso de la catedra</p>
+  <div class="badge">8 ejercicios &middot; 21 preguntas validadas</div>
 </div>
 <div class="parcial-stats" data-parcial="p1">
   <div class="ps-item"><div class="ps-num ps-tot">0</div><div class="ps-lab">Total preguntas</div></div>
@@ -1260,149 +1260,131 @@ $$x^*=\frac{CF}{PV-CV}$$
 </div>
 <div class="section" id="p1">
 <div class="section-header active" onclick="toggle(this)">
-  <h2><i data-lucide="notebook-pen" style="width:20px;height:20px"></i> Enunciado Parcial 1 (complejo)</h2>
+  <h2><i data-lucide="notebook-pen" style="width:20px;height:20px"></i> Parcial 1 &mdash; tipo repaso UCES</h2>
   <span class="chevron" style="transform:rotate(180deg)"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
 </div>
 <div class="section-body open">
 
-<div class="q-group-t">Ejercicio 1 &mdash; Operaciones combinadas largas <span class="pts">20 pts</span></div>
+<div class="q-group-t">Ejercicio 1 &mdash; Ecuaciones e inecuaciones lineales <span class="pts">20 pts</span></div>
 <div class="q">
-  <div class="q-stem">a) \(\displaystyle\frac{\left(\dfrac{3}{4}-\dfrac{1}{2}\right)\cdot 2^{3}}{\left(\dfrac{1}{3}+\dfrac{1}{6}\right)\cdot 2^{-1}}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="8" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Num: \((\tfrac{1}{4})\cdot 8 = 2\). Den: \((\tfrac{1}{2})\cdot\tfrac{1}{2} = \tfrac{1}{4}\). \(\tfrac{2}{1/4} = 8\).</p></details>
+  <div class="q-stem">a) Resolver \(4-\dfrac{2}{3}x=x+\dfrac{2}{3}\). Hallar \(x\).</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="2" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(4-\tfrac{2}{3}x=x+\tfrac{2}{3}\). Pasando: \(4-\tfrac{2}{3}=x+\tfrac{2}{3}x\) &rarr; \(\tfrac{10}{3}=\tfrac{5}{3}x\) &rarr; \(x=2\).</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">b) \(\displaystyle\frac{(-2)^{3}\cdot\left(\dfrac{1}{4}\right)^{-1}+\sqrt{16}}{5-\left(\dfrac{1}{2}\right)^{-2}}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="-28" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Num: \(-8\cdot 4+4=-28\). Den: \(5-4=1\). \(-28/1=-28\).</p></details>
+  <div class="q-stem">b) Resolver \(\dfrac{x+3}{2}-\dfrac{2x-1}{3}=\dfrac{5}{6}\).</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="6" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>MCM=6: \(3(x+3)-2(2x-1)=5\) &rarr; \(3x+9-4x+2=5\) &rarr; \(-x+11=5\) &rarr; \(x=6\).</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">c) \(\left(\dfrac{5}{6}-\dfrac{1}{4}\right)\cdot\dfrac{8}{7}\div\left(\dfrac{2}{3}\right)^{2}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="3/2" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{7}{12}\cdot\tfrac{8}{7}=\tfrac{2}{3}\). \(\tfrac{2}{3}\div\tfrac{4}{9}=\tfrac{2}{3}\cdot\tfrac{9}{4}=\tfrac{18}{12}=\tfrac{3}{2}\).</p></details>
+  <div class="q-stem">c) Resolver \(-2x+\dfrac{3}{2}\geq 5x-\dfrac{7}{2}\). Indicar signo y limite (conjunto solucion como intervalo).</div>
+  <div class="q-in"><span class="q-label">x</span>
+    <select class="vld" data-a="<=" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option><option value=">">&gt;</option><option value=">=">&ge;</option></select>
+    <input class="vld" data-a="5/7" data-t="num" placeholder="limite">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(-2x-5x\geq-\tfrac{7}{2}-\tfrac{3}{2}\) &rarr; \(-7x\geq -5\) &rarr; \(x\leq\tfrac{5}{7}\). Intervalo: \((-\infty,\tfrac{5}{7}]\).</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">d) \(\displaystyle\frac{\sqrt{\dfrac{81}{16}}-\left(\dfrac{1}{2}\right)^{-3}}{3^{-1}+\dfrac{2}{3}}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="-23/4" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Num: \(\tfrac{9}{4}-8=\tfrac{9-32}{4}=-\tfrac{23}{4}\). Den: \(\tfrac{1}{3}+\tfrac{2}{3}=1\). Result: \(-\tfrac{23}{4}\).</p></details>
+  <div class="q-stem">d) Resolver \(\dfrac{1}{3}x-\dfrac{2}{3}&lt;-\dfrac{5}{3}x+\dfrac{7}{3}\).</div>
+  <div class="q-in"><span class="q-label">x</span>
+    <select class="vld" data-a="<" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option><option value=">">&gt;</option><option value=">=">&ge;</option></select>
+    <input class="vld" data-a="3/2" data-t="num" placeholder="limite">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{x}{3}+\tfrac{5x}{3}&lt;\tfrac{7}{3}+\tfrac{2}{3}\) &rarr; \(2x&lt;3\) &rarr; \(x&lt;\tfrac{3}{2}\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 2 &mdash; Porcentaje compuesto y contextual <span class="pts">15 pts</span></div>
+<div class="q-group-t">Ejercicio 2 &mdash; Equilibrio y utilidad <span class="pts">15 pts</span></div>
 <div class="q">
-  <div class="q-stem">a) Un producto sufre aumentos sucesivos del 20% y luego 15%, y finalmente un descuento del 10%. Si el precio final es $12.420, cual era el precio inicial?</div>
-  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="10000" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Factor total: \(1{,}20\cdot 1{,}15\cdot 0{,}90=1{,}242\). \(P\cdot 1{,}242=12420 \Rightarrow P=10000\).</p></details>
+  <div class="q-stem">CF=$5.000/mes, CV=$3,50/u, PV=$6/u. Cantidad y <strong>ingreso</strong> de equilibrio.</div>
+  <div class="q-in">
+    <span class="q-label">x* =</span><input class="vld" data-a="2000" data-t="num">
+    <span class="q-label">I* = $</span><input class="vld" data-a="12000" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(x^*=\dfrac{5000}{6-3{,}5}=2000\). \(I^*=6\cdot 2000=12000\).</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">b) Un comerciante compra un producto y paga 21% de IVA sobre el costo. Lo vende ganando 40% sobre el precio con IVA. Si el PV es $8.470, cuanto pago sin IVA?</div>
-  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="5000" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Precio con IVA = \(8470/1{,}40=6050\). Sin IVA = \(6050/1{,}21=5000\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) Un sueldo sube 40%, luego cae 25%, luego sube 15%. Que porcentaje de aumento equivale la variacion total? (escribir solo el numero, ej: 15.5)</div>
-  <div class="q-in"><input class="vld" data-a="20.75" data-t="num"><span class="q-label">%</span><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Factor: \(1{,}40\cdot 0{,}75\cdot 1{,}15=1{,}2075\). Aumento: \(20{,}75\%\).</p></details>
+  <div class="q-stem">b) Unidades para obtener utilidad de $1.000 al mes.</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="2400" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(2{,}5x-5000=1000 \Rightarrow x=2400\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 3 &mdash; Ecuaciones: resolver y clasificar <span class="pts">15 pts</span></div>
+<div class="q-group-t">Ejercicio 3 &mdash; Evento con 15% extra sobre excedente <span class="pts">15 pts</span></div>
 <div class="q">
-  <div class="q-stem">a) Resolver \(\dfrac{2x-1}{3}-\dfrac{x+2}{6}=\dfrac{3x-4}{4}\). Hallar \(x\).</div>
-  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="4/3" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>MCM=12. \(4(2x-1)-2(x+2)=3(3x-4)\) &rarr; \(8x-4-2x-4=9x-12\) &rarr; \(6x-8=9x-12\) &rarr; \(-3x=-4\) &rarr; \(x=\tfrac{4}{3}\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) Clasificar la ecuacion \(5(2x-3)-4(x-5)=6x+5\). Escribir: <code>SCD</code>, <code>identidad</code> o <code>incompatible</code>.</div>
-  <div class="q-in"><span class="q-label">Tipo =</span><input class="vld" data-a="identidad|sci|infinitas soluciones|infinitas|todos los reales|compatible indeterminado" data-t="text" placeholder="SCD / identidad / incompatible"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(10x-15-4x+20=6x+5\) &rarr; \(6x+5=6x+5\) &rarr; \(0=0\). Verdadera para todo x &rArr; <strong>identidad</strong>.</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) Clasificar \(3(x-1)-2(x+2)=x-4\).</div>
-  <div class="q-in"><span class="q-label">Tipo =</span><input class="vld" data-a="incompatible|absurdo|sin solucion|si|no tiene solucion" data-t="text" placeholder="SCD / identidad / incompatible"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(3x-3-2x-4=x-4\) &rarr; \(x-7=x-4\) &rarr; \(-7=-4\). Absurdo &rArr; <strong>incompatible</strong>.</p></details>
+  <div class="q-stem">Una empresa organiza eventos. Costo por asistente: $2.000. Entrada: $1.800. Ademas recibe un 15% extra sobre la recaudacion de entradas <strong>por arriba</strong> de 300. Cual es el <strong>numero minimo entero</strong> de entradas para que el evento no genere perdidas?</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="1158" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>Si \(x&gt;300\): \(U(x)=1800x+0{,}15\cdot 1800\cdot(x-300)-2000x=70x-81000\). \(U\geq 0 \Rightarrow x\geq 1157{,}14\ldots\) &rArr; minimo <strong>1158</strong>.</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 4 &mdash; Inecuacion aplicada <span class="pts">10 pts</span></div>
+<div class="q-group-t">Ejercicio 4 &mdash; Oferta lineal por 2 puntos (refrigeradores) <span class="pts">20 pts</span></div>
 <div class="q">
-  <div class="q-stem">Un tecnico A cobra $450 fijos mas $180 por hora. Otro tecnico B cobra $900 fijos mas $120 por hora.</div>
+  <div class="q-stem">Un fabricante produce 3000 u cuando \(p=\$940\) y 2200 u cuando \(p=\$740\). Oferta lineal \(p=mq+b\).</div>
   <div class="q-in">
-    <span class="q-label">Mismo costo en h =</span><input class="vld" data-a="7.5" data-t="num" placeholder="ej: 7,5">
-    <span class="q-label">Minimo entero h desde que conviene B =</span><input class="vld" data-a="8" data-t="num">
+    <span class="q-label">m =</span><input class="vld" data-a="1/4" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="190" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(450+180h=900+120h\) &rarr; \(60h=450\) &rarr; \(h=7{,}5\). B es mas barato si \(h&gt;7{,}5\); primer entero: 8 horas.</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(m=\dfrac{940-740}{3000-2200}=\tfrac{1}{4}\). \(940=\tfrac{3000}{4}+b \Rightarrow b=190\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Para que \(q\) el precio es mayor a $1.800?</div>
+  <div class="q-in"><span class="q-label">q &gt;</span><input class="vld" data-a="6440" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{q}{4}+190&gt;1800 \Rightarrow q&gt;6440\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) Para que \(q\) el precio es menor a $900?</div>
+  <div class="q-in"><span class="q-label">q &lt;</span><input class="vld" data-a="2840" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{q}{4}+190&lt;900 \Rightarrow q&lt;2840\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">d) Si \(q=4000\), precio?</div>
+  <div class="q-in"><span class="q-label">p = $</span><input class="vld" data-a="1190" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(p=\tfrac{4000}{4}+190=1190\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 5 &mdash; Dos rectas: explicita, relacion e interseccion <span class="pts">15 pts</span></div>
+<div class="q-group-t">Ejercicio 5 &mdash; Funcion lineal de costo (boligrafos) <span class="pts">15 pts</span></div>
 <div class="q">
-  <div class="q-stem">Dadas \(r_1: 2x-y+1=0\) y \(r_2: x+2y-12=0\):</div>
+  <div class="q-stem">Una fabrica de boligrafos tiene costo lineal. \(C(200)=\$1100\) y CV es $3/u. Hallar CF, \(C(600)\) y la cantidad si \(C=\$1781\).</div>
   <div class="q-in">
-    <span class="q-label">m&#8321; =</span><input class="vld" data-a="2" data-t="num">
-    <span class="q-label">b&#8321; =</span><input class="vld" data-a="1" data-t="num">
-    <span class="q-label">m&#8322; =</span><input class="vld" data-a="-1/2" data-t="num">
-    <span class="q-label">b&#8322; =</span><input class="vld" data-a="6" data-t="num">
+    <span class="q-label">CF = $</span><input class="vld" data-a="500" data-t="num">
+    <span class="q-label">C(600) = $</span><input class="vld" data-a="2300" data-t="num">
+    <span class="q-label">x (si C=1781) =</span><input class="vld" data-a="427" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(r_1\): \(y=2x+1\) &rArr; \(m=2, b=1\). \(r_2\): \(2y=-x+12 \Rightarrow y=-\tfrac{x}{2}+6\) &rArr; \(m=-\tfrac{1}{2}, b=6\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) Que relacion tienen? (escribir: <code>paralelas</code>, <code>perpendiculares</code>, <code>secantes</code>)</div>
-  <div class="q-in"><span class="q-label">Relacion =</span><input class="vld" data-a="perpendiculares|perpendicular" data-t="text"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(2\cdot(-\tfrac{1}{2})=-1\) &rArr; son perpendiculares.</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) Punto de interseccion de \(r_1\) y \(r_2\):</div>
-  <div class="q-in">
-    <span class="q-label">x =</span><input class="vld" data-a="2" data-t="num">
-    <span class="q-label">y =</span><input class="vld" data-a="5" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(2x+1=-\tfrac{x}{2}+6\) &rarr; \(4x+2=-x+12\) &rarr; \(5x=10\) &rarr; \(x=2\), \(y=5\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(C(x)=3x+b\). \(600+b=1100 \Rightarrow b=500\). \(C(600)=2300\). \(3x+500=1781 \Rightarrow x=427\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 6 &mdash; Utilidad completa (multi-escenario) <span class="pts">20 pts</span></div>
+<div class="q-group-t">Ejercicio 6 &mdash; Recta general: perpendicular y paralela <span class="pts">20 pts</span></div>
 <div class="q">
-  <div class="q-stem">Una empresa produce mochilas. CF=$36.000, CV=$80/u, PV=$200/u. Calcular:</div>
+  <div class="q-stem">Dada \(r_1: -25x+5y+5=0\). Forma explicita, \(m\) y \(b\).</div>
   <div class="q-in">
-    <span class="q-label">C(200) =</span><input class="vld" data-a="52000" data-t="num">
-    <span class="q-label">U(400) =</span><input class="vld" data-a="12000" data-t="num">
-    <span class="q-label">Equilibrio x* =</span><input class="vld" data-a="300" data-t="num">
+    <span class="q-label">m =</span><input class="vld" data-a="5" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="-1" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(C(200)=36000+80\cdot 200=52000\). \(U(x)=120x-36000\) &rArr; \(U(400)=48000-36000=12000\). \(x^*=36000/120=300\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(5y=25x-5 \Rightarrow y=5x-1\).</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">b) Cantidad para utilidad de $18.000 y utilidad al vender 500 mochilas:</div>
+  <div class="q-stem">b) Perpendicular a \(r_1\) por \(P(-2,-1)\). Dar \(m\) y \(b\).</div>
   <div class="q-in">
-    <span class="q-label">x (U=18000) =</span><input class="vld" data-a="450" data-t="num">
-    <span class="q-label">U(500) =</span><input class="vld" data-a="24000" data-t="num">
+    <span class="q-label">m =</span><input class="vld" data-a="-1/5" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="-7/5" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(120x-36000=18000 \Rightarrow x=450\). \(U(500)=500\cdot 120-36000=24000\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(m_{\perp}=-\tfrac{1}{5}\). \(-1=-\tfrac{1}{5}(-2)+b=\tfrac{2}{5}+b \Rightarrow b=-\tfrac{7}{5}\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) Paralela a \(r_1\) por \(Q(2,5)\). Dar \(m\) y \(b\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="5" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="-5" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>Misma pendiente: \(m=5\). \(5=10+b \Rightarrow b=-5\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 7 &mdash; Sistema aplicado (problema con palabras) <span class="pts">15 pts</span></div>
+<div class="q-group-t">Ejercicio 7 &mdash; Sistema aplicado (comedores 20% mas) <span class="pts">15 pts</span></div>
 <div class="q">
-  <div class="q-stem">En un local se venden remeras a $1.000 y camisas a $2.500. En un dia se vendieron 60 prendas con una recaudacion de $96.000. Cuantas de cada una se vendieron?</div>
+  <div class="q-stem">Un fabricante de comedores vende 2 estilos A y B. Se venden <strong>20% mas</strong> del estilo A que del B. Utilidad: $250/A y $350/B. Meta anual: ganancia total de $130.000. Cuantas unidades de cada estilo?</div>
   <div class="q-in">
-    <span class="q-label">Remeras =</span><input class="vld" data-a="36" data-t="num">
-    <span class="q-label">Camisas =</span><input class="vld" data-a="24" data-t="num">
+    <span class="q-label">A =</span><input class="vld" data-a="240" data-t="num">
+    <span class="q-label">B =</span><input class="vld" data-a="200" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(x+y=60\) y \(1000x+2500y=96000\). De la 1ra: \(x=60-y\). \(1000(60-y)+2500y=96000\) &rarr; \(60000+1500y=96000\) &rarr; \(y=24\), \(x=36\).</p></details>
-</div>
-
-<div class="q-group-t">Ejercicio 8 &mdash; Oferta y demanda <span class="pts">15 pts</span></div>
-<div class="q">
-  <div class="q-stem">Oferta: \(p=q+20\) &bull; Demanda: \(p=-q+80\). Hallar cantidad y precio de equilibrio.</div>
-  <div class="q-in">
-    <span class="q-label">q* =</span><input class="vld" data-a="30" data-t="num">
-    <span class="q-label">p* =</span><input class="vld" data-a="50" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(q+20=-q+80 \Rightarrow 2q=60 \Rightarrow q=30\), \(p=50\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) Si el precio se fija en $60, indicar que tipo de desequilibrio se produce (<code>excedente</code> o <code>escasez</code>):</div>
-  <div class="q-in"><span class="q-label">Tipo =</span><input class="vld" data-a="excedente|sobreoferta|exceso de oferta" data-t="text"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>A p=60: oferta q=40, demanda q=20. Sobra &rArr; <strong>excedente</strong>.</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) Si el precio se fija en $40:</div>
-  <div class="q-in"><span class="q-label">Tipo =</span><input class="vld" data-a="escasez|exceso de demanda|sobredemanda" data-t="text"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>A p=40: oferta q=20, demanda q=40. Falta &rArr; <strong>escasez</strong>.</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(A=1{,}2B\). \(250(1{,}2B)+350B=130000 \Rightarrow 650B=130000 \Rightarrow B=200\), \(A=240\).</p></details>
 </div>
 
 <button class="q-reset" onclick="resetParcial('p1')" style="margin-top:16px"><i data-lucide="refresh-cw" style="width:14px;height:14px;vertical-align:-2px"></i> Reiniciar parcial 1</button>
@@ -1412,7 +1394,7 @@ $$x^*=\frac{CF}{PV-CV}$$
 <!-- ============ PARCIAL 2 ============ -->
 <div class="parcial-hero" id="parcial2">
   <h2><i data-lucide="file-text" style="width:22px;height:22px;vertical-align:-4px"></i> Parcial Simulacro 2</h2>
-  <p>Nivel: <strong>avanzado</strong> &bull; Duracion estimada: 2 horas &bull; Funciones + sistemas aplicados</p>
+  <p>Nivel <strong>TP N&deg;1 + N&deg;2</strong> &bull; Editorial, inversiones, sistemas con fracciones</p>
   <div class="badge">9 ejercicios &middot; 22 preguntas validadas</div>
 </div>
 <div class="parcial-stats" data-parcial="p2">
@@ -1422,148 +1404,123 @@ $$x^*=\frac{CF}{PV-CV}$$
 </div>
 <div class="section" id="p2">
 <div class="section-header active" onclick="toggle(this)">
-  <h2><i data-lucide="notebook-pen" style="width:20px;height:20px"></i> Enunciado Parcial 2 (avanzado)</h2>
+  <h2><i data-lucide="notebook-pen" style="width:20px;height:20px"></i> Parcial 2 &mdash; tipo TP</h2>
   <span class="chevron" style="transform:rotate(180deg)"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
 </div>
 <div class="section-body open">
 
-<div class="q-group-t">Ejercicio 1 &mdash; Operaciones anidadas <span class="pts">20 pts</span></div>
+<div class="q-group-t">Ejercicio 1 &mdash; Inecuaciones (signo + limite) <span class="pts">20 pts</span></div>
 <div class="q">
-  <div class="q-stem">a) \(\displaystyle\left(\dfrac{5}{6}+\dfrac{2}{3}\right)\cdot\left(\dfrac{9}{14}-\dfrac{3}{7}\right)\div\left(1-\dfrac{1}{4}\right)^{2}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="4/7" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{3}{2}\cdot\tfrac{3}{14}=\tfrac{9}{28}\). \((\tfrac{3}{4})^2=\tfrac{9}{16}\). \(\tfrac{9}{28}\div\tfrac{9}{16}=\tfrac{9}{28}\cdot\tfrac{16}{9}=\tfrac{16}{28}=\tfrac{4}{7}\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) \(\displaystyle\left(2^{-2}-\dfrac{1}{8}\right)^{-1}\cdot\left(\dfrac{3}{2}\right)^{-2}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="32/9" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{1}{4}-\tfrac{1}{8}=\tfrac{1}{8}\). \((\tfrac{1}{8})^{-1}=8\). \((\tfrac{3}{2})^{-2}=\tfrac{4}{9}\). \(8\cdot\tfrac{4}{9}=\tfrac{32}{9}\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) \(\displaystyle\frac{\sqrt{\dfrac{36}{25}}\cdot\dfrac{5}{3}}{\left(\dfrac{1}{2}\right)^{-2}-2}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="1" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Num: \(\tfrac{6}{5}\cdot\tfrac{5}{3}=2\). Den: \(4-2=2\). \(2/2=1\).</p></details>
-</div>
-
-<div class="q-group-t">Ejercicio 2 &mdash; Porcentaje con 3 cambios y problemas reales <span class="pts">15 pts</span></div>
-<div class="q">
-  <div class="q-stem">a) Un producto sufre tres cambios: +25%, +20% y -10%. Precio final: $13.500. Hallar el precio inicial.</div>
-  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="10000" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Factor: \(1{,}25\cdot 1{,}20\cdot 0{,}90=1{,}35\). \(P=13500/1{,}35=10000\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) Un empresario compra a $4.200 (sin IVA). Al costo se le agrega 21% de IVA. Luego vende ganando 30% sobre el costo con IVA. Cual es el PV?</div>
-  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="6606.60" data-t="num" placeholder="ej: 6606,60"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Con IVA: \(4200\cdot 1{,}21=5082\). PV: \(5082\cdot 1{,}30=6606{,}60\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) En una tienda el 70% de los visitantes compra. De los que compran, el 40% paga con tarjeta. Si en un dia entraron 500 personas, cuantas pagaron con tarjeta?</div>
-  <div class="q-in"><input class="vld" data-a="140" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(500\cdot 0{,}70\cdot 0{,}40=140\).</p></details>
-</div>
-
-<div class="q-group-t">Ejercicio 3 &mdash; Ecuaciones con fracciones complejas <span class="pts">15 pts</span></div>
-<div class="q">
-  <div class="q-stem">a) Resolver \(\dfrac{3x-1}{5}-\dfrac{x+2}{3}=\dfrac{x}{15}-1\).</div>
-  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="-2/3" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>MCM=15. \(3(3x-1)-5(x+2)=x-15\) &rarr; \(9x-3-5x-10=x-15\) &rarr; \(4x-13=x-15\) &rarr; \(3x=-2\) &rarr; \(x=-\tfrac{2}{3}\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) Resolver \(2\left(x-\dfrac{1}{3}\right)+\dfrac{5}{6}=\dfrac{x}{2}+1\).</div>
-  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="5/9" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(2x-\tfrac{2}{3}+\tfrac{5}{6}=\tfrac{x}{2}+1\) &rarr; \(2x+\tfrac{1}{6}=\tfrac{x}{2}+1\) &rarr; \(\tfrac{3x}{2}=\tfrac{5}{6}\) &rarr; \(x=\tfrac{5}{9}\).</p></details>
-</div>
-
-<div class="q-group-t">Ejercicio 4 &mdash; Inecuacion con fracciones <span class="pts">10 pts</span></div>
-<div class="q">
-  <div class="q-stem">Resolver \(\dfrac{x-2}{3}+\dfrac{2x-1}{6}\geq\dfrac{x+1}{2}-1\). Indicar signo y limite.</div>
+  <div class="q-stem">a) \(2(7x-3)\leq 12x+16\)</div>
   <div class="q-in"><span class="q-label">x</span>
-    <select class="vld" data-a=">=" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option><option value=">">&gt;</option><option value=">=">&ge;</option></select>
-    <input class="vld" data-a="2" data-t="num" placeholder="limite">
+    <select class="vld" data-a="<=" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option><option value=">">&gt;</option><option value=">=">&ge;</option></select>
+    <input class="vld" data-a="11" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>MCM=6. \(2(x-2)+(2x-1)\geq 3(x+1)-6\) &rarr; \(4x-5\geq 3x-3\) &rarr; \(x\geq 2\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(14x-6\leq 12x+16 \Rightarrow 2x\leq 22 \Rightarrow x\leq 11\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) \(5-3x\geq 8x-7\)</div>
+  <div class="q-in"><span class="q-label">x</span>
+    <select class="vld" data-a="<=" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option><option value=">">&gt;</option><option value=">=">&ge;</option></select>
+    <input class="vld" data-a="12/11" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(-11x\geq -12 \Rightarrow x\leq\tfrac{12}{11}\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) \(2x-5&gt;3\)</div>
+  <div class="q-in"><span class="q-label">x</span>
+    <select class="vld" data-a=">" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option><option value=">">&gt;</option><option value=">=">&ge;</option></select>
+    <input class="vld" data-a="4" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(2x&gt;8 \Rightarrow x&gt;4\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">d) \(0&lt;5-2x\)</div>
+  <div class="q-in"><span class="q-label">x</span>
+    <select class="vld" data-a="<" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option><option value=">">&gt;</option><option value=">=">&ge;</option></select>
+    <input class="vld" data-a="5/2" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(2x&lt;5 \Rightarrow x&lt;\tfrac{5}{2}\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 5 &mdash; Funcion lineal: ecuaciones y composicion <span class="pts">15 pts</span></div>
+<div class="q-group-t">Ejercicio 2 &mdash; Editorial con 10% sobre excedente <span class="pts">15 pts</span></div>
 <div class="q">
-  <div class="q-stem">Dada \(f(x)=-3x+7\):</div>
-  <div class="q-in">
-    <span class="q-label">x tal que f(x)=-5:</span><input class="vld" data-a="4" data-t="num">
-    <span class="q-label">a tal que f(a)=2a:</span><input class="vld" data-a="7/5" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(-3x+7=-5\Rightarrow x=4\). \(-3a+7=2a\Rightarrow 5a=7\Rightarrow a=\tfrac{7}{5}\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) Si \(g(x)=f(2x-1)+3\), expresar \(g(x)=mx+b\). Hallar \(m\), \(b\) y la raiz de \(g\).</div>
-  <div class="q-in">
-    <span class="q-label">m =</span><input class="vld" data-a="-6" data-t="num">
-    <span class="q-label">b =</span><input class="vld" data-a="13" data-t="num">
-    <span class="q-label">x&#8320; =</span><input class="vld" data-a="13/6" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(g(x)=-3(2x-1)+7+3=-6x+3+10=-6x+13\). \(m=-6, b=13\). \(0=-6x+13\Rightarrow x=\tfrac{13}{6}\).</p></details>
+  <div class="q-stem">Una editorial tiene costo $1,50/revista. Ingresos por distribuidor: $1,40/revista. Ingresos por publicidad: 10% de los ingresos por distribuidor, <strong>solo</strong> por los ejemplares vendidos <strong>arriba</strong> de 10.000. Cual es el <strong>minimo entero</strong> de revistas para tener utilidad positiva?</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="35001" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>Si \(x&gt;10000\): \(I(x)=1{,}4x+0{,}10\cdot 1{,}4(x-10000)=1{,}54x-1400\). \(U(x)=0{,}04x-1400&gt;0 \Rightarrow x&gt;35000\) &rArr; <strong>35001</strong>.</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 6 &mdash; Rectas: por 2 puntos, paralela y perpendicular <span class="pts">18 pts</span></div>
+<div class="q-group-t">Ejercicio 3 &mdash; Alquiler de camion <span class="pts">10 pts</span></div>
 <div class="q">
-  <div class="q-stem">a) Ecuacion explicita de la recta \(r\) que pasa por \(A(-3,5)\) y \(B(1,-3)\). Dar \(m\) y \(b\).</div>
-  <div class="q-in">
-    <span class="q-label">m =</span><input class="vld" data-a="-2" data-t="num">
-    <span class="q-label">b =</span><input class="vld" data-a="-1" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(m=\dfrac{-3-5}{1-(-3)}=\dfrac{-8}{4}=-2\). \(5=-2(-3)+b \Rightarrow b=-1\). \(r:y=-2x-1\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) Paralela a \(r\) que pasa por el origen:</div>
-  <div class="q-in">
-    <span class="q-label">m =</span><input class="vld" data-a="-2" data-t="num">
-    <span class="q-label">b =</span><input class="vld" data-a="0" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Misma pendiente, pasa por (0,0) &rArr; \(m=-2, b=0\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) Perpendicular a \(r\) que pasa por el punto medio de \(AB\). Dar \(m\) y \(b\).</div>
-  <div class="q-in">
-    <span class="q-label">m =</span><input class="vld" data-a="1/2" data-t="num">
-    <span class="q-label">b =</span><input class="vld" data-a="3/2" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Punto medio \(M(-1,1)\). \(m_{\perp}=\tfrac{1}{2}\). \(1=\tfrac{1}{2}(-1)+b\Rightarrow b=\tfrac{3}{2}\).</p></details>
+  <div class="q-stem">Una compañia cobra $3.500 por dia + $120 por km. Carlos alquilo 3 dias y pago $34.500. Cuantos kilometros recorrio?</div>
+  <div class="q-in"><span class="q-label">km =</span><input class="vld" data-a="200" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(3\cdot 3500+120k=34500 \Rightarrow 120k=24000 \Rightarrow k=200\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 7 &mdash; Sistema por combinacion lineal <span class="pts">12 pts</span></div>
+<div class="q-group-t">Ejercicio 4 &mdash; Inversion con restriccion <span class="pts">15 pts</span></div>
 <div class="q">
-  <div class="q-stem">Resolver el sistema: \(\begin{cases}2x+3y=13\\ 3x-y=3\end{cases}\)</div>
+  <div class="q-stem">Se invierten $200.000 en dos acciones: A (15%, <strong>maximo</strong> $50.000) y B (10%). Cuanto va a A y cuanto a B para un interes anual de $22.000?</div>
   <div class="q-in">
-    <span class="q-label">x =</span><input class="vld" data-a="2" data-t="num">
-    <span class="q-label">y =</span><input class="vld" data-a="3" data-t="num">
+    <span class="q-label">A = $</span><input class="vld" data-a="40000" data-t="num">
+    <span class="q-label">B = $</span><input class="vld" data-a="160000" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>De la 2da: \(y=3x-3\). Reemplazo: \(2x+3(3x-3)=13 \Rightarrow 11x-9=13 \Rightarrow x=2\), \(y=3\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(A+B=200000\), \(0{,}15A+0{,}10B=22000\). \(0{,}05A=2000 \Rightarrow A=40000, B=160000\). Verifico restriccion: \(A\leq 50000\) ✓.</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Si el cliente pretende $23.000 de interes con la misma restriccion, es posible? Responder <code>si</code> o <code>no</code>.</div>
+  <div class="q-in"><span class="q-label">Posible?</span><input class="vld" data-a="no" data-t="text" placeholder="si / no"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(0{,}05A=3000 \Rightarrow A=60000&gt;50000\). Excede el maximo permitido: <strong>no es posible</strong>.</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 8 &mdash; Sistema aplicado (mix de contenidos) <span class="pts">15 pts</span></div>
+<div class="q-group-t">Ejercicio 5 &mdash; Sistema con fracciones <span class="pts">15 pts</span></div>
 <div class="q">
-  <div class="q-stem">Una agencia produce 2 tipos de contenido: <strong>Premium</strong> (P) y <strong>Estandar</strong> (E). Cada Premium requiere 3 hs de diseño y 2 hs de reporting. Cada Estandar requiere 4 hs de diseño y 1 h de reporting. En el mes hay 94 hs disponibles de diseño y 36 hs de reporting, y se usan todas. Cuantas piezas de cada tipo se producen?</div>
+  <div class="q-stem">Resolver: \(\begin{cases}\dfrac{2}{3}x+\dfrac{1}{2}y=2\\[3pt] \dfrac{3}{8}x+\dfrac{5}{6}y=-\dfrac{11}{2}\end{cases}\)</div>
   <div class="q-in">
-    <span class="q-label">Premium =</span><input class="vld" data-a="10" data-t="num">
-    <span class="q-label">Estandar =</span><input class="vld" data-a="16" data-t="num">
+    <span class="q-label">x =</span><input class="vld" data-a="12" data-t="num">
+    <span class="q-label">y =</span><input class="vld" data-a="-12" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Sistema: \(3P+4E=94\), \(2P+E=36\). De 2da: \(E=36-2P\). Reemplazo: \(3P+4(36-2P)=94\) &rarr; \(-5P=-50\) &rarr; \(P=10, E=16\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>1ra por 6: \(4x+3y=12\). 2da por 24: \(9x+20y=-132\). Combinacion lineal: \(-53y=636 \Rightarrow y=-12\), \(x=12\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 9 &mdash; Oferta/demanda con desequilibrio <span class="pts">15 pts</span></div>
+<div class="q-group-t">Ejercicio 6 &mdash; Funcion lineal con pendiente conocida <span class="pts">10 pts</span></div>
 <div class="q">
-  <div class="q-stem">Oferta: \(p=q+20\). Demanda: \(p=-q+80\). Hallar equilibrio y analizar desequilibrios.</div>
+  <div class="q-stem">Una recta tiene pendiente 4 y pasa por \(M(2,5)\) y \(N(3,k)\). Hallar \(k\) y \(b\) de \(f(x)=mx+b\).</div>
   <div class="q-in">
-    <span class="q-label">q* =</span><input class="vld" data-a="30" data-t="num">
-    <span class="q-label">p* =</span><input class="vld" data-a="50" data-t="num">
+    <span class="q-label">k =</span><input class="vld" data-a="9" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="-3" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(q+20=-q+80 \Rightarrow q=30, p=50\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{k-5}{3-2}=4 \Rightarrow k=9\). \(5=8+b \Rightarrow b=-3\). \(f(x)=4x-3\).</p></details>
 </div>
+
+<div class="q-group-t">Ejercicio 7 &mdash; Costo lineal por 2 puntos <span class="pts">15 pts</span></div>
 <div class="q">
-  <div class="q-stem">b) A un precio de $60 la cantidad ofrecida y demandada son, respectivamente:</div>
+  <div class="q-stem">Una compañia tiene costo lineal. \(C(10)=\$75\) y \(C(25)=\$120\). Hallar CV (pendiente), CF (ord. origen) y \(C(20)\).</div>
   <div class="q-in">
-    <span class="q-label">q oferta =</span><input class="vld" data-a="40" data-t="num">
-    <span class="q-label">q demanda =</span><input class="vld" data-a="20" data-t="num">
+    <span class="q-label">CV = $</span><input class="vld" data-a="3" data-t="num">
+    <span class="q-label">CF = $</span><input class="vld" data-a="45" data-t="num">
+    <span class="q-label">C(20) = $</span><input class="vld" data-a="105" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Oferta: \(60=q+20\Rightarrow q=40\). Demanda: \(60=-q+80\Rightarrow q=20\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(10m+b=75\), \(25m+b=120\). \(15m=45 \Rightarrow m=3\) (CV), \(b=45\) (CF). \(C(20)=105\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 8 &mdash; Argon I / Argon II <span class="pts">15 pts</span></div>
+<div class="q">
+  <div class="q-stem">Se fabrican 2 modelos. Argon I usa 6 medidores y 3 controladores por unidad. Argon II usa 10 medidores y 8 controladores. Disponibles: 760 medidores y 500 controladores, todos utilizados. Cuantas unidades de cada modelo?</div>
+  <div class="q-in">
+    <span class="q-label">Argon I =</span><input class="vld" data-a="60" data-t="num">
+    <span class="q-label">Argon II =</span><input class="vld" data-a="40" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(6x+10y=760\), \(3x+8y=500\). Multiplico 2da por 2 y resto: \(6y=240 \Rightarrow y=40\), \(x=60\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 9 &mdash; Ley de demanda (martillos) <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Un fabricante vende 3000 martillos/mes a $2.000, pero solo 2000 a $2.750. Hallar la ley de demanda \(p=mq+b\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="-3/4" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="4250" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(m=\dfrac{2750-2000}{2000-3000}=-\tfrac{3}{4}\). \(2000=-\tfrac{3}{4}(3000)+b \Rightarrow b=4250\).</p></details>
 </div>
 
 <button class="q-reset" onclick="resetParcial('p2')" style="margin-top:16px"><i data-lucide="refresh-cw" style="width:14px;height:14px;vertical-align:-2px"></i> Reiniciar parcial 2</button>
@@ -1573,8 +1530,8 @@ $$x^*=\frac{CF}{PV-CV}$$
 <!-- ============ PARCIAL 3 ============ -->
 <div class="parcial-hero" id="parcial3">
   <h2><i data-lucide="file-text" style="width:22px;height:22px;vertical-align:-4px"></i> Parcial Simulacro 3</h2>
-  <p>Nivel: <strong>integrador (mas exigente)</strong> &bull; Comision extra, V/F analiticos y mucha aplicacion</p>
-  <div class="badge">8 ejercicios &middot; 24 preguntas validadas</div>
+  <p>Nivel <strong>integrador duro</strong> &bull; Oferta/demanda con impuesto, perdida, planteos</p>
+  <div class="badge">8 ejercicios &middot; 23 preguntas validadas</div>
 </div>
 <div class="parcial-stats" data-parcial="p3">
   <div class="ps-item"><div class="ps-num ps-tot">0</div><div class="ps-lab">Total preguntas</div></div>
@@ -1583,160 +1540,137 @@ $$x^*=\frac{CF}{PV-CV}$$
 </div>
 <div class="section" id="p3">
 <div class="section-header active" onclick="toggle(this)">
-  <h2><i data-lucide="notebook-pen" style="width:20px;height:20px"></i> Enunciado Parcial 3 (integrador duro)</h2>
+  <h2><i data-lucide="notebook-pen" style="width:20px;height:20px"></i> Parcial 3 &mdash; integrador duro</h2>
   <span class="chevron" style="transform:rotate(180deg)"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
 </div>
 <div class="section-body open">
 
-<div class="q-group-t">Ejercicio 1 &mdash; Operaciones combinadas con todo <span class="pts">15 pts</span></div>
+<div class="q-group-t">Ejercicio 1 &mdash; Ecuaciones lineales (TP tipico) <span class="pts">18 pts</span></div>
 <div class="q">
-  <div class="q-stem">a) \(\displaystyle\frac{(3^{2}-2^{3})\cdot\left(\dfrac{4}{5}+\dfrac{1}{10}\right)}{\left(\dfrac{1}{2}\right)^{-1}-\dfrac{1}{2}}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="3/5" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Num: \((9-8)\cdot\tfrac{9}{10}=\tfrac{9}{10}\). Den: \(2-\tfrac{1}{2}=\tfrac{3}{2}\). \(\tfrac{9}{10}\div\tfrac{3}{2}=\tfrac{9}{10}\cdot\tfrac{2}{3}=\tfrac{3}{5}\).</p></details>
+  <div class="q-stem">a) \(\dfrac{2}{3}(3x+6)=-3x+\dfrac{4}{3}\)</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="-8/15" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(2x+4=-3x+\tfrac{4}{3}\) &rarr; \(5x=-\tfrac{8}{3}\) &rarr; \(x=-\tfrac{8}{15}\).</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">b) \(\left(\dfrac{\sqrt{81}}{3}\right)^{-1}-\left(\dfrac{2}{3}\right)^{-1}\cdot 3^{-1}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="-1/6" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{9}{3}=3\); \(3^{-1}=\tfrac{1}{3}\). \(\tfrac{3}{2}\cdot\tfrac{1}{3}=\tfrac{1}{2}\). \(\tfrac{1}{3}-\tfrac{1}{2}=-\tfrac{1}{6}\).</p></details>
+  <div class="q-stem">b) \(\dfrac{2x-3}{5}=\dfrac{4}{5}x+\dfrac{3}{10}\)</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="-9/4" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>MCM=10: \(2(2x-3)=8x+3\) &rarr; \(-4x=9\) &rarr; \(x=-\tfrac{9}{4}\).</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">c) \(\displaystyle\frac{1+\left(\dfrac{2}{3}-\dfrac{1}{6}\right)\cdot 3}{(\sqrt{9}-1)^{2}}\)</div>
-  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="5/8" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{1}{2}\cdot 3=\tfrac{3}{2}\); \(1+\tfrac{3}{2}=\tfrac{5}{2}\). \((3-1)^2=4\). \(\tfrac{5}{2}\div 4=\tfrac{5}{8}\).</p></details>
-</div>
-
-<div class="q-group-t">Ejercicio 2 &mdash; Porcentaje sobre excedente (comision) <span class="pts">15 pts</span></div>
-<div class="q">
-  <div class="q-stem">Una empresa paga a cada distribuidor $500 por producto vendido, mas una comision extra del 8% sobre el excedente de ventas por encima de $10.000 mensuales. Un distribuidor vendio $45.000 este mes.</div>
-  <div class="q-in"><span class="q-label">Comision extra = $</span><input class="vld" data-a="2800" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Excedente \(=45000-10000=35000\). Comision \(=35000\cdot 0{,}08=2800\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) Si ademas vendio 30 productos, cuanto cobra en total ese mes?</div>
-  <div class="q-in"><span class="q-label">Ingreso total = $</span><input class="vld" data-a="17800" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(30\cdot 500+2800=15000+2800=17800\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) A partir de que monto de ventas ($) la comision extra supera los $3.500?</div>
-  <div class="q-in"><span class="q-label">V &gt; $</span><input class="vld" data-a="53750" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(0{,}08(V-10000)&gt;3500 \Rightarrow V-10000&gt;43750 \Rightarrow V&gt;53750\).</p></details>
+  <div class="q-stem">c) \(4-6x=2x-4(3x-5)\)</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="4" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(4-6x=-10x+20\) &rarr; \(4x=16\) &rarr; \(x=4\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 3 &mdash; Sistema aplicado (agencia de marketing) <span class="pts">12 pts</span></div>
+<div class="q-group-t">Ejercicio 2 &mdash; Oferta/demanda con impuesto al productor <span class="pts">18 pts</span></div>
 <div class="q">
-  <div class="q-stem">Una agencia maneja 2 tipos de campañas: <strong>Redes</strong> (R) y <strong>Email</strong> (E). Cada campaña de Redes requiere 3 hs de diseño y 2 hs de ejecucion. Cada campaña de Email requiere 1 h de diseño y 4 hs de ejecucion. El equipo dispone de 22 hs de diseño y 28 hs de ejecucion en la semana, y quiere usarlas todas. Cuantas campañas de cada tipo lanza?</div>
+  <div class="q-stem">Oferta: \(p=q+10\). Demanda: \(p=-q+30\). Equilibrio original.</div>
   <div class="q-in">
-    <span class="q-label">Campañas Redes =</span><input class="vld" data-a="6" data-t="num">
-    <span class="q-label">Campañas Email =</span><input class="vld" data-a="4" data-t="num">
+    <span class="q-label">q* =</span><input class="vld" data-a="10" data-t="num">
+    <span class="q-label">p* =</span><input class="vld" data-a="20" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(3R+E=22\), \(2R+4E=28\). De 1ra: \(E=22-3R\). Reemplazo: \(2R+4(22-3R)=28\Rightarrow -10R=-60\Rightarrow R=6, E=4\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(q+10=-q+30 \Rightarrow 2q=20 \Rightarrow q=10, p=20\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Se cobra al fabricante $2 por unidad. Nueva oferta: \(p=q+12\). Nuevo equilibrio.</div>
+  <div class="q-in">
+    <span class="q-label">q' =</span><input class="vld" data-a="9" data-t="num">
+    <span class="q-label">p' =</span><input class="vld" data-a="21" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(q+12=-q+30 \Rightarrow q=9, p=21\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) Ingreso del fabricante <strong>antes</strong> y <strong>despues</strong> del impuesto (despues recibe \(p-2\) por unidad).</div>
+  <div class="q-in">
+    <span class="q-label">I antes = $</span><input class="vld" data-a="200" data-t="num">
+    <span class="q-label">I despues = $</span><input class="vld" data-a="171" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>Antes: \(10\cdot 20=200\). Despues: \(9\cdot(21-2)=171\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 4 &mdash; Costos con dominio acotado <span class="pts">10 pts</span></div>
+<div class="q-group-t">Ejercicio 3 &mdash; Utilidad integradora (CV=22/9) <span class="pts">20 pts</span></div>
 <div class="q">
-  <div class="q-stem">Una planta debe producir entre 200 y 400 unidades por mes. \(CF=\$3.000\), \(CV=\$15\)/u.</div>
+  <div class="q-stem">PV=$8/u, CF=$5.000, CV=$22/9 por unidad. Equilibrio (cantidad + ingreso).</div>
   <div class="q-in">
-    <span class="q-label">Costo minimo = $</span><input class="vld" data-a="6000" data-t="num">
-    <span class="q-label">Costo maximo = $</span><input class="vld" data-a="9000" data-t="num">
+    <span class="q-label">x* =</span><input class="vld" data-a="900" data-t="num">
+    <span class="q-label">I* = $</span><input class="vld" data-a="7200" data-t="num">
     <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(C(x)=3000+15x\). \(C(200)=6000\), \(C(400)=9000\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(8-\tfrac{22}{9}=\tfrac{50}{9}\). \(x^*=\dfrac{5000}{50/9}=900\). \(I^*=7200\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Utilidad al producir 1800 unidades.</div>
+  <div class="q-in"><span class="q-label">U(1800) = $</span><input class="vld" data-a="5000" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(U(1800)=\tfrac{50}{9}\cdot 1800-5000=10000-5000=5000\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) <strong>Perdida</strong> al producir solo 450 unidades (valor absoluto, positivo).</div>
+  <div class="q-in"><span class="q-label">Perdida = $</span><input class="vld" data-a="2500" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(U(450)=2500-5000=-2500\). Perdida: $2.500.</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">d) Cantidad requerida para obtener utilidad de $10.000.</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="2700" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\tfrac{50}{9}x-5000=10000 \Rightarrow x=2700\).</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 5 &mdash; Rectas, sistema equivalente y parametro <span class="pts">18 pts</span></div>
+<div class="q-group-t">Ejercicio 4 &mdash; Numero entero sobre doble del anterior <span class="pts">10 pts</span></div>
 <div class="q">
-  <div class="q-stem">Dadas \(r_1: y=\dfrac{2}{3}x-1\) y \(r_2: 4x-6y=18\).</div>
-  <div class="q-in">
-    <span class="q-label">m&#8322; =</span><input class="vld" data-a="2/3" data-t="num">
-    <span class="q-label">b&#8322; =</span><input class="vld" data-a="-3" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>De \(r_2\): \(-6y=-4x+18\Rightarrow y=\tfrac{2}{3}x-3\).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">b) Son paralelas, perpendiculares o secantes?</div>
-  <div class="q-in"><span class="q-label">Relacion =</span><input class="vld" data-a="paralelas|paralelo" data-t="text"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Misma pendiente (2/3), distinta ord. al origen (-1 vs -3) &rArr; paralelas.</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) Como sistema de 2 ecuaciones, clasificarlo (SCD/SCI/SI).</div>
-  <div class="q-in"><span class="q-label">Tipo =</span><input class="vld" data-a="si|incompatible" data-t="text"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Paralelas distintas &rArr; sin solucion &rArr; SI (incompatible).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">d) Hallar \(k\) para que la recta \(y=kx+5\) sea perpendicular a \(r_1\).</div>
-  <div class="q-in"><span class="q-label">k =</span><input class="vld" data-a="-3/2" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(k\cdot\tfrac{2}{3}=-1\Rightarrow k=-\tfrac{3}{2}\).</p></details>
+  <div class="q-stem">Existe un numero entero que dividido por el doble de su anterior de \(\tfrac{1}{4}\)? Si existe, indicarlo.</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="-1" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\dfrac{x}{2(x-1)}=\tfrac{1}{4} \Rightarrow 4x=2x-2 \Rightarrow x=-1\). Verifico: \(\tfrac{-1}{-4}=\tfrac{1}{4}\) ✓.</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 6 &mdash; Utilidad multi-escenario con mejora <span class="pts">18 pts</span></div>
+<div class="q-group-t">Ejercicio 5 &mdash; Tres multiplos consecutivos de 3 <span class="pts">10 pts</span></div>
 <div class="q">
-  <div class="q-stem">Una empresa produce linternas. \(CF=\$18.000\), \(CV=\$30\)/u, \(PV=\$70\)/u.</div>
-  <div class="q-in">
-    <span class="q-label">Equilibrio x* =</span><input class="vld" data-a="450" data-t="num">
-    <span class="q-label">U(700) =</span><input class="vld" data-a="10000" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(U(x)=40x-18000\). \(x^*=18000/40=450\). \(U(700)=28000-18000=10000\).</p></details>
+  <div class="q-stem">Existen 3 multiplos consecutivos de 3 que sumen 54? Si existen, indicar el <strong>primero</strong>.</div>
+  <div class="q-in"><span class="q-label">Primer multiplo =</span><input class="vld" data-a="15" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(3k+3(k+1)+3(k+2)=9k+9=54 \Rightarrow k=5\). Multiplos: 15, 18, 21.</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">b) Cantidad para utilidad de $6.000 y nuevo equilibrio si el CV baja a $25/u.</div>
-  <div class="q-in">
-    <span class="q-label">x (U=6000) =</span><input class="vld" data-a="600" data-t="num">
-    <span class="q-label">Nuevo x* =</span><input class="vld" data-a="400" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(40x-18000=6000\Rightarrow x=600\). Con CV=25: \(x^*=18000/(70-25)=400\).</p></details>
+  <div class="q-stem">b) Y que sumen 56? Responder <code>si</code> o <code>no</code>.</div>
+  <div class="q-in"><span class="q-label">Respuesta =</span><input class="vld" data-a="no" data-t="text" placeholder="si / no"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(9k+9=56 \Rightarrow k=\tfrac{47}{9}\), no entero. <strong>No existen</strong>.</p></details>
 </div>
 
-<div class="q-group-t">Ejercicio 7 &mdash; Verdadero o Falso analitico <span class="pts">12 pts</span></div>
+<div class="q-group-t">Ejercicio 6 &mdash; Producto nuevo (material + mano de obra) <span class="pts">12 pts</span></div>
 <div class="q">
-  <div class="q-stem">a) Dos rectas cuyas pendientes son reciprocas con signos opuestos son perpendiculares.</div>
+  <div class="q-stem">Para una unidad: material $2,50, mano de obra $4. CF=$5.000. PV mayorista: $7,40/u. Minimo entero para obtener utilidad positiva?</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="5556" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>CV=6,50. \(7{,}4x-6{,}5x-5000&gt;0 \Rightarrow 0{,}9x&gt;5000 \Rightarrow x&gt;5555{,}55\) &rArr; <strong>5556</strong>.</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 7 &mdash; Utilidad meta <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">CV=$6/u, CF=$80.000, PV=$10/u. Unidades para utilidad de $60.000.</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="35000" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(4x-80000=60000 \Rightarrow x=35000\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 8 &mdash; Verdadero o Falso conceptual <span class="pts">12 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) Si \(CV\geq PV\), no se puede obtener utilidad positiva para ninguna cantidad vendida (con CF&gt;0).</div>
   <div class="q-in"><select class="vld" data-a="V" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>V. Si \(m_2=-\tfrac{1}{m_1}\), entonces \(m_1\cdot m_2=-1\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>V. \(U(x)=(PV-CV)x-CF\): si \(PV-CV\leq 0\) y \(CF&gt;0\), \(U&lt;0\) siempre.</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">b) Una ecuacion lineal de una incognita siempre tiene una sola solucion.</div>
-  <div class="q-in"><select class="vld" data-a="F" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>F. Puede ser identidad (infinitas) o incompatible (ninguna).</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) En \(f(x)=mx+b\), si \(m&gt;0\) entonces f es creciente y corta al eje x a la izquierda del origen.</div>
-  <div class="q-in"><select class="vld" data-a="F" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>F. Creciente si, pero la raiz \(x_0=-b/m\) puede estar a cualquier lado segun el signo de b.</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">d) Si en un sistema 2x2 las dos ecuaciones son multiplos entre si, es SCI.</div>
+  <div class="q-stem">b) En \(C(x)=CF+CV\cdot x\), la pendiente es el costo variable unitario.</div>
   <div class="q-in"><select class="vld" data-a="V" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>V. Representan la misma recta &rArr; infinitas soluciones.</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>V. \(m=CV\), \(b=CF\).</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">e) Si aumento un precio 50% y luego bajo 50%, vuelvo al precio original.</div>
+  <div class="q-stem">c) En la ley de demanda, a mayor precio la cantidad demandada aumenta.</div>
   <div class="q-in"><select class="vld" data-a="F" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>F. \(P\cdot 1{,}5\cdot 0{,}5=0{,}75P\) (queda 25% mas barato).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>F. La demanda es decreciente: a mayor precio, <strong>menor</strong> cantidad demandada.</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">f) El punto de equilibrio esta donde el ingreso total iguala al costo total.</div>
+  <div class="q-stem">d) Si al productor se le aplica un impuesto por unidad, la ecuacion de oferta se desplaza hacia arriba.</div>
   <div class="q-in"><select class="vld" data-a="V" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>V. Es la cantidad donde \(U(x)=0\).</p></details>
-</div>
-
-<div class="q-group-t">Ejercicio 8 &mdash; Problema integrador (planes telefonicos) <span class="pts">15 pts</span></div>
-<div class="q">
-  <div class="q-stem">Dos empresas ofrecen planes: <strong>Sol</strong> $1.200/mes + $8/min &bull; <strong>Luna</strong> $500/mes + $10/min.</div>
-  <div class="q-in">
-    <span class="q-label">Minutos para mismo costo =</span><input class="vld" data-a="350" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>\(1200+8m=500+10m\Rightarrow 700=2m\Rightarrow m=350\).</p></details>
+  <details class="q-sol"><summary>Ver solucion</summary><p>V. El productor exige mas precio por la misma cantidad.</p></details>
 </div>
 <div class="q">
-  <div class="q-stem">b) Si un usuario consume 300 min, cual plan conviene y cuanto paga con Sol?</div>
-  <div class="q-in">
-    <span class="q-label">Plan conveniente (Sol/Luna) =</span><input class="vld" data-a="luna|luna conviene" data-t="text" placeholder="Sol o Luna">
-    <span class="q-label">Costo Sol = $</span><input class="vld" data-a="3600" data-t="num">
-    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Sol(300)=1200+2400=3600. Luna(300)=500+3000=3500. Conviene Luna.</p></details>
-</div>
-<div class="q">
-  <div class="q-stem">c) Si consume 400 min, cual plan conviene?</div>
-  <div class="q-in"><span class="q-label">Plan =</span><input class="vld" data-a="sol|sol conviene" data-t="text"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
-  <details class="q-sol"><summary>Ver solucion</summary><p>Sol(400)=1200+3200=4400. Luna(400)=500+4000=4500. Conviene Sol.</p></details>
+  <div class="q-stem">e) Un sistema lineal 2x2 siempre tiene solucion unica.</div>
+  <div class="q-in"><select class="vld" data-a="F" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>F. Puede ser SCD, SCI o SI.</p></details>
 </div>
 
 <button class="q-reset" onclick="resetParcial('p3')" style="margin-top:16px"><i data-lucide="refresh-cw" style="width:14px;height:14px;vertical-align:-2px"></i> Reiniciar parcial 3</button>
