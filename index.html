@@ -140,8 +140,44 @@ tr:hover td{background:var(--accent-l)}
 .formula-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 .formula-card h4{color:var(--accent);margin-bottom:8px}
 
+/* ===== VALIDATOR (PARCIALES) ===== */
+.parcial-hero{background:linear-gradient(135deg,#0d9488,#0ea5e9,#6366f1);color:#fff;padding:22px 24px;border-radius:16px;margin:32px 0 14px;text-align:center;box-shadow:var(--shadow-lg)}
+.parcial-hero h2{color:#fff;background:none;border:none;padding:0;margin:0 0 4px;font-size:1.5em;font-weight:700}
+.parcial-hero p{opacity:.95;margin:0;font-size:.92em}
+.parcial-hero .badge{display:inline-block;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);padding:4px 12px;border-radius:20px;font-size:.78em;margin-top:8px}
+.parcial-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 16px;background:var(--card);padding:12px;border-radius:12px;border:1px solid var(--border)}
+.parcial-stats .ps-item{text-align:center}
+.parcial-stats .ps-num{font-size:1.5em;font-weight:700;color:var(--accent)}
+.parcial-stats .ps-lab{font-size:.78em;color:var(--muted)}
+.q-group{margin:14px 0}
+.q-group-t{font-weight:600;color:var(--accent);font-size:1.05em;margin:18px 0 8px;padding-bottom:4px;border-bottom:2px dashed var(--border);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.q-group-t .pts{font-size:.82em;color:var(--muted);font-weight:500;background:var(--bg);padding:2px 8px;border-radius:10px}
+.q{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:10px;padding:12px 14px;margin:8px 0;transition:.25s}
+.q.done{border-left-color:var(--green);background:linear-gradient(90deg,var(--success-bg) 0%,var(--card) 40%)}
+.q.bad{border-left-color:var(--red)}
+.q-stem{margin-bottom:8px;color:var(--text);line-height:1.55}
+.q-in{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px}
+.q-label{font-weight:600;color:var(--accent);font-size:.9em;font-family:'JetBrains Mono',monospace}
+.q-in input.vld,.q-in select.vld{background:var(--bg);border:2px solid var(--border);border-radius:8px;padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:.92em;color:var(--text);min-width:90px;max-width:180px;transition:.2s}
+.q-in input.vld:focus,.q-in select.vld:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-l)}
+.q-in input.vld.ok,.q-in select.vld.ok{border-color:var(--green);background:var(--success-bg)}
+.q-in input.vld.bad,.q-in select.vld.bad{border-color:var(--red);background:var(--danger-bg)}
+.q-btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-size:.88em;transition:.2s;display:inline-flex;align-items:center;gap:4px}
+.q-btn:hover{background:#0f766e;transform:translateY(-1px);box-shadow:var(--shadow)}
+.q-btn:active{transform:translateY(0)}
+.q-fb{font-weight:700;font-size:.92em;margin-left:4px;min-width:100px}
+.q-fb.ok{color:#16a34a}
+.q-fb.bad{color:var(--red)}
+.q-sol{margin-top:10px;padding:8px 12px;background:var(--info-bg);border-radius:8px;border-left:3px solid var(--blue);font-size:.88em}
+.q-sol summary{cursor:pointer;color:var(--blue);font-weight:600;user-select:none;font-size:.88em}
+.q-sol[open] summary{margin-bottom:6px}
+.q-sol p{margin:4px 0;color:var(--text2)}
+.q-reset{background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:4px 10px;font-size:.8em;cursor:pointer;margin-left:auto;transition:.2s}
+.q-reset:hover{background:var(--danger-bg);color:var(--red);border-color:var(--red)}
+.q-tip{display:inline-block;font-size:.78em;color:var(--muted);margin-left:4px;font-style:italic}
+
 /* ===== RESPONSIVE ===== */
-@media(max-width:768px){.hero{padding:30px 16px}.hero h1{font-size:1.5em}.topnav .nav-links{display:none}.content{padding:0 10px}.section-body{padding:0 14px 14px}.formula-sheet{grid-template-columns:1fr}.video-row{grid-template-columns:1fr}}
+@media(max-width:768px){.hero{padding:30px 16px}.hero h1{font-size:1.5em}.topnav .nav-links{display:none}.content{padding:0 10px}.section-body{padding:0 14px 14px}.formula-sheet{grid-template-columns:1fr}.video-row{grid-template-columns:1fr}.q-in input.vld,.q-in select.vld{min-width:70px;max-width:140px}.parcial-stats{grid-template-columns:1fr}}
 @media print{.topnav,.progress-bar,.controls,.video-row,.material-gallery,.topnav .nav-links{display:none!important}.content{margin-top:0}.section-body{display:block!important}body{background:#fff}}
 </style>
 </head>
@@ -151,7 +187,7 @@ tr:hover td{background:var(--accent-l)}
 <nav class="topnav">
   <div class="logo"><i data-lucide="book-open" style="width:20px;height:20px"></i> Cuanti</div>
   <div class="nav-links">
-    <a href="#prelim">Preliminares</a><a href="#u1">Unidad 1</a><a href="#u2">Unidad 2</a><a href="#ejercicios">Ejercicios</a><a href="#formulas">Formulas</a>
+    <a href="#prelim">Preliminares</a><a href="#u1">Unidad 1</a><a href="#u2">Unidad 2</a><a href="#ejercicios">Ejercicios</a><a href="#parciales" style="color:var(--purple);font-weight:700">Parciales</a><a href="#formulas">Formulas</a>
   </div>
   <div class="controls">
     <button onclick="toggleAll()" title="Abrir/cerrar todo"><i data-lucide="layout-list" style="width:16px;height:16px"></i></button>
@@ -1199,6 +1235,430 @@ $$x^*=\frac{CF}{PV-CV}$$
 </div></div>
 
 <!-- ================================================================ -->
+<!--                    PARCIALES SIMULACROS                          -->
+<!-- ================================================================ -->
+<h1 id="parciales" style="margin-top:50px;text-align:center;color:var(--accent);font-size:1.8em;border-bottom:3px solid var(--accent);padding-bottom:10px">Parciales Simulacros</h1>
+<p style="color:var(--muted);margin-bottom:16px;text-align:center">3 parciales completos con validador automatico. Escribi tu respuesta y tocal <strong>Verificar</strong>. Acepta fracciones (3/4), decimales (0,75 o 0.75) y expresiones (1/2+1/3).</p>
+<div class="alert alert-info">
+  <div class="at"><i data-lucide="info" style="width:16px;height:16px"></i> Como usar el validador</div>
+  <p style="margin:4px 0"><strong>Numericas</strong>: escribi el numero, fraccion o calculo. Ej: <code>11/12</code> &middot; <code>-23/8</code> &middot; <code>0,5</code> &middot; <code>3/4+1/2</code>.</p>
+  <p style="margin:4px 0"><strong>V o F</strong>: elegi del desplegable.</p>
+  <p style="margin:4px 0"><strong>Clasificar sistema</strong>: escribi <code>SCD</code>, <code>SCI</code> o <code>SI</code>.</p>
+  <p style="margin:4px 0"><strong>Enter</strong> verifica rapido sin tocar el boton.</p>
+</div>
+
+<!-- ============ PARCIAL 1 ============ -->
+<div class="parcial-hero" id="parcial1">
+  <h2><i data-lucide="file-text" style="width:22px;height:22px;vertical-align:-4px"></i> Parcial Simulacro 1</h2>
+  <p>Nivel: estandar &bull; Duracion estimada: 90 min &bull; Temas: Preliminares + Unidad 1 + Unidad 2</p>
+  <div class="badge">8 ejercicios</div>
+</div>
+<div class="parcial-stats" data-parcial="p1">
+  <div class="ps-item"><div class="ps-num ps-tot">0</div><div class="ps-lab">Total preguntas</div></div>
+  <div class="ps-item"><div class="ps-num ps-done">0</div><div class="ps-lab">Correctas</div></div>
+  <div class="ps-item"><div class="ps-num ps-pct">0%</div><div class="ps-lab">Progreso</div></div>
+</div>
+<div class="section" id="p1">
+<div class="section-header active" onclick="toggle(this)">
+  <h2><i data-lucide="notebook-pen" style="width:20px;height:20px"></i> Enunciado Parcial 1</h2>
+  <span class="chevron" style="transform:rotate(180deg)"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body open">
+
+<div class="q-group-t">Ejercicio 1 &mdash; Operaciones combinadas <span class="pts">20 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) Calcular \(\dfrac{3}{4}+\dfrac{1}{2}-\dfrac{1}{3}\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="11/12" data-t="num" placeholder="ej: 11/12"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>MCM(4,2,3)=12. \(\dfrac{9}{12}+\dfrac{6}{12}-\dfrac{4}{12}=\dfrac{11}{12}\)</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Calcular \(\left(\dfrac{2}{3}\right)^{2}\cdot\left(\dfrac{3}{2}\right)^{3}\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="3/2" data-t="num" placeholder="ej: 3/2"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\dfrac{4}{9}\cdot\dfrac{27}{8}=\dfrac{108}{72}=\dfrac{3}{2}\)</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) Calcular \(2^{-3}+2^{0}-2^{2}\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="-23/8" data-t="num" placeholder="ej: -23/8"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\dfrac{1}{8}+1-4=\dfrac{1}{8}-3=\dfrac{1-24}{8}=-\dfrac{23}{8}\)</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">d) Calcular \(\sqrt{81}-\sqrt{25}+\sqrt[3]{8}\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="6" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(9-5+2=6\)</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 2 &mdash; Porcentaje <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) El 15% de 480.</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="72" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(480\cdot 0{,}15=72\)</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Una campera costaba $25.000. Aumenta 20% y luego le hacen 15% de descuento sobre el nuevo precio. Precio final?</div>
+  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="25500" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(25000\cdot 1{,}20=30000\) &rarr; \(30000\cdot 0{,}85=25500\)</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) Un articulo con IVA del 8% sale $540. Precio sin IVA?</div>
+  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="500" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(540/1{,}08=500\)</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 3 &mdash; Ecuacion lineal <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Resolver \(3(2x-1)-5=4-(x-2)\). Hallar \(x\).</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="2" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(6x-3-5=4-x+2\) &rarr; \(6x-8=6-x\) &rarr; \(7x=14\) &rarr; \(x=2\)</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 4 &mdash; Ecuacion con fracciones <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Resolver \(\dfrac{x+3}{2}-\dfrac{x-1}{5}=1\). Hallar \(x\).</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="-7/3" data-t="num" placeholder="ej: -7/3"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>MCM=10. \(5(x+3)-2(x-1)=10\) &rarr; \(5x+15-2x+2=10\) &rarr; \(3x+17=10\) &rarr; \(3x=-7\) &rarr; \(x=-\tfrac{7}{3}\)</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 5 &mdash; Inecuacion <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Resolver \(-2(x-3)\geq 4x+1\). Indicar el limite de \(x\) y el signo.</div>
+  <div class="q-in"><span class="q-label">x</span>
+    <select class="vld" data-a="<=" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option><option value=">">&gt;</option><option value=">=">&ge;</option></select>
+    <input class="vld" data-a="5/6" data-t="num" placeholder="limite">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(-2x+6\geq 4x+1\) &rarr; \(5\geq 6x\) &rarr; \(x\leq\tfrac{5}{6}\)</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 6 &mdash; Funcion lineal <span class="pts">15 pts</span></div>
+<div class="q">
+  <div class="q-stem">Dada \(f(x)=-2x+6\), indicar pendiente, ordenada al origen, raiz y \(f(5)\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="-2" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="6" data-t="num">
+    <span class="q-label">x&#8320; =</span><input class="vld" data-a="3" data-t="num">
+    <span class="q-label">f(5) =</span><input class="vld" data-a="-4" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>m=-2, b=6. Raiz: \(0=-2x+6 \Rightarrow x=3\). \(f(5)=-10+6=-4\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 7 &mdash; Recta por 2 puntos <span class="pts">15 pts</span></div>
+<div class="q">
+  <div class="q-stem">Hallar la ecuacion explicita \(y=mx+b\) de la recta que pasa por \(A(2,-1)\) y \(B(-3,4)\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="-1" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="1" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(m=\dfrac{4-(-1)}{-3-2}=\dfrac{5}{-5}=-1\). \(-1=-1(2)+b \Rightarrow b=1\). Recta: \(y=-x+1\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 8 &mdash; Paralelas y perpendiculares <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) Paralela a \(y=2x-3\) que pasa por \((1,5)\). Dar \(m\) y \(b\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="2" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="3" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>Paralela &rArr; misma pendiente: m=2. \(5=2(1)+b \Rightarrow b=3\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Perpendicular a \(y=2x-3\) que pasa por \((4,-2)\). Dar \(m\) y \(b\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="-1/2" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="0" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>Perp &rArr; \(m\cdot 2=-1 \Rightarrow m=-\tfrac{1}{2}\). \(-2=-\tfrac{1}{2}(4)+b=-2+b \Rightarrow b=0\).</p></details>
+</div>
+
+<button class="q-reset" onclick="resetParcial('p1')" style="margin-top:16px"><i data-lucide="refresh-cw" style="width:14px;height:14px;vertical-align:-2px"></i> Reiniciar parcial 1</button>
+
+</div></div>
+
+<!-- ============ PARCIAL 2 ============ -->
+<div class="parcial-hero" id="parcial2">
+  <h2><i data-lucide="file-text" style="width:22px;height:22px;vertical-align:-4px"></i> Parcial Simulacro 2</h2>
+  <p>Nivel: estandar &bull; Duracion estimada: 90 min &bull; Temas: Combinados Unidad 1 + 2</p>
+  <div class="badge">9 ejercicios</div>
+</div>
+<div class="parcial-stats" data-parcial="p2">
+  <div class="ps-item"><div class="ps-num ps-tot">0</div><div class="ps-lab">Total preguntas</div></div>
+  <div class="ps-item"><div class="ps-num ps-done">0</div><div class="ps-lab">Correctas</div></div>
+  <div class="ps-item"><div class="ps-num ps-pct">0%</div><div class="ps-lab">Progreso</div></div>
+</div>
+<div class="section" id="p2">
+<div class="section-header active" onclick="toggle(this)">
+  <h2><i data-lucide="notebook-pen" style="width:20px;height:20px"></i> Enunciado Parcial 2</h2>
+  <span class="chevron" style="transform:rotate(180deg)"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body open">
+
+<div class="q-group-t">Ejercicio 1 &mdash; Operaciones (cuidar orden) <span class="pts">15 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) \(\dfrac{1}{2}-\dfrac{1}{3}\cdot\dfrac{3}{4}\) &nbsp;<span class="q-tip">(multiplicacion primero)</span></div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="1/4" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\dfrac{1}{3}\cdot\dfrac{3}{4}=\dfrac{1}{4}\). \(\dfrac{1}{2}-\dfrac{1}{4}=\dfrac{1}{4}\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) \(\left(\dfrac{1}{2}-\dfrac{1}{3}\right)\cdot\dfrac{3}{4}\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="1/8" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\dfrac{1}{2}-\dfrac{1}{3}=\dfrac{1}{6}\). \(\dfrac{1}{6}\cdot\dfrac{3}{4}=\dfrac{3}{24}=\dfrac{1}{8}\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) \((-2)^{4}-(-3)^{2}-1^{5}\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="6" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(16-9-1=6\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">d) \(16^{1/2}+27^{1/3}\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="7" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\sqrt{16}+\sqrt[3]{27}=4+3=7\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 2 &mdash; Porcentaje <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) Un articulo costo $800. El comerciante quiere ganar 25%. Cual es el precio de venta?</div>
+  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="1000" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(800\cdot 1{,}25=1000\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Con 40% de descuento, un producto sale $4200. Precio original?</div>
+  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="7000" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(x\cdot 0{,}60=4200 \Rightarrow x=4200/0{,}60=7000\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 3 &mdash; Ecuacion lineal <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Resolver \(4x-3(2-x)=5(x+1)-11\). Hallar \(x\).</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="0" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(4x-6+3x=5x+5-11\) &rarr; \(7x-6=5x-6\) &rarr; \(2x=0\) &rarr; \(x=0\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 4 &mdash; Ecuacion con fracciones <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Resolver \(\dfrac{x}{3}+\dfrac{x-1}{2}=2\). Hallar \(x\).</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="3" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>MCM=6. \(2x+3(x-1)=12\) &rarr; \(5x-3=12\) &rarr; \(5x=15\) &rarr; \(x=3\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 5 &mdash; Inecuacion doble <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Resolver \(-1&lt;2x+3\leq 9\). Indicar ambos limites y los signos.</div>
+  <div class="q-in">
+    <input class="vld" data-a="-2" data-t="num" placeholder="limite inf">
+    <select class="vld" data-a="<" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option></select>
+    <span class="q-label">x</span>
+    <select class="vld" data-a="<=" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option></select>
+    <input class="vld" data-a="3" data-t="num" placeholder="limite sup">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>Resto 3: \(-4&lt;2x\leq 6\). Divido por 2: \(-2&lt;x\leq 3\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 6 &mdash; Funcion lineal <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Dada \(g(x)=\dfrac{1}{2}x-4\), indicar pendiente, ord. origen, raiz y \(g(10)\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="1/2" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="-4" data-t="num">
+    <span class="q-label">x&#8320; =</span><input class="vld" data-a="8" data-t="num">
+    <span class="q-label">g(10) =</span><input class="vld" data-a="1" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>m=1/2, b=-4. \(0=\tfrac{x}{2}-4 \Rightarrow x=8\). \(g(10)=5-4=1\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 7 &mdash; Recta por punto y pendiente <span class="pts">12 pts</span></div>
+<div class="q">
+  <div class="q-stem">Recta que pasa por \(P(-2,5)\) con pendiente \(m=3\). Dar \(m\) y \(b\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="3" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="11" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(y-5=3(x+2)=3x+6\) &rarr; \(y=3x+11\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 8 &mdash; Sistema de ecuaciones <span class="pts">13 pts</span></div>
+<div class="q">
+  <div class="q-stem">Resolver el sistema: \(\begin{cases}x+2y=7\\ 3x-y=7\end{cases}\)</div>
+  <div class="q-in">
+    <span class="q-label">x =</span><input class="vld" data-a="3" data-t="num">
+    <span class="q-label">y =</span><input class="vld" data-a="2" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>De la 1ra: \(x=7-2y\). Reemplazo: \(3(7-2y)-y=7\) &rarr; \(21-7y=7\) &rarr; \(y=2\). \(x=7-4=3\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 9 &mdash; Problema de equilibrio <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Una pizzeria tiene CF=$60.000, CV=$800/pizza, PV=$2000/pizza.</div>
+  <div class="q-in">
+    <span class="q-label">Equilibrio x* =</span><input class="vld" data-a="50" data-t="num">
+    <span class="q-label">U(100) =</span><input class="vld" data-a="60000" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(x^*=\dfrac{60000}{2000-800}=\dfrac{60000}{1200}=50\). \(U(100)=100\cdot 1200-60000=120000-60000=60000\).</p></details>
+</div>
+
+<button class="q-reset" onclick="resetParcial('p2')" style="margin-top:16px"><i data-lucide="refresh-cw" style="width:14px;height:14px;vertical-align:-2px"></i> Reiniciar parcial 2</button>
+
+</div></div>
+
+<!-- ============ PARCIAL 3 ============ -->
+<div class="parcial-hero" id="parcial3">
+  <h2><i data-lucide="file-text" style="width:22px;height:22px;vertical-align:-4px"></i> Parcial Simulacro 3</h2>
+  <p>Nivel: integrador (mas exigente) &bull; Temas combinados con V/F y clasificacion de sistemas</p>
+  <div class="badge">8 ejercicios</div>
+</div>
+<div class="parcial-stats" data-parcial="p3">
+  <div class="ps-item"><div class="ps-num ps-tot">0</div><div class="ps-lab">Total preguntas</div></div>
+  <div class="ps-item"><div class="ps-num ps-done">0</div><div class="ps-lab">Correctas</div></div>
+  <div class="ps-item"><div class="ps-num ps-pct">0%</div><div class="ps-lab">Progreso</div></div>
+</div>
+<div class="section" id="p3">
+<div class="section-header active" onclick="toggle(this)">
+  <h2><i data-lucide="notebook-pen" style="width:20px;height:20px"></i> Enunciado Parcial 3 (integrador)</h2>
+  <span class="chevron" style="transform:rotate(180deg)"><i data-lucide="chevron-down" style="width:18px;height:18px"></i></span>
+</div>
+<div class="section-body open">
+
+<div class="q-group-t">Ejercicio 1 &mdash; Operaciones combinadas <span class="pts">15 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) \(\dfrac{3^{2}-1}{2^{3}-2^{2}}\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="2" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\dfrac{9-1}{8-4}=\dfrac{8}{4}=2\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) \(\left(\dfrac{2}{5}+\dfrac{3}{10}\right)\cdot\left(\dfrac{5}{7}-\dfrac{1}{14}\right)\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="9/20" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\dfrac{7}{10}\cdot\dfrac{9}{14}=\dfrac{63}{140}=\dfrac{9}{20}\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) \(\sqrt{2}\cdot\sqrt{8}-\sqrt{16}\)</div>
+  <div class="q-in"><span class="q-label">=</span><input class="vld" data-a="0" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(\sqrt{2\cdot 8}-4=\sqrt{16}-4=4-4=0\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 2 &mdash; Porcentaje inverso <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) Despues de un aumento del 25% un producto cuesta $5000. Precio original?</div>
+  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="4000" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(x\cdot 1{,}25=5000 \Rightarrow x=5000/1{,}25=4000\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Con 30% de descuento un curso sale $3500. Precio sin descuento?</div>
+  <div class="q-in"><span class="q-label">$</span><input class="vld" data-a="5000" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(x\cdot 0{,}70=3500 \Rightarrow x=3500/0{,}70=5000\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 3 &mdash; Ecuacion con fracciones <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Resolver \(\dfrac{3x-2}{4}-\dfrac{x+1}{3}=\dfrac{5}{12}\). Hallar \(x\).</div>
+  <div class="q-in"><span class="q-label">x =</span><input class="vld" data-a="3" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>MCM=12. \(3(3x-2)-4(x+1)=5\) &rarr; \(9x-6-4x-4=5\) &rarr; \(5x-10=5\) &rarr; \(x=3\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 4 &mdash; Inecuacion <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">Resolver \(2(x-1)+3\leq 5x-7\). Indicar limite y signo.</div>
+  <div class="q-in"><span class="q-label">x</span>
+    <select class="vld" data-a=">=" data-t="sign"><option value="">signo</option><option value="<">&lt;</option><option value="<=">&le;</option><option value=">">&gt;</option><option value=">=">&ge;</option></select>
+    <input class="vld" data-a="8/3" data-t="num" placeholder="limite">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(2x+1\leq 5x-7\) &rarr; \(8\leq 3x\) &rarr; \(x\geq\tfrac{8}{3}\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 5 &mdash; Recta forma general <span class="pts">15 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) Pasar \(2x-3y+6=0\) a forma explicita \(y=mx+b\). Dar \(m\) y \(b\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="2/3" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="2" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(-3y=-2x-6\) &rarr; \(y=\tfrac{2}{3}x+2\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Raiz de esa recta (valor de \(x\) cuando \(y=0\)).</div>
+  <div class="q-in"><span class="q-label">x&#8320; =</span><input class="vld" data-a="-3" data-t="num"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(0=\tfrac{2}{3}x+2 \Rightarrow x=-3\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) Perpendicular a esa recta que pasa por \((2,1)\). Dar \(m\) y \(b\).</div>
+  <div class="q-in">
+    <span class="q-label">m =</span><input class="vld" data-a="-3/2" data-t="num">
+    <span class="q-label">b =</span><input class="vld" data-a="4" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(m_{\perp}\cdot\tfrac{2}{3}=-1 \Rightarrow m_{\perp}=-\tfrac{3}{2}\). \(1=-\tfrac{3}{2}(2)+b=-3+b \Rightarrow b=4\).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 6 &mdash; Sistemas (resolver y clasificar) <span class="pts">15 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) Resolver \(\begin{cases}2x+3y=8\\ x-y=-1\end{cases}\)</div>
+  <div class="q-in">
+    <span class="q-label">x =</span><input class="vld" data-a="1" data-t="num">
+    <span class="q-label">y =</span><input class="vld" data-a="2" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(x=y-1\). \(2(y-1)+3y=8\) &rarr; \(5y=10\) &rarr; \(y=2\), \(x=1\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Clasificar \(\begin{cases}6x-9y=12\\ 2x-3y=4\end{cases}\) (escribir SCD / SCI / SI)</div>
+  <div class="q-in"><span class="q-label">Tipo =</span><input class="vld" data-a="sci|compatible indeterminado" data-t="text" placeholder="SCD, SCI o SI"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>La 2da multiplicada por 3 da la 1ra. Infinitas soluciones &rArr; SCI (compatible indeterminado).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) Clasificar \(\begin{cases}3x+y=5\\ 6x+2y=8\end{cases}\)</div>
+  <div class="q-in"><span class="q-label">Tipo =</span><input class="vld" data-a="si|incompatible" data-t="text" placeholder="SCD, SCI o SI"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>1ra por 2: \(6x+2y=10 \neq 8\). Sin solucion &rArr; SI (incompatible).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 7 &mdash; Verdadero o Falso <span class="pts">10 pts</span></div>
+<div class="q">
+  <div class="q-stem">a) Dos rectas con distinta pendiente siempre se cortan en un punto.</div>
+  <div class="q-in"><select class="vld" data-a="V" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>V. Pendientes distintas &rArr; no son paralelas, se cortan una unica vez.</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Si \(m&lt;0\) la funcion lineal es creciente.</div>
+  <div class="q-in"><select class="vld" data-a="F" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>F. Si \(m&lt;0\) la funcion es decreciente.</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) La ordenada al origen es el valor donde la recta corta al eje \(x\).</div>
+  <div class="q-in"><select class="vld" data-a="F" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>F. La ord. al origen es donde corta al eje \(y\). Lo que corta al eje \(x\) es la raiz.</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">d) Un sistema lineal 2x2 puede tener exactamente 3 soluciones.</div>
+  <div class="q-in"><select class="vld" data-a="F" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>F. Solo 3 casos: 0, 1 o infinitas soluciones.</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">e) El producto de las pendientes de dos rectas perpendiculares es \(-1\).</div>
+  <div class="q-in"><select class="vld" data-a="V" data-t="vf"><option value="">?</option><option value="V">V</option><option value="F">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>V. \(m_1\cdot m_2=-1\) (con ambas pendientes definidas).</p></details>
+</div>
+
+<div class="q-group-t">Ejercicio 8 &mdash; Aplicacion: funcion de utilidad <span class="pts">15 pts</span></div>
+<div class="q">
+  <div class="q-stem">Una empresa produce cuadernos. CF=$24.000, CV=$40/u, PV=$100/u. Calcular:</div>
+  <div class="q-in">
+    <span class="q-label">Equilibrio x* =</span><input class="vld" data-a="400" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(x^*=\dfrac{24000}{100-40}=\dfrac{24000}{60}=400\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">b) Utilidad al vender 600 unidades.</div>
+  <div class="q-in">
+    <span class="q-label">U(600) =</span><input class="vld" data-a="12000" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(U(x)=60x-24000\). \(U(600)=36000-24000=12000\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">c) Cantidad para utilidad de $18.000.</div>
+  <div class="q-in">
+    <span class="q-label">x =</span><input class="vld" data-a="700" data-t="num">
+    <button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>\(60x-24000=18000\) &rarr; \(60x=42000\) &rarr; \(x=700\).</p></details>
+</div>
+
+<button class="q-reset" onclick="resetParcial('p3')" style="margin-top:16px"><i data-lucide="refresh-cw" style="width:14px;height:14px;vertical-align:-2px"></i> Reiniciar parcial 3</button>
+
+</div></div>
+
+<!-- ================================================================ -->
 <!--                      GUIAS DE TP                                 -->
 <!-- ================================================================ -->
 <div class="section">
@@ -1274,7 +1734,139 @@ function loadProg(){const d=localStorage.getItem('cuanti-prog');if(!d)return;con
 document.addEventListener('change',e=>{if(e.target.classList.contains('ex-check')){e.target.closest('.ex-item').classList.toggle('done',e.target.checked);updateStats()}});
 function openLightbox(img){document.getElementById('lightboxImg').src=img.src;document.getElementById('lightbox').classList.add('active')}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('active')}
-window.addEventListener('DOMContentLoaded',()=>{loadProg();updateStats();if(typeof lucide!=='undefined')lucide.createIcons()});
+
+/* ===== VALIDATOR ENGINE ===== */
+function parseNum(raw){
+  if(raw==null) return NaN;
+  let s = String(raw).trim();
+  if(s==='') return NaN;
+  // normalize: comma→dot, strip spaces, ^→**
+  s = s.replace(/,/g,'.').replace(/\s+/g,'').replace(/\^/g,'**');
+  // allow implicit handling of common Unicode minus
+  s = s.replace(/[–—−]/g,'-');
+  // only digits, ., + - * / ( )
+  if(!/^[-+*/().\d]+$/.test(s)) return NaN;
+  // block suspicious sequences like "//" or "**"" which is ok for exponent, but not leading like "*"
+  try{
+    const v = Function('"use strict";return ('+s+')')();
+    if(typeof v!=='number' || !isFinite(v)) return NaN;
+    return v;
+  }catch(e){ return NaN; }
+}
+function normText(s){
+  return String(s==null?'':s).trim().toLowerCase()
+    .replace(/[áàä]/g,'a').replace(/[éèë]/g,'e').replace(/[íìï]/g,'i')
+    .replace(/[óòö]/g,'o').replace(/[úùü]/g,'u').replace(/ñ/g,'n')
+    .replace(/\s+/g,' ');
+}
+function numOK(u,c){
+  if(isNaN(u)||isNaN(c)) return false;
+  if(Math.abs(u-c) < 1e-6) return true;
+  if(Math.abs(c) > 1e-9 && Math.abs((u-c)/c) < 1e-6) return true;
+  return false;
+}
+function checkOne(inp){
+  const raw = inp.value;
+  if(raw==null || String(raw).trim()==='') return null;
+  const ans = inp.dataset.a;
+  const t = inp.dataset.t || 'num';
+  if(t==='num'){
+    const u = parseNum(raw), c = parseNum(ans);
+    return numOK(u,c);
+  }
+  if(t==='vf'){
+    const u = normText(raw), c = normText(ans);
+    if(c==='v'||c==='verdadero'||c==='true') return (u==='v'||u==='verdadero'||u==='true');
+    if(c==='f'||c==='falso'||c==='false') return (u==='f'||u==='falso'||u==='false');
+    return u===c;
+  }
+  if(t==='text'){
+    const u = normText(raw);
+    const opts = String(ans).split('|').map(normText);
+    return opts.includes(u);
+  }
+  if(t==='sign'){
+    const u = String(raw).trim().replace(/≤/g,'<=').replace(/≥/g,'>=');
+    return u===String(ans).trim();
+  }
+  return false;
+}
+function chk(btn){
+  const q = btn.closest('.q');
+  const inputs = q.querySelectorAll('.vld');
+  const fb = q.querySelector('.q-fb');
+  let allOk = true, anyEmpty = false, anyFilled = false;
+  inputs.forEach(inp => {
+    const r = checkOne(inp);
+    if(r===null){ anyEmpty = true; inp.classList.remove('ok','bad'); }
+    else { anyFilled = true; inp.classList.toggle('ok',r); inp.classList.toggle('bad',!r); if(!r) allOk = false; }
+  });
+  if(anyEmpty && !anyFilled){
+    fb.className = 'q-fb bad'; fb.textContent = '! Completa el campo';
+    q.classList.remove('done'); return;
+  }
+  if(anyEmpty){
+    fb.className = 'q-fb bad'; fb.textContent = '! Faltan campos';
+    q.classList.remove('done'); return;
+  }
+  if(allOk){
+    fb.className = 'q-fb ok'; fb.textContent = '✓ Correcto';
+    q.classList.add('done'); q.classList.remove('bad');
+  } else {
+    fb.className = 'q-fb bad'; fb.textContent = '✗ Revisa';
+    q.classList.remove('done'); q.classList.add('bad');
+  }
+  saveQState();
+}
+function saveQState(){
+  const st = {};
+  document.querySelectorAll('.q').forEach((q,i)=>{
+    const id = q.id || 'q_'+i;
+    if(q.classList.contains('done')) st[id] = 'done';
+  });
+  localStorage.setItem('cuanti-qstate', JSON.stringify(st));
+  updateQStats();
+}
+function loadQState(){
+  const d = localStorage.getItem('cuanti-qstate');
+  if(!d) return;
+  try{
+    const st = JSON.parse(d);
+    document.querySelectorAll('.q').forEach((q,i)=>{
+      const id = q.id || 'q_'+i;
+      if(st[id]==='done') q.classList.add('done');
+    });
+  }catch(e){}
+}
+function updateQStats(){
+  document.querySelectorAll('[data-parcial]').forEach(box => {
+    const scope = '#'+box.dataset.parcial;
+    const all = document.querySelectorAll(scope+' .q').length;
+    const done = document.querySelectorAll(scope+' .q.done').length;
+    const tn = box.querySelector('.ps-tot'); if(tn) tn.textContent = all;
+    const dn = box.querySelector('.ps-done'); if(dn) dn.textContent = done;
+    const pn = box.querySelector('.ps-pct'); if(pn) pn.textContent = (all?Math.round(done/all*100):0)+'%';
+  });
+}
+function resetParcial(id){
+  if(!confirm('Reiniciar este parcial? Se borran tus respuestas.')) return;
+  const s = document.getElementById(id); if(!s) return;
+  s.querySelectorAll('.vld').forEach(inp => { inp.value=''; inp.classList.remove('ok','bad'); });
+  s.querySelectorAll('.q').forEach(q => {
+    q.classList.remove('done','bad');
+    const fb = q.querySelector('.q-fb'); if(fb){ fb.textContent=''; fb.className='q-fb'; }
+  });
+  saveQState();
+}
+document.addEventListener('keydown', e => {
+  if(e.key === 'Enter' && e.target.classList && e.target.classList.contains('vld')){
+    e.preventDefault();
+    const q = e.target.closest('.q');
+    if(q){ const b = q.querySelector('.q-btn'); if(b) b.click(); }
+  }
+});
+
+window.addEventListener('DOMContentLoaded',()=>{loadProg();updateStats();loadQState();updateQStats();if(typeof lucide!=='undefined')lucide.createIcons()});
 </script>
 
 </body>
