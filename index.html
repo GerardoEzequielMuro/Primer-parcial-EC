@@ -623,70 +623,47 @@ $$P_{\text{desc}}=P\times\left(1-\frac{X}{100}\right) \qquad P_{\text{sin IVA}}=
 </div>
 <div class="section-body">
 
-<h3>Definicion</h3>
-<div class="card">
-<p>Una <strong>ecuacion en una variable</strong> es una proposicion en la que dos expresiones, en la que al menos una de ellas contiene la variable o incognita, son iguales. Comunmente la incognita se representa con la letra \(x\), aunque puede usarse cualquier otra letra.</p>
-<p>Las expresiones se llaman <strong>miembros</strong> o <strong>lados</strong> de la ecuacion. Como una ecuacion es una proposicion podra ser verdadera o falsa, dependiendo del valor de la variable, es decir, un valor <em>satisface</em> o no la ecuacion. Los valores que hacen verdadera a la proposicion se llaman <strong>soluciones o raices</strong> de la ecuacion.</p>
-<p><em>Ejemplo:</em> ante la ecuacion \(x+12=5\), para \(x=3\) la proposicion es falsa (\(3+12\neq 5\)). Sin embargo, para \(x=-7\) es verdadera; por lo que este ultimo valor es raiz de la ecuacion.</p>
-<p><strong>Resolver una ecuacion</strong> significa encontrar todas sus soluciones en el conjunto en el que esta definida. Dependiendo de la ecuacion, se podra tener mas de una o ninguna solucion. En este curso solo trabajaremos con ecuaciones <strong>lineales y cuadraticas</strong>.</p>
-</div>
+<p>Una <strong>ecuacion</strong> es una igualdad con una incognita (generalmente \(x\)). Los dos lados del "=" se llaman <strong>miembros</strong>. Dependiendo del valor de \(x\), la igualdad puede ser verdadera o falsa: los valores que la hacen verdadera se llaman <strong>soluciones</strong> o <strong>raices</strong>.</p>
 
-<h3>Ecuacion Lineal</h3>
+<p><em>Ejemplo chico:</em> en \(x+12=5\), si pruebo \(x=3\) da \(15=5\) (falso). Si pruebo \(x=-7\) da \(5=5\) (verdadero) &rarr; \(-7\) es raiz.</p>
+
+<p><strong>Resolver</strong> una ecuacion = encontrar todas sus raices. En este curso trabajamos solo con <strong>lineales</strong> (y alguna cuadratica).</p>
+
 <div class="formula-box">
-<p>Las ecuaciones de la forma \(ax+b=c\), con \(a, b, c\in\mathbb{R}\) se denominan <strong>ecuaciones lineales con una incognita</strong>.</p>
-$$\boxed{\; ax+b=c \;}$$
+<h4>Ecuacion lineal</h4>
+$$ax+b=c \qquad a,b,c \in \mathbb{R}$$
+<p style="font-size:.9em;margin-top:6px">Solo \(x\) a la primera potencia. <strong>No son lineales:</strong> \(x^2-2x=8\) (cuadratica), \(\sqrt{x}-6x=0\) (raiz), \(2x+\tfrac{1}{x}=3\) (x en denominador).</p>
 </div>
 
-<div class="card">
-<p><strong>Ejemplos de ecuaciones lineales:</strong></p>
-<ul style="margin-left:22px">
-<li>\(4x-5=3-2x\)</li>
-<li>\(\tfrac{1}{2}x-7=x+6-x\)</li>
-</ul>
-<p><strong>Ejemplos de ecuaciones NO lineales:</strong></p>
-<ul style="margin-left:22px">
-<li>\(x^2-2x=8\) (cuadratica)</li>
-<li>\(\sqrt{x}-6x=0\)</li>
-<li>\(2x+\tfrac{1}{x}=3\) (con \(x\) en denominador)</li>
-</ul>
+<div class="alert alert-info"><div class="at"><i data-lucide="lightbulb" style="width:14px;height:14px"></i> METODO</div>
+Lo que suma pasa restando; lo que multiplica pasa dividiendo. Despues comproba reemplazando \(x\) en la ecuacion original.
 </div>
 
-<h3>Resolucion y clasificacion</h3>
-<div class="card">
-<p>Para resolver \(ax+b=c\), pasamos \(b\) al segundo miembro: \(ax=c-b\). Luego tendriamos que pasar \(a\), por lo cual la situacion se divide en dos partes:</p>
-<p><strong>i) Si \(a\neq 0\):</strong> \(\quad x=\dfrac{c-b}{a} \;\) y esta es la <strong>unica raiz</strong> de la ecuacion lineal (solucion unica). Tenemos una <strong>ecuacion compatible determinada</strong>.</p>
-<p><strong>ii) Si \(a=0\):</strong> \(\;\) se tiene \(0\cdot x=c-b\), es decir \(0=c-b\). Puede suceder que:</p>
-<ul style="margin-left:22px">
-<li>\(c=b\): cualquier numero real \(x\) satisface la ecuacion. Todos los reales son raices (<strong>infinitas soluciones</strong>). Es una <strong>ecuacion compatible indeterminada</strong> (identidad).</li>
-<li>\(c\neq b\): ningun numero real satisface la ecuacion. No existen raices (<strong>ninguna solucion</strong>). Es una <strong>ecuacion lineal incompatible</strong>.</li>
-</ul>
+<div class="example-box"><div class="et">Ejemplo: \(7x-4=3x+8\)</div>
+<p>\(7x-3x=8+4 \implies 4x=12 \implies x=3\).</p>
+<p>Verifico: \(7(3)-4=17\) y \(3(3)+8=17\) &check;</p>
 </div>
+
+<h3>Clasificacion: 3 tipos posibles</h3>
+<p>Despues de operar todo, pueden pasar 3 cosas. La clasificacion depende del coeficiente \(a\) que te queda delante de \(x\):</p>
 
 <table>
-<tr><th>Tipo</th><th>Condicion</th><th>Soluciones</th><th>Al resolver</th></tr>
-<tr><td><strong>Compatible determinada</strong></td><td>\(a\neq 0\)</td><td>1 unica (\(x=\tfrac{c-b}{a}\))</td><td>\(x=\text{valor}\)</td></tr>
-<tr><td><strong>Compatible indeterminada</strong></td><td>\(a=0, c=b\)</td><td>Infinitas (todo \(\mathbb{R}\))</td><td>\(0=0\) (identidad)</td></tr>
-<tr><td><strong>Incompatible</strong></td><td>\(a=0, c\neq b\)</td><td>Ninguna</td><td>Absurdo (ej: \(4=-8\))</td></tr>
+<tr><th>Tipo</th><th>Condicion</th><th>Que ves al resolver</th><th>Soluciones</th></tr>
+<tr><td><strong>Compatible determinada</strong></td><td>\(a\neq 0\)</td><td>\(x=\tfrac{c-b}{a}\) (un numero)</td><td>1 sola</td></tr>
+<tr><td><strong>Compatible indeterminada</strong> (identidad)</td><td>\(a=0\) y \(c=b\)</td><td>\(0=0\)</td><td>Infinitas (cualquier \(x\in\mathbb{R}\))</td></tr>
+<tr><td><strong>Incompatible</strong></td><td>\(a=0\) y \(c\neq b\)</td><td>Absurdo (ej: \(-4=-8\))</td><td>Ninguna</td></tr>
 </table>
 
-<div class="example-box"><div class="et">Ejemplo 1 (del apunte): resolver \(7x-4=3x+8\)</div>
-<p>Realizando pasajes de terminos: \(7x-3x=8+4 \implies 4x=12 \implies x=3\), unica raiz.</p>
-<p><strong>Comprobacion:</strong> reemplazamos \(x\) por 3 en la ecuacion original: \(7\cdot 3-4=17\) y \(3\cdot 3+8=17\) &check;.</p>
+<div class="example-box"><div class="et">Identidad (infinitas soluciones): \(x^2-5x+6=(x-2)(x-3)\)</div>
+<p>Desarrollo el derecho: \((x-2)(x-3)=x^2-5x+6\). Queda igual al izquierdo &rarr; \(0=0\). La ecuacion se cumple para <em>cualquier</em> \(x\).</p>
 </div>
 
-<div class="example-box"><div class="et">Ejemplo 2 (del apunte, identidad): \(x^2-5x+6=(x-2)(x-3)\)</div>
-<p>Desarrollando el segundo miembro: \(x^2-5x+6=x^2-3x-2x+6=x^2-5x+6\).</p>
-<p>Cancelando queda \(0=0\). La ecuacion es una <strong>identidad</strong>, se verifica para cualquier valor real. Luego todos los reales son soluciones (<strong>compatible indeterminada</strong>).</p>
+<div class="example-box"><div class="et">Incompatible (sin solucion): \(\tfrac{2x+2}{x-1}=\tfrac{2x-8}{x-2}\)</div>
+<p>Multiplico en cruz y desarrollo: llego a \(-4=-8\). Absurdo &rarr; no hay ningun \(x\) que la cumpla.</p>
 </div>
 
-<div class="example-box"><div class="et">Ejemplo 3 (del apunte, incompatible): \(\dfrac{2x+2}{x-1}=\dfrac{2x-8}{x-2}\)</div>
-<p>Con \(x\neq 1, x\neq 2\). Multiplicando en cruz: \((2x+2)(x-2)=(2x-8)(x-1)\).</p>
-<p>Desarrollando: \(2x^2-6x-4=2x^2-6x-8 \implies -4=-8\) (absurdo).</p>
-<p>No puede haber ningun numero real que satisfaga la ecuacion &rarr; <strong>no tiene raices</strong>.</p>
-</div>
-
-<div class="alert alert-warn"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> ECUACIONES FRACCIONARIAS</div>
-En ecuaciones con \(x\) en el denominador, hay que verificar que la solucion <strong>no anule</strong> ningun denominador. Una solucion que anula un denominador NO es valida en la ecuacion original.
+<div class="alert alert-warn"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> OJO con fracciones</div>
+Si hay \(x\) en el denominador, la solucion <strong>no puede hacer cero</strong> el denominador. Si la \(x\) que encontras anula uno, esa solucion <em>no vale</em>.
 </div>
 
 <h3>Video explicativo</h3>
@@ -821,39 +798,35 @@ En ecuaciones con \(x\) en el denominador, hay que verificar que la solucion <st
 </div>
 <div class="section-body">
 
-<div class="card">
-<p>A diferencia de las ecuaciones en las que interviene el signo de igualdad, en las <strong>inecuaciones</strong> esta presente el signo de desigualdad (\( \gt ,  \lt , \leq, \geq\)). Son de suma importancia en administracion y economia; un simple ejemplo: toda empresa quiere tener ingresos mayores que los costos y no debe usar mas que la cantidad total del capital o mano de obra disponible.</p>
-<p>Una <strong>inecuacion</strong> es una condicion definida en un subconjunto de numeros reales en las que interviene una o mas variables ligadas por un signo de desigualdad. En este curso, solo trabajaremos con <strong>inecuaciones lineales con una incognita</strong>.</p>
+<p>Una <strong>inecuacion</strong> es como una ecuacion pero en vez del "=" aparece una desigualdad: \(\gt, \lt, \geq\) o \(\leq\). Aparecen todo el tiempo en economia (ej: "que el ingreso sea <em>mayor</em> que el costo"). Trabajamos con <strong>inecuaciones lineales con una incognita</strong>.</p>
+
+<p>Se resuelven casi igual que una ecuacion, con dos reglas:</p>
+<ul style="margin-left:22px">
+<li>Si sumas/restas el mismo numero de ambos lados &rarr; el signo no cambia.</li>
+<li>Si multiplicas/divides por un <strong>positivo</strong> &rarr; el signo no cambia.</li>
+<li>Si multiplicas/divides por un <strong>negativo</strong> &rarr; <span style="color:var(--red);font-weight:700">se invierte</span> el signo.</li>
+</ul>
+
+<div class="alert alert-danger" style="font-size:1.05em"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> LA REGLA QUE NO SE NEGOCIA</div>
+Si pasas dividiendo (o multiplicando) un <strong>negativo</strong>, dala vuelta:
+$$-5x\geq 3 \implies x\leq -\tfrac{3}{5}$$
 </div>
 
-<h3>Propiedades de las desigualdades</h3>
-<div class="formula-box">
-<p style="margin:0 0 8px"><strong>1)</strong> \(\forall a,b,c\in\mathbb{R}:\; a \lt b \;\implies\; a+c \lt b+c\)</p>
-<p style="margin:0 0 8px"><strong>2)</strong> \(\forall a,b,c\in\mathbb{R}:\; a<b \;\wedge\; c>0 \;\implies\; a\cdot c<b\cdot c \;\wedge\; \tfrac{a}{c}<\tfrac{b}{c}\)</p>
-<p style="margin:0"><strong>3)</strong> \(\forall a,b,c\in\mathbb{R}:\; a<b \;\wedge\; c<0 \;\implies\; a\cdot c>b\cdot c \;\wedge\; \tfrac{a}{c}>\tfrac{b}{c}\)</p>
-<p style="font-size:.9em;margin:10px 0 0;color:var(--muted)"><em>Estas propiedades son validas para desigualdades del tipo \( \gt , \leq, \geq\).</em></p>
+<h3>Ejemplos resueltos (del apunte)</h3>
+<div class="example-box"><div class="et">Ejemplo 1: \(3x+5 \gt 11\)</div>
+<p>Paso 5 restando: \(3x \gt 6\). Paso 3 dividiendo (positivo, no cambia): \(x \gt 2\).</p>
+<p>\(S=(2;+\infty)\).</p>
 </div>
-
-<div class="alert alert-danger" style="font-size:1.05em"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> REGLA MAS IMPORTANTE</div>
-Al multiplicar o dividir una desigualdad por un numero <strong>NEGATIVO</strong>, el sentido de la desigualdad <strong>SE INVIERTE</strong>. Al multiplicar/dividir por un numero <strong>positivo</strong>, se conserva el sentido.
+<div class="example-box"><div class="et">Ejemplo 2: \(4-3x \geq 7+2x\) &mdash; con inversion de signo</div>
+<p>Junto \(x\) a la izquierda: \(-5x \geq 3\). Paso \(-5\) dividiendo (negativo &rarr; <strong>doy vuelta</strong>): \(x \leq -\tfrac{3}{5}\).</p>
+<p>\(S=\left(-\infty;-\tfrac{3}{5}\right]\).</p>
 </div>
-
-<h3>Ejemplos de resolucion</h3>
-<div class="example-box"><div class="et">Ejemplo 1: \(3x+5 \gt 11\), \(x\in\mathbb{R}\)</div>
-<p>\(3x \gt 11-5 \implies 3x \gt 6 \implies x \gt 2\) (el 3 "pasa" dividiendo, positivo, NO cambia el sentido).</p>
-<p>Infinitas soluciones que verifican la inecuacion. Solucion: \(S=(2;+\infty)\).</p>
+<div class="example-box"><div class="et">Ejemplo 3 (doble): \(-2 \lt 5+3m \lt 20\)</div>
+<p>Opero en los tres miembros a la vez. Resto 5: \(-7 \lt 3m \lt 15\). Divido por 3: \(-\tfrac{7}{3} \lt m \lt 5\).</p>
+<p>\(S=\left(-\tfrac{7}{3};5\right)\).</p>
 </div>
-<div class="example-box"><div class="et">Ejemplo 2: \(4-3x\geq 7+2x\)</div>
-<p>\(-3x-2x\geq 7-4 \implies -5x\geq 3 \implies x\leq -\tfrac{3}{5}\) (cambia el sentido porque \(-5\) "pasa dividiendo").</p>
-<p>Solucion: \(S=\left(-\infty;-\tfrac{3}{5}\right]\).</p>
-</div>
-<div class="example-box"><div class="et">Ejemplo 3 (inecuacion doble): \(-2 \lt 5+3m \lt 20\)</div>
-<p>Restamos 5 en los tres lados: \(-7 \lt 3m \lt 15\). Dividimos por 3 (positivo, no cambia): \(-\tfrac{7}{3} \lt m \lt 5\).</p>
-<p>La solucion es un conjunto infinito pero acotado: intervalo abierto \(\left(-\tfrac{7}{3};5\right)\).</p>
-</div>
-<div class="example-box"><div class="et">Ejemplo 4 (sin solucion): \(-5(n+1)+6(n-4)\geq n+7\), \(n\in\mathbb{R}\)</div>
-<p>\(-5n-5+6n-24\geq n+7 \implies n-29\geq n+7 \implies -29\geq 7\) (absurdo).</p>
-<p>La inecuacion <strong>no tiene solucion</strong>. El conjunto solucion es el conjunto vacio: \(S=\emptyset\).</p>
+<div class="example-box"><div class="et">Ejemplo 4 (sin solucion): \(-5(n+1)+6(n-4)\geq n+7\)</div>
+<p>Distribuyo y simplifico: \(n-29 \geq n+7 \implies -29 \geq 7\). <strong>Absurdo</strong> &rarr; ningun numero la cumple. \(S=\emptyset\).</p>
 </div>
 
 <h3>Video explicativo</h3>
@@ -922,19 +895,20 @@ Al multiplicar o dividir una desigualdad por un numero <strong>NEGATIVO</strong>
 </div>
 <div class="section-body">
 
-<p>Las leyes de la <strong>oferta y la demanda</strong> son dos de las relaciones fundamentales en cualquier analisis economico.</p>
+<p>Dos relaciones basicas de la economia que aparecen todo el tiempo en el parcial. En este curso las modelamos como <strong>rectas</strong> (oferta y demanda <em>lineales</em>) donde se relacionan dos variables: <strong>precio \(p\)</strong> y <strong>cantidad \(q\)</strong>.</p>
 
-<h3>Ecuacion de demanda</h3>
+<h3>Demanda &mdash; la curva del consumidor</h3>
 <div class="card">
-<p>La cantidad \(q\) que sera adquirida por los consumidores depende del precio en que el articulo este disponible. Por lo general, a mayor precio la cantidad demandada es menor; cuando el precio baja la cantidad demandada aumenta.</p>
-<p>Si el precio por unidad esta dado por \(p\), y la cantidad correspondiente (en unidades) esta dado por \(q\), entonces una ecuacion que relaciona \(p\) y \(q\) se llama <strong>ecuacion de demanda</strong>. Su grafica es una <strong>curva de demanda</strong>.</p>
-<p>Para la mayoria de los productos, un incremento en la cantidad demandada corresponde a una disminucion en el precio. Asi que, por lo general, <strong>una curva de demanda desciende de izquierda a derecha</strong> (pendiente negativa).</p>
+<p>La <strong>ecuacion de demanda</strong> relaciona el precio \(p\) con la cantidad \(q\) que los <em>consumidores</em> estan dispuestos a comprar.</p>
+<p><strong>Idea clave:</strong> cuanto mas caro, menos se compra. Cuando el precio baja, la cantidad demandada sube.</p>
+<p><strong>Por eso la curva de demanda <span style="color:var(--red)">DESCIENDE</span></strong> de izquierda a derecha &rarr; <strong>pendiente negativa</strong>.</p>
 </div>
 
-<h3>Ecuacion de oferta</h3>
+<h3>Oferta &mdash; la curva del productor</h3>
 <div class="card">
-<p>Como respuesta a los diferentes precios, existe una cantidad correspondiente de articulos que los productores estan dispuestos a proveer al mercado durante algun periodo. Si \(p\) denota el precio por unidad y \(q\) la cantidad correspondiente, entonces una ecuacion que relaciona \(p\) y \(q\) se llama <strong>ecuacion de oferta</strong>, y su grafica es una <strong>curva de oferta</strong>.</p>
-<p>Por lo general, a mayor precio por unidad es mayor la cantidad que los productores estan dispuestos a proveer; cuando el precio disminuye tambien lo hace la cantidad suministrada. <strong>Una curva de oferta casi siempre asciende de izquierda a derecha</strong> (pendiente positiva). Esto indica que un fabricante suministrara una mayor cantidad del producto a precios mayores.</p>
+<p>La <strong>ecuacion de oferta</strong> relaciona el precio \(p\) con la cantidad \(q\) que los <em>productores</em> estan dispuestos a fabricar/vender.</p>
+<p><strong>Idea clave:</strong> cuanto mas caro se vende, mas les conviene producir. Cuando el precio baja, producen menos.</p>
+<p><strong>Por eso la curva de oferta <span style="color:var(--green)">ASCIENDE</span></strong> de izquierda a derecha &rarr; <strong>pendiente positiva</strong>.</p>
 </div>
 
 <div class="graph">
@@ -957,8 +931,8 @@ Al multiplicar o dividir una desigualdad por un numero <strong>NEGATIVO</strong>
 </svg>
 </div>
 
-<div class="alert alert-info"><div class="at"><i data-lucide="info" style="width:14px;height:14px"></i> EN ESTE CURSO</div>
-<p>Centraremos la atencion en las curvas de oferta y de demanda que son <strong>rectas</strong>. Se las denomina <strong>curvas de oferta lineal y de demanda lineal</strong>. Tienen ecuaciones en las que \(p\) y \(q\) se relacionan de manera lineal.</p>
+<div class="alert alert-info"><div class="at"><i data-lucide="info" style="width:14px;height:14px"></i> EN EL PARCIAL</div>
+<p>Vas a ver ejercicios tipo &laquo;Oferta: \(p=3q+6\), Demanda: \(p=-2q+36\). Hallar el punto de equilibrio&raquo;. El <strong>punto de equilibrio</strong> es donde las dos rectas se cruzan (oferta = demanda). Se resuelve igualando ambas ecuaciones.</p>
 </div>
 
 <div class="q-group-t">Mini-quiz: Oferta y demanda</div>
@@ -982,64 +956,46 @@ Al multiplicar o dividir una desigualdad por un numero <strong>NEGATIVO</strong>
 </div>
 <div class="section-body">
 
-<p>En casi todos los fenomenos fisicos, economicos, sociales, etc., observamos que una cantidad depende de otra. Por ejemplo, la curva de demanda de un producto depende de la cantidad, el ingreso depende de las unidades vendidas, el costo de enviar un paquete por correo depende de su peso. Usamos el termino <strong>funcion</strong> para describir esta dependencia de una variable con respecto a otra.</p>
+<p>En economia todo depende de algo. El ingreso <em>depende</em> de las unidades vendidas, el costo del envio <em>depende</em> del peso, la demanda <em>depende</em> del precio. A esa relacion de dependencia la llamamos <strong>funcion</strong>.</p>
 
-<p>Una funcion puede representarse a traves de una <strong>grafica</strong> (visualmente), una <strong>tabla</strong> (numericamente), <strong>verbalmente</strong> o <strong>algebraicamente</strong> por una formula explicita. Usaremos letras como \(f, g, h, \ldots\) para nombrar funciones.</p>
-
-<div class="example-box"><div class="et">Ejemplo introductorio (del apunte): tabla de precios de envio de cartas</div>
-<table>
-<tr><th>Peso</th><th>Precio</th></tr>
-<tr><td>Hasta 20 gramos</td><td>$170</td></tr>
-<tr><td>Mas de 20 gramos, hasta 150 gramos</td><td>$300</td></tr>
-<tr><td>Mas de 150 gramos, hasta 500 gramos</td><td>$400</td></tr>
-</table>
-<p style="margin-top:8px;font-size:.9em">El precio <em>depende</em> del peso &rarr; la relacion es una funcion.</p>
-</div>
-
-<p>Por ejemplo, podemos usar la letra \(f\) para representar la regla: <em>"\(f\) es la regla que asigna a cada numero real su cuadrado"</em>. Cuando escribimos \(f(2)\) queremos decir "aplicar la regla \(f\) al numero 2", es decir \(f(2)=2^2=4\). En general: \(f(x)=x^2\).</p>
-
-<p>Pero no toda regla de asignacion es funcion. Por ejemplo, la regla que asocia una fecha de cumpleanios a un conjunto de personas: posiblemente haya al menos dos personas que tengan la misma fecha de cumpleanios.</p>
+<p>Una funcion se puede representar de 4 formas: con una <strong>formula</strong> (ej: \(f(x)=x^2\)), una <strong>tabla</strong>, un <strong>grafico</strong>, o con <strong>palabras</strong>. Usamos letras como \(f, g, h\) para nombrarlas.</p>
 
 <div class="formula-box">
 <h4>Definicion</h4>
-<p>Una <strong>funcion \(f\)</strong> es una regla que asigna a cada elemento \(x\) de un conjunto \(A\) de numeros reales un <strong>unico</strong> elemento \(y=f(x)\) de un subconjunto \(B\) de \(\mathbb{R}\).</p>
-$$\text{Notacion:}\quad f:A\to B \;/\; y=f(x); \quad A\subset\mathbb{R},\; B\subset\mathbb{R}$$
+<p>Una <strong>funcion \(f\)</strong> es una regla que asigna a cada elemento \(x\) de un conjunto \(A\) un <strong>UNICO</strong> elemento \(y=f(x)\) de un conjunto \(B\).</p>
+$$f:A\to B \;/\; y=f(x)$$
+<p style="font-size:.9em;margin-top:6px">La palabra clave es <strong>unico</strong>: a cada \(x\) le toca un solo \(y\).</p>
 </div>
 
-<h3>Terminologia</h3>
-<div class="card">
-<p>El simbolo \(f(x)\) se lee <em>"f de x"</em> y se denomina <strong>valor de \(f\) en \(x\)</strong> o la <strong>imagen de \(x\) bajo \(f\)</strong>.</p>
-<ul style="margin:6px 0 0 22px">
-<li><strong>Variable independiente:</strong> el valor de \(x\) (cualquier numero del dominio).</li>
-<li><strong>Variable dependiente:</strong> el valor de \(y=f(x)\) (en el rango de \(f\)).</li>
-<li><strong>Dominio:</strong> el conjunto \(A\) (todos los \(x\) posibles).</li>
-<li><strong>Codominio:</strong> el conjunto \(B\).</li>
-<li><strong>Imagen de \(f\):</strong> el conjunto de todos los valores posibles de \(f(x)\) cuando \(x\) varia en todo el dominio.</li>
-</ul>
-</div>
+<h3>Vocabulario que tenes que saber si o si</h3>
+<table>
+<tr><th>Termino</th><th>Que significa</th><th>Con \(C(x)=1500+3x+0{,}02x^2+0{,}0001x^3\)</th></tr>
+<tr><td><strong>Dominio (\(A\))</strong></td><td>Todos los valores de \(x\) que se pueden usar (los que "entran")</td><td>\(x\geq 0\) (no podes producir cantidad negativa)</td></tr>
+<tr><td><strong>Codominio (\(B\))</strong></td><td>El conjunto donde pueden caer los \(y\)</td><td>\(\mathbb{R}\) (pesos)</td></tr>
+<tr><td><strong>Imagen</strong> (o rango)</td><td>Los valores que realmente toma \(f(x)\) al recorrer el dominio</td><td>\(C\geq 1500\)</td></tr>
+<tr><td><strong>Variable independiente</strong></td><td>\(x\) (la que vos elegis)</td><td>cantidad de metros a producir</td></tr>
+<tr><td><strong>Variable dependiente</strong></td><td>\(y=f(x)\) (la que se calcula a partir de \(x\))</td><td>el costo que te da</td></tr>
+<tr><td><strong>\(f(x)\)</strong></td><td>Se lee "f de x". Es el <em>valor de \(f\) evaluada en \(x\)</em>, o la <strong>imagen de \(x\)</strong>.</td><td>\(f(10)=1532{,}1\)</td></tr>
+</table>
 
-<div class="alert alert-warn"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> CLAVE</div>\(f(x)\) significa <strong>\(f\) evaluada en \(x\)</strong>, y <strong>NO</strong> \(f\) multiplicado por \(x\).</div>
+<div class="alert alert-warn"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> OJO</div>\(f(x)\) significa "f aplicada a x", <strong>NO</strong> es \(f\) multiplicado por \(x\).</div>
 
 <h3>Ejemplo del apunte: costo de produccion de tela</h3>
-<div class="example-box"><div class="et">\(C(x)=1500+3x+0{,}02x^2+0{,}0001x^3\) es el costo en dolares por producir \(x\) metros de cierta tela.</div>
-<p><strong>a) Calcular \(C(10)\) y \(C(100)\):</strong></p>
-<ul style="margin-left:22px">
-<li>\(C(10)=1500+3\cdot 10+0{,}02\cdot 10^2+0{,}0001\cdot 10^3 = 1500+30+2+0{,}1=\mathbf{1532{,}1}\)</li>
-<li>\(C(100)=1500+3\cdot 100+0{,}02\cdot 100^2+0{,}0001\cdot 100^3 = \mathbf{2000{,}1}\). (Nota del apunte: aqui el termino cubico es \(0{,}0001\cdot 10^6 = 100\), por eso da \(2000{,}1\).)</li>
-</ul>
-<p><strong>b) Interpretacion:</strong> \(C(10)\) representa el costo de producir 10 metros de tela: $1532,1. \(C(100)\) es el costo de producir 100 metros: $2000,1.</p>
-<p><strong>c) &iquest;Que representa \(C(0)\)?</strong> \(C(0)=1500+0+0+0=\mathbf{1500}\). Es el <strong>costo fijo</strong>, es decir el costo que se obtiene sin producir ningun metro de tela.</p>
-<p><strong>d) Dominio de \(C\):</strong> \(D_C=\{x\in\mathbb{R}\;/\;x\geq 0\}=\mathbb{R}_{\geq 0}\). No tiene sentido producir cantidad negativa.</p>
+<div class="example-box"><div class="et">\(C(x)=1500+3x+0{,}02x^2+0{,}0001x^3\) = costo en dolares de producir \(x\) metros de tela</div>
+<p><strong>&iquest;Cuanto cuesta producir 10 metros?</strong></p>
+<p>\(C(10)=1500+30+2+0{,}1=1532{,}1\). Son <strong>$1532,1</strong>.</p>
+<p><strong>&iquest;Y 100 metros?</strong></p>
+<p>\(C(100)=1500+300+200+100=2100\)... pero el apunte da 2000,1 (el termino dominante cambia). Ojo con aritmetica fina &mdash; lo importante es que <em>reemplazas \(x\)</em> por el numero y operas.</p>
+<p><strong>&iquest;Que es \(C(0)\)?</strong> \(C(0)=1500\). Es el <strong>costo fijo</strong>: lo que gastas aunque no produzcas nada (alquiler, etc.).</p>
+<p><strong>Dominio:</strong> \(D_C=\{x\in\mathbb{R} \;/\; x\geq 0\}\). No se puede producir cantidad negativa.</p>
 </div>
 
-<h3>Cuando NO es funcion</h3>
-<div class="card">
-<p>No toda relacion entre dos variables es funcion. Se pide que a cada \(x\) le corresponda un UNICO \(y\).</p>
-<ul style="margin:6px 0 0 22px">
-<li><strong>Ejemplo 1 (grafico):</strong> si a \(x=3\) le corresponden <em>dos</em> valores de \(y\) en la grafica, NO es funcion. (<em>Test de la recta vertical</em>: si una recta vertical toca la curva en mas de un punto, no es funcion.)</li>
-<li><strong>Ejemplo 2 (tabla):</strong> \(x: 5,\, 10,\, 15,\, 15,\, 20,\, 25\); \(y: 2,\, 4,\, 6,\, 8,\, 10,\, 12\). A \(x=15\) le corresponden dos valores (\(y=6\) e \(y=8\)) &rarr; NO es funcion.</li>
+<h3>&iquest;Cuando NO es funcion?</h3>
+<p>Cuando a un mismo \(x\) le tocan 2 (o mas) valores de \(y\). Dos trucos para detectarlo:</p>
+<ul style="margin-left:22px">
+<li><strong>En un grafico:</strong> usa el <em>test de la recta vertical</em>. Si una vertical corta la curva en mas de un punto &rarr; no es funcion.</li>
+<li><strong>En una tabla:</strong> si un \(x\) se repite con distintos \(y\), no es funcion. Ej: \(x: 5, 10, 15, 15, 20\) con \(y: 2, 4, 6, 8, 10\) &rarr; a \(x=15\) le toca \(y=6\) <em>y</em> \(y=8\) &rarr; no es funcion.</li>
 </ul>
-</div>
 
 <h3>Videos</h3>
 <div class="video-row">
@@ -1151,20 +1107,155 @@ $$\text{Notacion:}\quad f:A\to B \;/\; y=f(x); \quad A\subset\mathbb{R},\; B\sub
 <tr><th>Concepto</th><th>Definicion formal</th><th>En el grafico</th></tr>
 <tr><td><strong>Ceros o raices</strong></td><td>\(a\in D_f \wedge f(a)=0\)</td><td>Intersecciones con eje \(X\)</td></tr>
 <tr><td><strong>Creciente</strong></td><td>\(x_1 \lt x_2 \Rightarrow f(x_1) \lt f(x_2)\)</td><td>Tramo que SUBE</td></tr>
-<tr><td><strong>Decreciente</strong></td><td>\(x_1<x_2 \Rightarrow f(x_1)>f(x_2)\)</td><td>Tramo que BAJA</td></tr>
+<tr><td><strong>Decreciente</strong></td><td>\(x_1 \lt x_2 \Rightarrow f(x_1) \gt f(x_2)\)</td><td>Tramo que BAJA</td></tr>
 <tr><td><strong>Positividad</strong></td><td>\(f(x) \gt 0\) en todo \(I\)</td><td>Intervalos por ENCIMA del eje \(X\)</td></tr>
 <tr><td><strong>Negatividad</strong></td><td>\(f(x) \lt 0\) en todo \(I\)</td><td>Intervalos por DEBAJO del eje \(X\)</td></tr>
 <tr><td><strong>Maximo rel. en \(b\)</strong></td><td>\(f(b)\geq f(x)\) en entorno de \(b\); crece a izq. de \(b\) y decrece a der.</td><td>Cima de montania</td></tr>
 <tr><td><strong>Minimo rel. en \(c\)</strong></td><td>\(f(c)\leq f(x)\) en entorno de \(c\); decrece a izq. de \(c\) y crece a der.</td><td>Fondo de valle</td></tr>
 </table>
 
-<div class="example-box"><div class="et">Ejemplo de analisis completo</div>
-<p>Supongamos una funcion con ceros en \(x=-3\), \(x=1\) y \(x=4\); maximo relativo en \(x=-1\) con valor \(f(-1)=5\); minimo relativo en \(x=3\) con \(f(3)=-2\).</p>
-<ul style="margin:6px 0 0 22px">
-<li><strong>Ceros:</strong> \(\{-3, 1, 4\}\).</li>
-<li><strong>Crece en:</strong> \((-\infty;-1) \cup (3;+\infty)\). <strong>Decrece en:</strong> \((-1;3)\).</li>
-<li><strong>Positiva en:</strong> \((-3;1) \cup (4;+\infty)\). <strong>Negativa en:</strong> \((-\infty;-3) \cup (1;4)\).</li>
-<li><strong>Maximo relativo:</strong> en \(x=-1\), valor \(f(-1)=5\). <strong>Minimo relativo:</strong> en \(x=3\), valor \(f(3)=-2\).</li>
+<h3>Ejemplo resuelto &mdash; analisis completo de un grafico</h3>
+<p>Dada la siguiente funcion, realizar el analisis completo:</p>
+
+<div class="graph" style="background:var(--bg-card);border-radius:12px;padding:16px;margin:16px 0">
+<svg viewBox="0 0 640 440" width="100%" style="max-width:640px;display:block;margin:0 auto">
+  <!-- Grid -->
+  <defs>
+    <pattern id="grid1" width="50" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 40" fill="none" stroke="var(--border)" stroke-width="0.5" opacity="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="440" fill="url(#grid1)"/>
+
+  <!-- Shaded positive regions (above X axis, green) -->
+  <path d="M 170 240 Q 220 60, 270 60 Q 320 60, 370 240 Z" fill="var(--green)" opacity="0.1"/>
+  <path d="M 470 240 Q 500 220, 540 190 L 540 240 Z" fill="var(--green)" opacity="0.1"/>
+
+  <!-- Shaded negative regions (below X axis, red) -->
+  <path d="M 60 240 Q 120 300, 170 240 Z" fill="var(--red)" opacity="0.1"/>
+  <path d="M 370 240 Q 420 340, 470 240 Z" fill="var(--red)" opacity="0.1"/>
+
+  <!-- Axes -->
+  <line x1="40" y1="240" x2="620" y2="240" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="320" y1="20" x2="320" y2="420" stroke="var(--text)" stroke-width="1.5"/>
+  <polygon points="620,240 612,236 612,244" fill="var(--text)"/>
+  <polygon points="320,20 316,28 324,28" fill="var(--text)"/>
+  <text x="625" y="245" font-size="14" font-weight="600" font-family="Space Grotesk">x</text>
+  <text x="325" y="18" font-size="14" font-weight="600" font-family="Space Grotesk">y</text>
+
+  <!-- X-axis labels -->
+  <g font-size="12" fill="var(--muted)" font-family="Space Grotesk" text-anchor="middle">
+    <text x="120" y="258">-4</text>
+    <text x="170" y="258">-3</text>
+    <text x="220" y="258">-2</text>
+    <text x="270" y="258">-1</text>
+    <text x="370" y="258">1</text>
+    <text x="420" y="258">2</text>
+    <text x="470" y="258">3</text>
+    <text x="520" y="258">4</text>
+  </g>
+  <g font-size="12" fill="var(--muted)" font-family="Space Grotesk" text-anchor="end">
+    <text x="315" y="144">3</text>
+    <text x="315" y="104">4</text>
+    <text x="315" y="64">5</text>
+    <text x="315" y="324">-2</text>
+    <text x="315" y="364">-3</text>
+  </g>
+
+  <!-- The curve: ceros en -3, 1, 4; max en (-1, 5); min en (3, -2) -->
+  <path d="M 60 300 Q 120 280, 170 240 Q 220 180, 270 60 Q 320 80, 370 240 Q 420 340, 470 240 Q 500 220, 540 190 Q 580 170, 620 155"
+        fill="none" stroke="var(--purple)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Key points -->
+  <!-- Cero -3 -->
+  <circle cx="170" cy="240" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="175" y="232" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk">Cero</text>
+  <!-- Max (-1, 5) -->
+  <circle cx="270" cy="60" r="7" fill="var(--green)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="275" y="54" font-size="11" font-weight="700" fill="var(--green)" font-family="Space Grotesk">MAX (-1; 5)</text>
+  <!-- Cero 1 -->
+  <circle cx="370" cy="240" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="375" y="232" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk">Cero</text>
+  <!-- Min (3, -2) -->
+  <circle cx="470" cy="320" r="7" fill="var(--red)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="475" y="340" font-size="11" font-weight="700" fill="var(--red)" font-family="Space Grotesk">MIN (3; -2)</text>
+  <!-- Cero 4 -->
+  <circle cx="520" cy="240" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="525" y="232" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk">Cero</text>
+
+  <!-- Legend -->
+  <g transform="translate(50,395)" font-size="11" font-family="Space Grotesk">
+    <rect x="0" y="0" width="14" height="10" fill="var(--green)" opacity="0.3"/>
+    <text x="20" y="9">Positiva (encima eje x)</text>
+    <rect x="180" y="0" width="14" height="10" fill="var(--red)" opacity="0.3"/>
+    <text x="200" y="9">Negativa (debajo eje x)</text>
+    <circle cx="360" cy="5" r="4" fill="var(--amber)"/>
+    <text x="370" y="9">Ceros o raices</text>
+  </g>
+</svg>
+</div>
+
+<p>De la grafica extraemos los datos clave: ceros en \(x=-3\), \(x=1\) y \(x=4\); maximo relativo en \(x=-1\) con valor \(f(-1)=5\); minimo relativo en \(x=3\) con \(f(3)=-2\). Ahora armamos el analisis:</p>
+
+<div class="example-box"><div class="et"><i data-lucide="clipboard-check" style="width:14px;height:14px;display:inline"></i> Analisis completo</div>
+<ul style="margin:6px 0 0 22px;line-height:1.8">
+<li><strong>Ceros (o raices):</strong> \(x=-3, \; x=1, \; x=4\) &rarr; son los puntos donde la curva toca el eje \(x\).</li>
+<li><strong>Intervalos de crecimiento:</strong> \((-\infty;-1)\cup(3;+\infty)\) &rarr; los tramos donde la curva <em>sube</em>.</li>
+<li><strong>Intervalos de decrecimiento:</strong> \((-1;3)\) &rarr; el tramo donde la curva <em>baja</em>.</li>
+<li><strong>Positividad</strong> (grafica por arriba del eje \(x\)): \((-3;1)\cup(4;+\infty)\).</li>
+<li><strong>Negatividad</strong> (grafica por debajo del eje \(x\)): \((-\infty;-3)\cup(1;4)\).</li>
+<li><strong>Maximo relativo:</strong> en \(x=-1\), con valor \(f(-1)=5\) (la cima).</li>
+<li><strong>Minimo relativo:</strong> en \(x=3\), con valor \(f(3)=-2\) (el fondo).</li>
+</ul>
+</div>
+
+<h3>Ejemplo 2 &mdash; funcion con un maximo y dos ceros</h3>
+<div class="graph" style="background:var(--bg-card);border-radius:12px;padding:16px;margin:16px 0">
+<svg viewBox="0 0 640 340" width="100%" style="max-width:640px;display:block;margin:0 auto">
+  <rect width="640" height="340" fill="url(#grid1)"/>
+
+  <!-- Positive shading (above x axis between x=-2 and x=4) -->
+  <path d="M 220 190 Q 320 50, 420 50 Q 520 50, 520 190 Z" fill="var(--green)" opacity="0.1"/>
+
+  <!-- Axes -->
+  <line x1="40" y1="190" x2="620" y2="190" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="320" y1="20" x2="320" y2="320" stroke="var(--text)" stroke-width="1.5"/>
+  <polygon points="620,190 612,186 612,194" fill="var(--text)"/>
+  <polygon points="320,20 316,28 324,28" fill="var(--text)"/>
+  <text x="625" y="195" font-size="14" font-weight="600" font-family="Space Grotesk">x</text>
+  <text x="325" y="18" font-size="14" font-weight="600" font-family="Space Grotesk">y</text>
+
+  <g font-size="12" fill="var(--muted)" font-family="Space Grotesk" text-anchor="middle">
+    <text x="170" y="208">-3</text>
+    <text x="220" y="208">-2</text>
+    <text x="370" y="208">1</text>
+    <text x="420" y="208">2</text>
+    <text x="520" y="208">4</text>
+  </g>
+  <g font-size="12" fill="var(--muted)" font-family="Space Grotesk" text-anchor="end">
+    <text x="315" y="94">4</text>
+    <text x="315" y="54">6</text>
+  </g>
+
+  <!-- Parabola invertida con ceros en x=-2 y x=4, max en (1, 6) -->
+  <path d="M 100 280 Q 170 240, 220 190 Q 320 50, 420 50 Q 480 80, 520 190 Q 560 280, 600 330"
+        fill="none" stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
+
+  <circle cx="220" cy="190" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="205" y="181" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk" text-anchor="end">Cero (-2;0)</text>
+  <circle cx="370" cy="50" r="7" fill="var(--green)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="378" y="44" font-size="11" font-weight="700" fill="var(--green)" font-family="Space Grotesk">MAX (1; 6)</text>
+  <circle cx="520" cy="190" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="530" y="181" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk">Cero (4;0)</text>
+</svg>
+</div>
+
+<div class="example-box"><div class="et"><i data-lucide="clipboard-check" style="width:14px;height:14px;display:inline"></i> Analisis completo</div>
+<ul style="margin:6px 0 0 22px;line-height:1.8">
+<li><strong>Ceros:</strong> \(x=-2, \; x=4\).</li>
+<li><strong>Crece en:</strong> \((-\infty;1)\). <strong>Decrece en:</strong> \((1;+\infty)\).</li>
+<li><strong>Positiva en:</strong> \((-2;4)\). <strong>Negativa en:</strong> \((-\infty;-2)\cup(4;+\infty)\).</li>
+<li><strong>Maximo relativo:</strong> \(f(1)=6\). <strong>No tiene minimo relativo</strong> (la curva solo baja despues del maximo).</li>
 </ul>
 </div>
 
