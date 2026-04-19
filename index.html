@@ -933,18 +933,72 @@ $$f:A\to B\;/\;y=f(x)$$
 </div>
 <div class="section-body">
 
-<p>En el parcial te dan un grafico y te piden un "analisis completo":</p>
+<div class="alert alert-info"><div class="at"><i data-lucide="clipboard-list" style="width:14px;height:14px"></i> CONSIGNA TIPICA DE PARCIAL</div>
+<p><em>&laquo;Dado el siguiente grafico, realizar un analisis completo: ceros o raices, intervalos de crecimiento y decrecimiento, intervalos de positividad y negatividad, maximos y minimos.&raquo;</em></p>
+</div>
 
+<h3>1) Funciones crecientes y decrecientes</h3>
+<div class="card">
+<p><strong>Creciente en \(I\):</strong> para cualesquiera \(x_1, x_2 \in I\), si \(x_1<x_2\) entonces \(f(x_1)<f(x_2)\). Graficamente SUBE de izquierda a derecha.</p>
+<p><strong>Decreciente en \(I\):</strong> para cualesquiera \(x_1, x_2 \in I\), si \(x_1<x_2\) entonces \(f(x_1)>f(x_2)\). Graficamente BAJA de izquierda a derecha.</p>
+</div>
+
+<h3>2) Extremos relativos (maximos y minimos)</h3>
+<div class="card">
+<p><strong>Maximo relativo en \(b\):</strong> \(f\) tiene un maximo relativo en el punto \(b\) si existe un intervalo abierto que contenga a \(b\) sobre el cual \(f(b)\geq f(x)\) para toda \(x\) en el intervalo. El <em>valor maximo</em> es \(f(b)\).</p>
+<p><strong>Minimo relativo en \(c\):</strong> \(f\) tiene un minimo relativo en el punto \(c\) si existe un intervalo abierto que contenga a \(c\) sobre el cual \(f(c)\leq f(x)\) para toda \(x\) en el intervalo. El <em>valor minimo</em> es \(f(c)\).</p>
+</div>
+
+<div class="alert alert-success"><div class="at"><i data-lucide="check-circle" style="width:14px;height:14px"></i> CRITERIO PARA DETECTARLOS</div>
+<p>Sea \(f\) continua en \(I=(a;d)\) y \(b, c \in I\):</p>
+<ul style="margin:4px 0 0 22px">
+<li>Si \(f\) es <strong>creciente</strong> en \((a;b)\) y <strong>decreciente</strong> en \((b;c)\) &rarr; hay un <strong>maximo relativo en \(b\)</strong>.</li>
+<li>Si \(f\) es <strong>decreciente</strong> en \((b;c)\) y <strong>creciente</strong> en \((c;d)\) &rarr; hay un <strong>minimo relativo en \(c\)</strong>.</li>
+</ul>
+</div>
+
+<h3>3) Ceros o raices</h3>
+<div class="card">
+<p>Se llama <strong>cero o raiz</strong> de una funcion \(f\) al numero real \(a\) del dominio cuya imagen es cero:</p>
+<div class="formula-box">$$a \text{ es raiz de } f \;\Leftrightarrow\; a\in D_f \;\wedge\; f(a)=0$$</div>
+<p>Graficamente: los ceros son las <strong>intersecciones de la grafica con el eje \(X\)</strong> (eje de abscisas).</p>
+</div>
+
+<h3>4) Funcion positiva y funcion negativa</h3>
+<div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div>
+<h4 style="color:var(--green)">Funcion positiva en \(I\)</h4>
+<div class="formula-box" style="border-color:var(--green)">$$f(x)>0 \quad \forall\, x \in I$$</div>
+<p>La grafica esta por <strong>ENCIMA</strong> del eje \(X\) en todo el intervalo.</p>
+</div>
+<div>
+<h4 style="color:var(--red)">Funcion negativa en \(I\)</h4>
+<div class="formula-box" style="border-color:var(--red)">$$f(x)<0 \quad \forall\, x \in I$$</div>
+<p>La grafica esta por <strong>DEBAJO</strong> del eje \(X\) en todo el intervalo.</p>
+</div>
+</div>
+
+<h3>Resumen para el analisis completo</h3>
 <table>
-<tr><th>Concepto</th><th>Definicion</th><th>En el grafico</th></tr>
-<tr><td><strong>Creciente</strong></td><td>\(x_1<x_2 \Rightarrow f(x_1)<f(x_2)\)</td><td>Sube de izq a der</td></tr>
-<tr><td><strong>Decreciente</strong></td><td>\(x_1<x_2 \Rightarrow f(x_1)>f(x_2)\)</td><td>Baja de izq a der</td></tr>
-<tr><td><strong>Maximo rel.</strong></td><td>Pasa de crecer a decrecer</td><td>Cima de montania</td></tr>
-<tr><td><strong>Minimo rel.</strong></td><td>Pasa de decrecer a crecer</td><td>Fondo de valle</td></tr>
-<tr><td><strong>Ceros</strong></td><td>\(f(a)=0\)</td><td>Cruza el eje X</td></tr>
-<tr><td><strong>Positiva</strong></td><td>\(f(x)>0\)</td><td>Arriba del eje X</td></tr>
-<tr><td><strong>Negativa</strong></td><td>\(f(x)<0\)</td><td>Abajo del eje X</td></tr>
+<tr><th>Concepto</th><th>Definicion formal</th><th>En el grafico</th></tr>
+<tr><td><strong>Ceros o raices</strong></td><td>\(a\in D_f \wedge f(a)=0\)</td><td>Intersecciones con eje \(X\)</td></tr>
+<tr><td><strong>Creciente</strong></td><td>\(x_1<x_2 \Rightarrow f(x_1)<f(x_2)\)</td><td>Tramo que SUBE</td></tr>
+<tr><td><strong>Decreciente</strong></td><td>\(x_1<x_2 \Rightarrow f(x_1)>f(x_2)\)</td><td>Tramo que BAJA</td></tr>
+<tr><td><strong>Positividad</strong></td><td>\(f(x)>0\) en todo \(I\)</td><td>Intervalos por ENCIMA del eje \(X\)</td></tr>
+<tr><td><strong>Negatividad</strong></td><td>\(f(x)<0\) en todo \(I\)</td><td>Intervalos por DEBAJO del eje \(X\)</td></tr>
+<tr><td><strong>Maximo rel. en \(b\)</strong></td><td>\(f(b)\geq f(x)\) en entorno de \(b\); crece a izq. de \(b\) y decrece a der.</td><td>Cima de montania</td></tr>
+<tr><td><strong>Minimo rel. en \(c\)</strong></td><td>\(f(c)\leq f(x)\) en entorno de \(c\); decrece a izq. de \(c\) y crece a der.</td><td>Fondo de valle</td></tr>
 </table>
+
+<div class="example-box"><div class="et">Ejemplo de analisis completo</div>
+<p>Supongamos una funcion con ceros en \(x=-3\), \(x=1\) y \(x=4\); maximo relativo en \(x=-1\) con valor \(f(-1)=5\); minimo relativo en \(x=3\) con \(f(3)=-2\).</p>
+<ul style="margin:6px 0 0 22px">
+<li><strong>Ceros:</strong> \(\{-3, 1, 4\}\).</li>
+<li><strong>Crece en:</strong> \((-\infty;-1) \cup (3;+\infty)\). <strong>Decrece en:</strong> \((-1;3)\).</li>
+<li><strong>Positiva en:</strong> \((-3;1) \cup (4;+\infty)\). <strong>Negativa en:</strong> \((-\infty;-3) \cup (1;4)\).</li>
+<li><strong>Maximo relativo:</strong> en \(x=-1\), valor \(f(-1)=5\). <strong>Minimo relativo:</strong> en \(x=3\), valor \(f(3)=-2\).</li>
+</ul>
+</div>
 
 <details class="material-gallery">
 <summary><i data-lucide="file-text" style="width:16px;height:16px"></i> Ver material del apunte</summary>
@@ -973,6 +1027,26 @@ $$f:A\to B\;/\;y=f(x)$$
   <div class="q-stem">d) Los CEROS de una funcion son los valores de \(x\) donde la grafica cruza el eje Y.</div>
   <div class="q-in"><span class="q-label">V/F:</span><select class="vld" data-a="f" data-t="vf"><option value="">--</option><option value="v">V</option><option value="f">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
   <details class="q-sol"><summary>Ver solucion</summary><p>FALSO. Los ceros son los \(x\) donde \(f(x)=0\) &rarr; cruzan el eje X (no el Y).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">e) Un punto donde la funcion pasa de DECRECER a CRECER se llama (una palabra):</div>
+  <div class="q-in"><span class="q-label">tipo:</span><input class="vld" data-a="minimo|minimo relativo" data-t="text" placeholder="maximo o minimo"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>MINIMO relativo (fondo de valle).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">f) Una funcion \(f\) tiene un <strong>maximo relativo en \(b\)</strong> si existe un entorno donde \(f(b) \geq f(x)\) para todo \(x\) en ese entorno.</div>
+  <div class="q-in"><span class="q-label">V/F:</span><select class="vld" data-a="v" data-t="vf"><option value="">--</option><option value="v">V</option><option value="f">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>VERDADERO. Definicion del apunte (Salaj). El VALOR maximo es \(f(b)\); el PUNTO donde se alcanza es \(b\).</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">g) Una funcion tiene raiz \(x=2\) si \(f(2)\) vale cualquier numero distinto de cero.</div>
+  <div class="q-in"><span class="q-label">V/F:</span><select class="vld" data-a="f" data-t="vf"><option value="">--</option><option value="v">V</option><option value="f">F</option></select><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>FALSO. Raiz \(\Leftrightarrow f(a)=0\), no otro valor.</p></details>
+</div>
+<div class="q">
+  <div class="q-stem">h) Una funcion con ceros en \(x=-2\) y \(x=3\) y que es positiva entre ambos, &iquest;como es en el intervalo \((-2;3)\)?</div>
+  <div class="q-in"><span class="q-label">signo:</span><input class="vld" data-a="positiva|positivo|+" data-t="text" placeholder="positiva/negativa"><button class="q-btn" onclick="chk(this)">Verificar</button><span class="q-fb"></span></div>
+  <details class="q-sol"><summary>Ver solucion</summary><p>POSITIVA en \((-2;3)\): el grafico esta por arriba del eje X en ese tramo.</p></details>
 </div>
 
 </div></div>
