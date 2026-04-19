@@ -1065,12 +1065,39 @@ $$m=\frac{y_2-y_1}{x_2-x_1}=\frac{\Delta y}{\Delta x}$$
 </div>
 <div class="section-body">
 
-<div class="formula-box"><h4>Explicita</h4>$$y=mx+b$$</div>
-<div class="formula-box"><h4>Por un punto con pendiente</h4>$$y-y_1=m(x-x_1)$$</div>
-<div class="formula-box"><h4>Por dos puntos</h4>$$m=\frac{y_2-y_1}{x_2-x_1} \qquad\text{luego}\qquad y-y_1=m(x-x_1)$$</div>
+<div class="formula-box"><h4>1) Explicita (la mas usada)</h4>$$y=mx+b$$
+<p style="font-size:.9em;margin-top:6px"><strong>m</strong> = pendiente &bull; <strong>b</strong> = ordenada al origen. La recta corta al eje \(Y\) en \((0,b)\) y al eje \(X\) en \(\left(-\tfrac{b}{m},0\right)\).</p></div>
 
-<div class="example-box"><div class="et">Ejemplo: recta por \(P(3,-4)\) con \(m=-\frac{3}{2}\)</div>
+<div class="formula-box"><h4>2) Punto-pendiente (para armar la recta a partir de un punto)</h4>$$y-y_1=m(x-x_1)$$
+<p style="font-size:.9em;margin-top:6px">Usala cuando te dan un punto \((x_1,y_1)\) y la pendiente \(m\). Despues distribuis y despejas \(y\) para llegar a la explicita.</p></div>
+
+<div class="formula-box"><h4>3) Por DOS puntos &mdash; primero calcula \(m\), luego punto-pendiente</h4>
+$$\boxed{\;m=\frac{y_2-y_1}{x_2-x_1}\;} \qquad\text{luego}\qquad y-y_1=m(x-x_1)$$
+<p style="font-size:.9em;margin-top:6px">Tambien se puede escribir en una sola linea como proporcion de variaciones:</p>
+$$\frac{y-y_1}{x-x_1}=\frac{y_2-y_1}{x_2-x_1}$$</div>
+
+<div class="formula-box"><h4>4) Segmentaria (cuando conoces los cortes con los ejes)</h4>$$\frac{x}{a}+\frac{y}{b}=1$$
+<p style="font-size:.9em;margin-top:6px">\(a\) = corte con eje \(X\) (raiz). \(b\) = corte con eje \(Y\) (ordenada al origen). Util cuando el enunciado dice &laquo;pasa por (a,0) y (0,b)&raquo;.</p></div>
+
+<div class="formula-box"><h4>5) General (implicita)</h4>$$Ax+By+C=0$$
+<p style="font-size:.9em;margin-top:6px">Para volver a explicita: \(y=-\tfrac{A}{B}x-\tfrac{C}{B}\) (siempre que \(B\neq 0\)). De ahi sacas \(m=-\tfrac{A}{B}\) y \(b=-\tfrac{C}{B}\).</p></div>
+
+<div class="example-box"><div class="et">Ejemplo 1: por \(P(3,-4)\) con \(m=-\tfrac{3}{2}\) (punto-pendiente)</div>
 $$y+4=-\tfrac{3}{2}(x-3) \implies y=-\tfrac{3}{2}x+\tfrac{9}{2}-4=-\tfrac{3}{2}x+\tfrac{1}{2}$$
+</div>
+
+<div class="example-box"><div class="et">Ejemplo 2: por \(A(1,2)\) y \(B(3,8)\) (dos puntos)</div>
+<p><strong>Paso 1 &mdash; pendiente:</strong> \(m=\dfrac{8-2}{3-1}=\dfrac{6}{2}=3\).</p>
+<p><strong>Paso 2 &mdash; punto-pendiente con \(A\):</strong> \(y-2=3(x-1) \implies y=3x-3+2=3x-1\).</p>
+<p><strong>Verif:</strong> en \(B(3,8)\): \(3(3)-1=8\) &check;.</p>
+</div>
+
+<div class="example-box"><div class="et">Ejemplo 3: corta eje \(X\) en 4 y eje \(Y\) en 12 (segmentaria)</div>
+<p>Segmentaria directa: \(\dfrac{x}{4}+\dfrac{y}{12}=1\). Multiplico por 12: \(3x+y=12 \implies y=-3x+12\). Asi \(m=-3, b=12\).</p>
+</div>
+
+<div class="alert alert-info"><div class="at"><i data-lucide="lightbulb" style="width:14px;height:14px"></i> TIP</div>
+Si dos puntos tienen MISMA \(y\): la recta es <strong>horizontal</strong> \((y=y_1, m=0)\). Si tienen MISMA \(x\): la recta es <strong>vertical</strong> \((x=x_1, m\) indefinida, no es funcion\()\).
 </div>
 
 <h3>Video</h3>
@@ -1123,21 +1150,51 @@ $$y+4=-\tfrac{3}{2}(x-3) \implies y=-\tfrac{3}{2}x+\tfrac{9}{2}-4=-\tfrac{3}{2}x
 <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
 <div>
 <h4 style="color:var(--blue)">Paralelas \(r_1\parallel r_2\)</h4>
-<div class="formula-box" style="border-color:var(--blue)">$$m_1=m_2$$</div>
-<p>Misma pendiente, distinta \(b\). Nunca se cruzan.</p>
+<div class="formula-box" style="border-color:var(--blue)">$$\boxed{\;m_1=m_2\;}$$</div>
+<p>Misma pendiente, distinta \(b\). Nunca se cruzan (sistema <strong>incompatible</strong>).</p>
+<p style="font-size:.9em"><em>Si ademas \(b_1=b_2\), son la MISMA recta (sistema indeterminado).</em></p>
 </div>
 <div>
 <h4 style="color:var(--purple)">Perpendiculares \(r_1\perp r_2\)</h4>
-<div class="formula-box" style="border-color:var(--purple)">$$m_1\cdot m_2=-1$$</div>
-<p>Pendientes opuestas e inversas. Se cruzan a 90 grados.</p>
-<p>Si \(m_1=2\) &rarr; \(m_2=-\frac{1}{2}\)</p>
+<div class="formula-box" style="border-color:var(--purple)">$$m_1\cdot m_2=-1 \quad\Leftrightarrow\quad \boxed{\;m_2=-\tfrac{1}{m_1}\;}$$</div>
+<p>Pendientes <strong>opuestas e inversas</strong>. Se cruzan a 90&deg;.</p>
+<p style="font-size:.9em"><em>Truco: dala vuelta y cambiale el signo.</em></p>
 </div>
 </div>
 
-<div class="example-box"><div class="et">Ejemplo tipo parcial</div>
-<p>Dada \(r_1:-25x+5y+5=0\). Forma explicita: \(y=5x-1\), \(m_1=5\).</p>
-<p><strong>Perpendicular por \((-2,-1)\):</strong> \(m_\perp=-\frac{1}{5}\) &rarr; \(y=-\frac{1}{5}x-\frac{7}{5}\)</p>
-<p><strong>Paralela por \((2,5)\):</strong> \(m_\parallel=5\) &rarr; \(y=5x-5\)</p>
+<h3>Como calcular la perpendicular paso a paso</h3>
+<table>
+<tr><th>Si \(m_1\) es...</th><th>Entonces \(m_\perp = -\tfrac{1}{m_1}\) es...</th><th>Verificacion</th></tr>
+<tr><td>\(m_1=2\)</td><td>\(m_\perp=-\tfrac{1}{2}\)</td><td>\(2\cdot(-\tfrac{1}{2})=-1\) &check;</td></tr>
+<tr><td>\(m_1=-3\)</td><td>\(m_\perp=\tfrac{1}{3}\)</td><td>\(-3\cdot\tfrac{1}{3}=-1\) &check;</td></tr>
+<tr><td>\(m_1=\tfrac{3}{4}\)</td><td>\(m_\perp=-\tfrac{4}{3}\)</td><td>\(\tfrac{3}{4}\cdot(-\tfrac{4}{3})=-1\) &check;</td></tr>
+<tr><td>\(m_1=-\tfrac{2}{5}\)</td><td>\(m_\perp=\tfrac{5}{2}\)</td><td>\(-\tfrac{2}{5}\cdot\tfrac{5}{2}=-1\) &check;</td></tr>
+</table>
+
+<div class="alert alert-warn"><div class="at"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i> CASOS ESPECIALES</div>
+<p><strong>Horizontales</strong> (\(y=k\), \(m=0\)): son <strong>paralelas entre si</strong>. Su perpendicular es una <strong>recta vertical</strong> (\(x=c\)), que <em>no es funcion</em> y no tiene pendiente definida.</p>
+<p><strong>Verticales</strong> (\(x=c\)): son paralelas entre si. Su perpendicular es una <strong>horizontal</strong> \((y=k)\).</p>
+</div>
+
+<h3>Receta para armar la paralela / perpendicular por un punto</h3>
+<div class="card">
+<ol style="margin-left:20px">
+<li>Llevar la recta dada a forma <strong>explicita</strong> \(y=mx+b\) para extraer \(m_1\).</li>
+<li>Calcular \(m\) de la nueva recta: <strong>paralela</strong> &rarr; \(m=m_1\). <strong>Perpendicular</strong> &rarr; \(m=-\tfrac{1}{m_1}\).</li>
+<li>Usar <strong>punto-pendiente</strong> \(y-y_1=m(x-x_1)\) con el punto dado y despejar \(y\).</li>
+</ol>
+</div>
+
+<div class="example-box"><div class="et">Ejemplo completo: \(r_1: -25x+5y+5=0\)</div>
+<p><strong>Paso 1 &mdash; explicita:</strong> \(5y=25x-5 \implies y=5x-1\), entonces \(m_1=5, b_1=-1\).</p>
+<p><strong>Paralela por \((2,5)\):</strong> \(m=5\). \(y-5=5(x-2) \implies y=5x-5\).</p>
+<p><strong>Perpendicular por \((-2,-1)\):</strong> \(m_\perp=-\tfrac{1}{5}\). \(y+1=-\tfrac{1}{5}(x+2) \implies y=-\tfrac{1}{5}x-\tfrac{7}{5}\).</p>
+</div>
+
+<div class="example-box"><div class="et">Ejemplo con forma general: perp. a \(x+4y=8\) por \((2,-1)\)</div>
+<p><strong>Paso 1:</strong> \(4y=-x+8 \implies y=-\tfrac{1}{4}x+2 \implies m_1=-\tfrac{1}{4}\).</p>
+<p><strong>Paso 2:</strong> \(m_\perp=-\tfrac{1}{m_1}=-\tfrac{1}{-1/4}=4\).</p>
+<p><strong>Paso 3:</strong> \(y+1=4(x-2) \implies y=4x-9\).</p>
 </div>
 
 <h3>Video</h3>
@@ -2568,9 +2625,10 @@ $$x^*=\frac{CF}{PV-CV}$$
 <div class="formula-card"><h4>Ecuacion lineal</h4>$$ax+b=c \implies x=\frac{c-b}{a}$$</div>
 <div class="formula-card"><h4>Inecuaciones</h4><p style="font-weight:600">Dividir por negativo &rarr; <span style="color:var(--red)">INVIERTE</span></p></div>
 <div class="formula-card"><h4>Funcion lineal</h4>$$y=mx+b$$$$m=\frac{y_2-y_1}{x_2-x_1} \quad x_0=-\frac{b}{m}$$</div>
-<div class="formula-card"><h4>Recta por punto</h4>$$y-y_1=m(x-x_1)$$</div>
-<div class="formula-card"><h4>Paralelas / Perp.</h4>$$\parallel: m_1=m_2$$$$\perp: m_1\cdot m_2=-1$$</div>
-<div class="formula-card"><h4>Equilibrio</h4>$$x^*=\frac{CF}{PV-CV}$$</div>
+<div class="formula-card"><h4>Recta: 4 formas</h4>$$y=mx+b \quad\text{(explicita)}$$$$y-y_1=m(x-x_1) \quad\text{(punto-pendiente)}$$$$\frac{x}{a}+\frac{y}{b}=1 \quad\text{(segmentaria)}$$$$Ax+By+C=0 \quad\text{(general)}$$</div>
+<div class="formula-card"><h4>Recta por 2 puntos</h4>$$m=\frac{y_2-y_1}{x_2-x_1}$$$$\frac{y-y_1}{x-x_1}=\frac{y_2-y_1}{x_2-x_1}$$</div>
+<div class="formula-card"><h4>Paralelas / Perp.</h4>$$\parallel: m_1=m_2$$$$\perp: m_1\cdot m_2=-1$$$$m_\perp=-\frac{1}{m_1}$$</div>
+<div class="formula-card"><h4>Aplicaciones</h4>$$C(x)=CF+CV\cdot x$$$$I(x)=PV\cdot x$$$$U(x)=I(x)-C(x)$$$$x^*=\frac{CF}{PV-CV}$$</div>
 </div>
 
 <br><br>
