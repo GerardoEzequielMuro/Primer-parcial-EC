@@ -1119,29 +1119,30 @@ $$f:A\to B \;/\; y=f(x)$$
 
 <div class="graph" style="background:var(--bg-card);border-radius:12px;padding:16px;margin:16px 0">
 <svg viewBox="0 0 640 440" width="100%" style="max-width:640px;display:block;margin:0 auto">
-  <!-- Grid -->
   <defs>
     <pattern id="grid1" width="50" height="40" patternUnits="userSpaceOnUse">
       <path d="M 50 0 L 0 0 0 40" fill="none" stroke="var(--border)" stroke-width="0.5" opacity="0.5"/>
     </pattern>
+    <!-- Clip path that follows the curve so shading only appears where the curve encloses area -->
   </defs>
   <rect width="640" height="440" fill="url(#grid1)"/>
 
-  <!-- Shaded positive regions (above X axis, green) -->
-  <path d="M 170 240 Q 220 60, 270 60 Q 320 60, 370 240 Z" fill="var(--green)" opacity="0.1"/>
-  <path d="M 470 240 Q 500 220, 540 190 L 540 240 Z" fill="var(--green)" opacity="0.1"/>
-
-  <!-- Shaded negative regions (below X axis, red) -->
-  <path d="M 60 240 Q 120 300, 170 240 Z" fill="var(--red)" opacity="0.1"/>
-  <path d="M 370 240 Q 420 340, 470 240 Z" fill="var(--red)" opacity="0.1"/>
+  <!-- Shaded positive region (curve above x-axis between x=-3 and x=1) -->
+  <path d="M 170 240 Q 220 20, 270 40 Q 320 80, 370 240 Z" fill="var(--green)" opacity="0.18"/>
+  <!-- Shaded positive region (curve above x-axis from x=4 onwards) -->
+  <path d="M 520 240 Q 570 120, 620 100 L 620 240 Z" fill="var(--green)" opacity="0.18"/>
+  <!-- Shaded negative region (curve below x-axis from left to x=-3) -->
+  <path d="M 60 360 Q 115 340, 170 240 L 60 240 Z" fill="var(--red)" opacity="0.15"/>
+  <!-- Shaded negative region (curve below x-axis between x=1 and x=4) -->
+  <path d="M 370 240 Q 420 400, 470 320 Q 500 280, 520 240 Z" fill="var(--red)" opacity="0.15"/>
 
   <!-- Axes -->
   <line x1="40" y1="240" x2="620" y2="240" stroke="var(--text)" stroke-width="1.5"/>
   <line x1="320" y1="20" x2="320" y2="420" stroke="var(--text)" stroke-width="1.5"/>
   <polygon points="620,240 612,236 612,244" fill="var(--text)"/>
   <polygon points="320,20 316,28 324,28" fill="var(--text)"/>
-  <text x="625" y="245" font-size="14" font-weight="600" font-family="Space Grotesk">x</text>
-  <text x="325" y="18" font-size="14" font-weight="600" font-family="Space Grotesk">y</text>
+  <text x="628" y="245" font-size="14" font-weight="600" font-family="Space Grotesk">x</text>
+  <text x="325" y="16" font-size="14" font-weight="600" font-family="Space Grotesk">y</text>
 
   <!-- X-axis labels -->
   <g font-size="12" fill="var(--muted)" font-family="Space Grotesk" text-anchor="middle">
@@ -1153,41 +1154,60 @@ $$f:A\to B \;/\; y=f(x)$$
     <text x="420" y="258">2</text>
     <text x="470" y="258">3</text>
     <text x="520" y="258">4</text>
+    <text x="570" y="258">5</text>
   </g>
+  <!-- Y-axis labels (y-scale: 40px = 1 unit) -->
   <g font-size="12" fill="var(--muted)" font-family="Space Grotesk" text-anchor="end">
-    <text x="315" y="144">3</text>
-    <text x="315" y="104">4</text>
-    <text x="315" y="64">5</text>
+    <text x="315" y="204">1</text>
+    <text x="315" y="164">2</text>
+    <text x="315" y="124">3</text>
+    <text x="315" y="84">4</text>
+    <text x="315" y="44">5</text>
+    <text x="315" y="284">-1</text>
     <text x="315" y="324">-2</text>
     <text x="315" y="364">-3</text>
   </g>
 
-  <!-- The curve: ceros en -3, 1, 4; max en (-1, 5); min en (3, -2) -->
-  <path d="M 60 300 Q 120 280, 170 240 Q 220 180, 270 60 Q 320 80, 370 240 Q 420 340, 470 240 Q 500 220, 540 190 Q 580 170, 620 155"
+  <!--
+    Curve passes EXACTLY through these key points:
+    (-3, 0) = (170, 240)   cero
+    (-1, 5) = (270, 40)    MAX
+    ( 1, 0) = (370, 240)   cero
+    ( 3,-2) = (470, 320)   MIN
+    ( 4, 0) = (520, 240)   cero
+    Using quadratic Bezier segments between consecutive key points.
+  -->
+  <path d="M 60 360
+           Q 115 340, 170 240
+           Q 220 0, 270 40
+           Q 320 80, 370 240
+           Q 420 400, 470 320
+           Q 500 280, 520 240
+           Q 570 120, 620 100"
         fill="none" stroke="var(--purple)" stroke-width="3" stroke-linecap="round"/>
 
   <!-- Key points -->
   <!-- Cero -3 -->
   <circle cx="170" cy="240" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="175" y="232" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk">Cero</text>
+  <text x="170" y="278" font-size="11" font-weight="700" fill="var(--amber)" font-family="Space Grotesk" text-anchor="middle">Cero (-3;0)</text>
   <!-- Max (-1, 5) -->
-  <circle cx="270" cy="60" r="7" fill="var(--green)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="275" y="54" font-size="11" font-weight="700" fill="var(--green)" font-family="Space Grotesk">MAX (-1; 5)</text>
+  <circle cx="270" cy="40" r="7" fill="var(--green)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="270" y="30" font-size="12" font-weight="700" fill="var(--green)" font-family="Space Grotesk" text-anchor="middle">MAX (-1 ; 5)</text>
   <!-- Cero 1 -->
   <circle cx="370" cy="240" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="375" y="232" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk">Cero</text>
+  <text x="370" y="278" font-size="11" font-weight="700" fill="var(--amber)" font-family="Space Grotesk" text-anchor="middle">Cero (1;0)</text>
   <!-- Min (3, -2) -->
   <circle cx="470" cy="320" r="7" fill="var(--red)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="475" y="340" font-size="11" font-weight="700" fill="var(--red)" font-family="Space Grotesk">MIN (3; -2)</text>
+  <text x="470" y="342" font-size="12" font-weight="700" fill="var(--red)" font-family="Space Grotesk" text-anchor="middle">MIN (3 ; -2)</text>
   <!-- Cero 4 -->
   <circle cx="520" cy="240" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="525" y="232" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk">Cero</text>
+  <text x="520" y="228" font-size="11" font-weight="700" fill="var(--amber)" font-family="Space Grotesk" text-anchor="middle">Cero (4;0)</text>
 
   <!-- Legend -->
-  <g transform="translate(50,395)" font-size="11" font-family="Space Grotesk">
-    <rect x="0" y="0" width="14" height="10" fill="var(--green)" opacity="0.3"/>
+  <g transform="translate(50,408)" font-size="11" font-family="Space Grotesk" fill="var(--text)">
+    <rect x="0" y="0" width="14" height="10" fill="var(--green)" opacity="0.4"/>
     <text x="20" y="9">Positiva (encima eje x)</text>
-    <rect x="180" y="0" width="14" height="10" fill="var(--red)" opacity="0.3"/>
+    <rect x="180" y="0" width="14" height="10" fill="var(--red)" opacity="0.4"/>
     <text x="200" y="9">Negativa (debajo eje x)</text>
     <circle cx="360" cy="5" r="4" fill="var(--amber)"/>
     <text x="370" y="9">Ceros o raices</text>
@@ -1209,44 +1229,69 @@ $$f:A\to B \;/\; y=f(x)$$
 </ul>
 </div>
 
-<h3>Ejemplo 2 &mdash; funcion con un maximo y dos ceros</h3>
+<h3>Ejemplo 2 &mdash; parabola invertida (un maximo, dos ceros)</h3>
 <div class="graph" style="background:var(--bg-card);border-radius:12px;padding:16px;margin:16px 0">
 <svg viewBox="0 0 640 340" width="100%" style="max-width:640px;display:block;margin:0 auto">
   <rect width="640" height="340" fill="url(#grid1)"/>
 
-  <!-- Positive shading (above x axis between x=-2 and x=4) -->
-  <path d="M 220 190 Q 320 50, 420 50 Q 520 50, 520 190 Z" fill="var(--green)" opacity="0.1"/>
+  <!-- Shaded positive region (above x-axis between x=-2 and x=4) -->
+  <path d="M 220 190 Q 270 90, 370 10 Q 470 90, 520 190 Z" fill="var(--green)" opacity="0.18"/>
+  <!-- Shaded negative regions on the tails -->
+  <path d="M 120 290 Q 170 250, 220 190 L 120 190 Z" fill="var(--red)" opacity="0.15"/>
+  <path d="M 520 190 Q 565 260, 610 290 L 610 190 Z" fill="var(--red)" opacity="0.15"/>
 
   <!-- Axes -->
   <line x1="40" y1="190" x2="620" y2="190" stroke="var(--text)" stroke-width="1.5"/>
   <line x1="320" y1="20" x2="320" y2="320" stroke="var(--text)" stroke-width="1.5"/>
   <polygon points="620,190 612,186 612,194" fill="var(--text)"/>
   <polygon points="320,20 316,28 324,28" fill="var(--text)"/>
-  <text x="625" y="195" font-size="14" font-weight="600" font-family="Space Grotesk">x</text>
-  <text x="325" y="18" font-size="14" font-weight="600" font-family="Space Grotesk">y</text>
+  <text x="628" y="195" font-size="14" font-weight="600" font-family="Space Grotesk">x</text>
+  <text x="325" y="16" font-size="14" font-weight="600" font-family="Space Grotesk">y</text>
 
+  <!-- X-axis labels -->
   <g font-size="12" fill="var(--muted)" font-family="Space Grotesk" text-anchor="middle">
     <text x="170" y="208">-3</text>
     <text x="220" y="208">-2</text>
+    <text x="270" y="208">-1</text>
     <text x="370" y="208">1</text>
     <text x="420" y="208">2</text>
+    <text x="470" y="208">3</text>
     <text x="520" y="208">4</text>
+    <text x="570" y="208">5</text>
   </g>
+  <!-- Y-axis labels (scale: 30px = 1 unit) -->
   <g font-size="12" fill="var(--muted)" font-family="Space Grotesk" text-anchor="end">
-    <text x="315" y="94">4</text>
-    <text x="315" y="54">6</text>
+    <text x="315" y="164">1</text>
+    <text x="315" y="134">2</text>
+    <text x="315" y="104">3</text>
+    <text x="315" y="74">4</text>
+    <text x="315" y="44">5</text>
+    <text x="315" y="14">6</text>
+    <text x="315" y="224">-1</text>
+    <text x="315" y="254">-2</text>
   </g>
 
-  <!-- Parabola invertida con ceros en x=-2 y x=4, max en (1, 6) -->
-  <path d="M 100 280 Q 170 240, 220 190 Q 320 50, 420 50 Q 480 80, 520 190 Q 560 280, 600 330"
+  <!--
+    Parabola invertida f(x) = -2/3 (x-1)^2 + 6
+    Key points:
+    (-2, 0) = (220, 190)   cero
+    ( 1, 6) = (370,  10)   MAX
+    ( 4, 0) = (520, 190)   cero
+    Scale: x: 50px/unit ; y: 30px/unit ; origin (320, 190)
+  -->
+  <path d="M 120 290
+           Q 170 250, 220 190
+           Q 270 90, 370 10
+           Q 470 90, 520 190
+           Q 565 260, 610 290"
         fill="none" stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
 
   <circle cx="220" cy="190" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="205" y="181" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk" text-anchor="end">Cero (-2;0)</text>
-  <circle cx="370" cy="50" r="7" fill="var(--green)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="378" y="44" font-size="11" font-weight="700" fill="var(--green)" font-family="Space Grotesk">MAX (1; 6)</text>
+  <text x="220" y="228" font-size="11" font-weight="700" fill="var(--amber)" font-family="Space Grotesk" text-anchor="middle">Cero (-2;0)</text>
+  <circle cx="370" cy="10" r="7" fill="var(--green)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="370" y="-2" font-size="12" font-weight="700" fill="var(--green)" font-family="Space Grotesk" text-anchor="middle">MAX (1 ; 6)</text>
   <circle cx="520" cy="190" r="6" fill="var(--amber)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="530" y="181" font-size="11" font-weight="600" fill="var(--amber)" font-family="Space Grotesk">Cero (4;0)</text>
+  <text x="520" y="228" font-size="11" font-weight="700" fill="var(--amber)" font-family="Space Grotesk" text-anchor="middle">Cero (4;0)</text>
 </svg>
 </div>
 
